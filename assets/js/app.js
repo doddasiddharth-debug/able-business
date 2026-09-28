@@ -516,8 +516,28 @@
     },
   };
 
-  // Health: the extra tools below are shared by every site like the rest.
+  // Health and engineering tools: shared by every site like the rest.
+  const round = (v, d) => { const f = Math.pow(10, d); return Math.round(v * f) / f; };
+  const fixed = (v) => (Number.isInteger(v) ? String(v) : String(round(v, 3)));
   Object.assign(TOOLS, {
+    percenterror(v, out) {
+      if (!v.accepted) return { warn: "Enter the accepted (true) value; it can't be zero." };
+      const diff = Math.abs(v.measured - v.accepted);
+      out.diff = fixed(round(diff, 4));
+      out.error = `${round((diff / v.accepted) * 100, 2)}%`;
+    },
+    lever(v, out) {
+      if (!v.effortDist) return { warn: "Enter how far the effort is from the fulcrum." };
+      out.effort = fixed(round((v.load * v.loadDist) / v.effortDist, 3));
+      out.advantage = v.loadDist ? `${fixed(round(v.effortDist / v.loadDist, 3))} : 1` : "—";
+    },
+    ohm(v, out) {
+      if (!v.resistance) return { warn: "Resistance can't be zero: that's a short circuit." };
+      const amps = v.voltage / v.resistance;
+      out.amps = `${fixed(round(amps, 4))} A`;
+      out.milliamps = `${fixed(round(amps * 1000, 2))} mA`;
+      out.watts = `${fixed(round(v.voltage * amps, 4))} W`;
+    },
     nutrition(v, out) {
       const k = v.eaten;
       out.calories = `${Math.round(v.calories * k * 10) / 10} calories`;
