@@ -300,12 +300,19 @@
       a.classList.toggle("active", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
+    // Calculators: one at a time, picked from the list (#tool-<name>).
+    if (view.id === "tools") {
+      const panels = $$("[data-calc]");
+      const pick = target && target.matches("[data-calc]") ? target : panels.find((p) => p.classList.contains("is-active")) || panels[0];
+      panels.forEach((p) => p.classList.toggle("is-active", p === pick));
+      $$("[data-calc-link]").forEach((a) => a.classList.toggle("is-active", a.dataset.calcLink === pick?.dataset.calc));
+    }
     // Only the open course's lessons are listed in the sidebar.
     const course = view.dataset.course || "";
     $$("[data-course-nav]").forEach((g) => g.classList.toggle("is-open", g.dataset.courseNav === course));
     document.title = `${view.dataset.title} · ABLE Business`;
     setMenu(false);
-    if (target && target !== view) target.scrollIntoView({ block: "start" });
+    if (target && target !== view && !(view.id === "tools" && window.innerWidth > 1100)) target.scrollIntoView({ block: "start" });
     else window.scrollTo({ top: 0, behavior: "instant" });
   };
   window.addEventListener("hashchange", show);

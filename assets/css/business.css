@@ -171,15 +171,6 @@ img { max-width: 100%; display: block; }
 .tool-tile strong { display: block; font-size: 14.5px; font-weight: 600; }
 .tool-tile span { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
 
-/* ---------- calculators page ---------- */
-.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; align-items: start; }
-.tool-grid > .card { margin: 0; scroll-margin-top: 20px; }
-.tool-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.tool-card-head h2 { margin: 0 0 4px; }
-.tool-card > p { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
-.tool-card .lesson-tool { margin: 12px 0 0; box-shadow: none; }
-.tool-card .lesson-tool h4 { display: none; }
-
 /* ---------- glossary ---------- */
 .glossary-search { display: grid; gap: 6px; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 18px; max-width: 420px; }
 .glossary-search input { font: inherit; font-size: 15px; font-weight: 400; padding: 11px 16px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); background: var(--paper); }
@@ -334,7 +325,7 @@ img { max-width: 100%; display: block; }
   .topbar .brand-compact { display: flex; }
   .page { padding: 20px 16px 48px; }
   .app-foot { padding: 20px 16px 28px; }
-  .tool-grid, .glossary-list { grid-template-columns: 1fr; }
+  .glossary-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .topbar-link { display: none; }
@@ -401,9 +392,6 @@ img { max-width: 100%; display: block; }
 .course-tile-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .catalog-note { margin-top: 18px; }
 
-/* Calculators page: one group per course. */
-.tool-group-title { font-size: 18px; margin: 30px 0 14px; color: var(--ink-soft); }
-.tool-group-title:first-of-type { margin-top: 4px; }
 
 @media (max-width: 900px) {
   .course-tiles { grid-template-columns: 1fr; }
@@ -411,4 +399,57 @@ img { max-width: 100%; display: block; }
 @media (max-width: 640px) {
   .course-tile { padding: 22px 20px; }
   .course-tile-actions .btn { flex: 1 1 100%; }
+}
+
+/* ==========================================================================
+   CALCULATORS
+   Inputs on the left, results on the right: every input one per row, every
+   result one per line (label left, value right), with the main result first
+   and highlighted. The same layout inside lessons and on #tools.
+   ========================================================================== */
+.js .lesson-tool { display: grid; }
+.lesson-tool { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 16px 28px; align-items: start; }
+.lesson-tool > h4, .lesson-tool > .tool-warn, .lesson-tool > .tool-note { grid-column: 1 / -1; }
+.lesson-tool > h4 { margin: 0 0 2px; }
+.lesson-tool > .tool-warn, .lesson-tool > .tool-note { margin: 0; }
+.tool-inputs { grid-template-columns: 1fr; gap: 12px; }
+.tool-out { margin: 0; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; background: var(--paper); }
+.tool-out > div { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 12px 16px; border-radius: 0; background: var(--paper); border-top: 1px solid var(--line); }
+.tool-out span { font-size: 14px; color: var(--ink-soft); line-height: 1.35; }
+.tool-out strong { margin: 0; font-size: 18px; text-align: right; white-space: nowrap; }
+.tool-out > .is-main { order: -1; display: block; padding: 16px 18px 18px; border-top: none; background: var(--accent); }
+.tool-out > .is-main span { color: rgba(255, 255, 255, 0.9); font-size: 13.5px; }
+.tool-out > .is-main strong { display: block; margin-top: 4px; font-size: 30px; line-height: 1.15; text-align: left; white-space: normal; }
+.tool-out > .is-main + div { border-top: none; }
+
+/* The picker: every calculator, grouped by course, beside the open one. */
+.calc-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 20px; align-items: start; }
+.calc-list { position: sticky; top: 20px; display: grid; gap: 4px; padding: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.calc-group { margin: 10px 8px 6px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.calc-group:first-child { margin-top: 2px; }
+.calc-link { display: block; padding: 9px 12px; border-radius: var(--radius-sm); text-decoration: none; color: var(--ink); transition: background 0.12s ease; }
+.calc-link strong { display: block; font-size: 14.5px; font-weight: 600; }
+/* The open calculator shows its own description, so the list stays short. */
+.calc-link span { display: none; }
+.calc-link:hover { background: var(--bg); }
+.calc-link.is-active { background: var(--accent); color: #FFFFFF; }
+.calc-link.is-active span { color: rgba(255, 255, 255, 0.85); }
+.calc-panels { display: grid; gap: 18px; }
+.calc-panel { margin: 0; padding: 26px 28px; scroll-margin-top: 20px; }
+.js .calc-panel:not(.is-active) { display: none; }
+.calc-head h2 { font-size: 26px; letter-spacing: -0.03em; margin: 0 0 6px; }
+.calc-head p { color: var(--ink-soft); margin: 0 0 20px; }
+.calc-head .btn-text { white-space: nowrap; }
+.calc-panel .lesson-tool { margin: 0; padding: 0; border: none; box-shadow: none; background: none; }
+.calc-panel .lesson-tool > h4 { display: none; }
+
+@media (max-width: 1100px) {
+  .calc-layout { grid-template-columns: 1fr; }
+  .calc-list { position: static; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+  .calc-group { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .lesson-tool { grid-template-columns: 1fr; }
+  .calc-panel { padding: 22px 18px; }
+  .calc-list { grid-template-columns: 1fr 1fr; padding: 10px; }
 }

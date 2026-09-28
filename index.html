@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/business.css?v=2">
+<link rel="stylesheet" href="assets/css/business.css?v=3">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -2542,14 +2542,27 @@
           <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><rect x="8" y="5.5" width="8" height="4" rx="0.8"/><path d="M8.5 13h1M12 13h1M15.5 13h1M8.5 17h1M12 17h1M15.5 17h1"/></svg></span><h1>Calculators</h1></div>
           <p class="lede">Every calculator from the courses in one place. Change any number and the results update as you type.</p>
         </div>
-        <h2 class="tool-group-title">Money &amp; Business Foundations</h2>
-        <div class="tool-grid">
-          <section class="card tool-card" id="tool-budget">
-            <div class="tool-card-head">
+        <div class="calc-layout">
+          <nav class="calc-list" aria-label="Calculators">
+            <p class="calc-group">Money &amp; Business Foundations</p>
+            <a class="calc-link" href="#tool-budget" data-calc-link="budget"><strong>50/30/20 budget</strong><span>Split take-home pay into needs, wants and savings.</span></a>
+            <a class="calc-link" href="#tool-paycheck" data-calc-link="paycheck"><strong>Paycheck</strong><span>See what comes out of a two-week paycheck.</span></a>
+            <a class="calc-link" href="#tool-compound" data-calc-link="compound"><strong>Compound growth</strong><span>Watch regular saving grow over the years.</span></a>
+            <a class="calc-link" href="#tool-payoff" data-calc-link="payoff"><strong>Credit card payoff</strong><span>How long a balance takes to clear, and what it costs.</span></a>
+            <a class="calc-link" href="#tool-breakeven" data-calc-link="breakeven"><strong>Break-even</strong><span>How many sales before a business covers its costs.</span></a>
+            <p class="calc-group">Financial Literacy: Money in Real Life</p>
+            <a class="calc-link" href="#tool-unitprice" data-calc-link="unitprice"><strong>Unit price</strong><span>Which size or package is really cheaper.</span></a>
+            <a class="calc-link" href="#tool-insurance" data-calc-link="insurance"><strong>Insurance plans</strong><span>Premium vs. deductible: which plan costs less this year.</span></a>
+            <a class="calc-link" href="#tool-studentloan" data-calc-link="studentloan"><strong>Student loan</strong><span>The monthly payment and total cost of borrowing for college.</span></a>
+            <a class="calc-link" href="#tool-carloan" data-calc-link="carloan"><strong>Car loan</strong><span>What a car really costs once the loan is paid off.</span></a>
+          </nav>
+          <div class="calc-panels">
+          <section class="card calc-panel" id="tool-budget" data-calc="budget">
+            <div class="calc-head">
+              <span class="eyebrow">Money &amp; Business · Lesson 1</span>
               <h2>50/30/20 budget</h2>
-              <a class="btn-text" href="#mbf-lesson-1">From lesson 1 →</a>
+              <p>Split take-home pay into needs, wants and savings. <a class="btn-text" href="#mbf-lesson-1">Learn it in lesson 1 →</a></p>
             </div>
-            <p>Split take-home pay into needs, wants and savings.</p>
             <div class="lesson-tool" data-tool="budget">
       <h4>Try it: the 50/30/20 split</h4>
       <div class="tool-inputs">
@@ -2564,12 +2577,12 @@
       <p class="tool-note">A starting point, not a rule. If your needs are lower, move the difference into savings.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-paycheck">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-paycheck" data-calc="paycheck">
+            <div class="calc-head">
+              <span class="eyebrow">Money &amp; Business · Lesson 2</span>
               <h2>Paycheck</h2>
-              <a class="btn-text" href="#mbf-lesson-2">From lesson 2 →</a>
+              <p>See what comes out of a two-week paycheck. <a class="btn-text" href="#mbf-lesson-2">Learn it in lesson 2 →</a></p>
             </div>
-            <p>See what comes out of a two-week paycheck.</p>
             <div class="lesson-tool" data-tool="paycheck">
       <h4>Try it: paycheck calculator</h4>
       <div class="tool-inputs">
@@ -2588,12 +2601,12 @@
       <p class="tool-note">Income tax withheld is an estimate you enter: the real amount depends on your W-4, your state and how much you earn in the year.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-compound">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-compound" data-calc="compound">
+            <div class="calc-head">
+              <span class="eyebrow">Money &amp; Business · Lesson 3</span>
               <h2>Compound growth</h2>
-              <a class="btn-text" href="#mbf-lesson-3">From lesson 3 →</a>
+              <p>Watch regular saving grow over the years. <a class="btn-text" href="#mbf-lesson-3">Learn it in lesson 3 →</a></p>
             </div>
-            <p>Watch regular saving grow over the years.</p>
             <div class="lesson-tool" data-tool="compound">
       <h4>Try it: compound growth calculator</h4>
       <div class="tool-inputs">
@@ -2611,12 +2624,12 @@
       <p class="tool-note">Assumes the same return every year, compounded monthly, with each deposit at the end of the month. Real returns go up and down, and are never guaranteed.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-payoff">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-payoff" data-calc="payoff">
+            <div class="calc-head">
+              <span class="eyebrow">Money &amp; Business · Lesson 4</span>
               <h2>Credit card payoff</h2>
-              <a class="btn-text" href="#mbf-lesson-4">From lesson 4 →</a>
+              <p>How long a balance takes to clear, and what it costs. <a class="btn-text" href="#mbf-lesson-4">Learn it in lesson 4 →</a></p>
             </div>
-            <p>How long a balance takes to clear, and what it costs.</p>
             <div class="lesson-tool" data-tool="payoff">
       <h4>Try it: credit card payoff calculator</h4>
       <div class="tool-inputs">
@@ -2633,12 +2646,12 @@
       <p class="tool-note">Assumes the same payment every month, no new purchases or fees, and interest of APR ÷ 12 on the balance each month, rounded to the cent. Real cards usually work interest out daily, so the numbers differ slightly.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-breakeven">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-breakeven" data-calc="breakeven">
+            <div class="calc-head">
+              <span class="eyebrow">Money &amp; Business · Lesson 5</span>
               <h2>Break-even</h2>
-              <a class="btn-text" href="#mbf-lesson-5">From lesson 5 →</a>
+              <p>How many sales before a business covers its costs. <a class="btn-text" href="#mbf-lesson-5">Learn it in lesson 5 →</a></p>
             </div>
-            <p>How many sales before a business covers its costs.</p>
             <div class="lesson-tool" data-tool="breakeven">
       <h4>Try it: break-even calculator</h4>
       <div class="tool-inputs">
@@ -2655,15 +2668,12 @@
       <p class="tool-note">Break-even is rounded up to whole units: you can't sell part of a box.</p>
     </div>
           </section>
-        </div>
-        <h2 class="tool-group-title">Financial Literacy: Money in Real Life</h2>
-        <div class="tool-grid">
-          <section class="card tool-card" id="tool-unitprice">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-unitprice" data-calc="unitprice">
+            <div class="calc-head">
+              <span class="eyebrow">Financial Literacy · Lesson 2</span>
               <h2>Unit price</h2>
-              <a class="btn-text" href="#fl-lesson-2">From lesson 2 →</a>
+              <p>Which size or package is really cheaper. <a class="btn-text" href="#fl-lesson-2">Learn it in lesson 2 →</a></p>
             </div>
-            <p>Which size or package is really cheaper.</p>
             <div class="lesson-tool" data-tool="unitprice">
       <h4>Try it: unit price comparison</h4>
       <div class="tool-inputs">
@@ -2681,12 +2691,12 @@
       <p class="tool-note">Use the same unit for both sizes (ounces, count, liters) or the comparison means nothing.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-insurance">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-insurance" data-calc="insurance">
+            <div class="calc-head">
+              <span class="eyebrow">Financial Literacy · Lesson 4</span>
               <h2>Insurance plans</h2>
-              <a class="btn-text" href="#fl-lesson-4">From lesson 4 →</a>
+              <p>Premium vs. deductible: which plan costs less this year. <a class="btn-text" href="#fl-lesson-4">Learn it in lesson 4 →</a></p>
             </div>
-            <p>Premium vs. deductible: which plan costs less this year.</p>
             <div class="lesson-tool" data-tool="insurance">
       <h4>Try it: compare two plans for a year</h4>
       <div class="tool-inputs">
@@ -2705,12 +2715,12 @@
       <p class="tool-note">Simplified: premiums for 12 months plus the bills up to the deductible. It ignores copays, coinsurance and out-of-pocket maximums.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-studentloan">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-studentloan" data-calc="studentloan">
+            <div class="calc-head">
+              <span class="eyebrow">Financial Literacy · Lesson 5</span>
               <h2>Student loan</h2>
-              <a class="btn-text" href="#fl-lesson-5">From lesson 5 →</a>
+              <p>The monthly payment and total cost of borrowing for college. <a class="btn-text" href="#fl-lesson-5">Learn it in lesson 5 →</a></p>
             </div>
-            <p>The monthly payment and total cost of borrowing for college.</p>
             <div class="lesson-tool" data-tool="studentloan">
       <h4>Try it: student loan payment</h4>
       <div class="tool-inputs">
@@ -2727,12 +2737,12 @@
       <p class="tool-note">A fixed payment every month with interest at APR ÷ 12. The rate here is an example you enter, not a current federal rate.</p>
     </div>
           </section>
-          <section class="card tool-card" id="tool-carloan">
-            <div class="tool-card-head">
+          <section class="card calc-panel" id="tool-carloan" data-calc="carloan">
+            <div class="calc-head">
+              <span class="eyebrow">Financial Literacy · Lesson 6</span>
               <h2>Car loan</h2>
-              <a class="btn-text" href="#fl-lesson-6">From lesson 6 →</a>
+              <p>What a car really costs once the loan is paid off. <a class="btn-text" href="#fl-lesson-6">Learn it in lesson 6 →</a></p>
             </div>
-            <p>What a car really costs once the loan is paid off.</p>
             <div class="lesson-tool" data-tool="carloan">
       <h4>Try it: car loan calculator</h4>
       <div class="tool-inputs">
@@ -2751,6 +2761,7 @@
       <p class="tool-note">A fixed payment every month with interest at APR ÷ 12. Taxes, fees and insurance aren't included.</p>
     </div>
           </section>
+          </div>
         </div>
       </section>
 
@@ -2776,6 +2787,6 @@
   </div>
 </div>
 
-<script src="assets/js/app.js?v=4"></script>
+<script src="assets/js/app.js?v=5"></script>
 </body>
 </html>
