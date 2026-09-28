@@ -29,6 +29,32 @@
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode: this visit only */ }
   };
 
+  // Progress carried over from the course's old home on ableinitiatives.com:
+  // its forwarding page passes what that browser had saved as ?progress=…
+  // Merged rather than replaced, keeping the better result per lesson, then
+  // the parameter is dropped from the address bar.
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const raw = params.get("progress");
+    if (!raw) return;
+    try {
+      const old = JSON.parse(raw);
+      if (old && typeof old === "object") {
+        Object.keys(old.passed || {}).forEach((k) => { if (/^[1-6]$/.test(k) && old.passed[k] === true) state.passed[k] = true; });
+        Object.keys(old.best || {}).forEach((k) => {
+          const v = Number(old.best[k]);
+          if (/^[1-6]$/.test(k) && Number.isInteger(v) && v >= 0 && v <= 5) state.best[k] = Math.max(v, state.best[k] || 0);
+        });
+        if (typeof old.name === "string" && !state.name) state.name = old.name.slice(0, 60);
+        if (Number.isFinite(old.completedAt) && !state.completedAt) state.completedAt = old.completedAt;
+        save();
+      }
+    } catch (e) { /* malformed: ignore */ }
+    params.delete("progress");
+    const qs = params.toString();
+    history.replaceState(null, "", location.pathname + (qs ? `?${qs}` : "") + location.hash);
+  })();
+
   const renderProgress = () => {
     const done = lessons.filter((l) => state.passed[l.dataset.lesson]).length;
     $$("[data-done]").forEach((el) => { el.textContent = done; });
