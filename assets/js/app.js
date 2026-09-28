@@ -1,4 +1,9 @@
-/* ABLE Business courses (business.ableinitiatives.com)
+/* ABLE course sites (business., health., engineering.ableinitiatives.com …)
+
+   One script for every branch's course site. What differs between sites (the
+   branch name, colours, logo, domain, its courses) lives in the page, in
+   <script type="application/json" id="site-config">, so this file is the
+   same everywhere: copy it between the repos unchanged.
 
    Every view is already in index.html, so with no JS the page is every
    course top to bottom. This script turns it into an app like the SAT one:
@@ -10,8 +15,7 @@
    A course is a set of views carrying data-course="<id>":
      #<id>                 its dashboard       #<id>-lesson-N   lesson N
      #<id>-certificate     its certificate
-   and an entry in COURSES below. Adding a course = its views in index.html,
-   its sidebar group and catalog card, and one entry here.
+   and an entry in the config's "courses".
 */
 (() => {
   "use strict";
@@ -21,31 +25,16 @@
   // Anonymous interaction counts (analytics.js); a no-op if it isn't loaded.
   const track = (name, once) => window.ableTrack?.(name, once);
 
-  const COURSES = {
-    mbf: {
-      key: "able.business.course.v1", // the first course's key from before there were several
-      title: "Money & Business Foundations",
-      topics: ["Budgeting  ·  Paychecks and taxes  ·  Saving and investing",
-               "Credit and debt  ·  How a business makes money  ·  Starting something, and careers in business"],
-      file: "Money-and-Business-Foundations",
-    },
-    fl: {
-      key: "able.business.fl.v1",
-      title: "Financial Literacy: Money in Real Life",
-      certTitle: "Financial Literacy",
-      topics: ["Banking basics  ·  Smart spending  ·  Protecting your money",
-               "Insurance  ·  Paying for college  ·  Your first car and first apartment"],
-      file: "Financial-Literacy",
-    },
-  };
+  const CFG = JSON.parse(document.getElementById("site-config").textContent);
+  const SITE = CFG.site;
+  const COURSES = CFG.courses;
 
   // Links from before there were several courses (and the old course page on
   // ableinitiatives.com, which forwards #lesson-N, #certificate, #dashboard).
   const alias = (id) => {
-    if (id === "dashboard" || id === "lessons") return "mbf";
-    if (id === "certificate") return "mbf-certificate";
-    const m = /^lesson-(\d+)$/.exec(id);
-    return m ? `mbf-lesson-${m[1]}` : id;
+    if (CFG.aliases && CFG.aliases[id]) return CFG.aliases[id];
+    const m = CFG.lessonAlias && /^lesson-(\d+)$/.exec(id);
+    return m ? `${CFG.lessonAlias}-lesson-${m[1]}` : id;
   };
 
   const views = $$("[data-view]");
@@ -74,7 +63,7 @@
   (() => {
     const params = new URLSearchParams(location.search);
     const raw = params.get("progress");
-    const c = byId.mbf;
+    const c = byId[CFG.importProgressTo];
     if (!raw || !c) return;
     try {
       const old = JSON.parse(raw);
@@ -161,18 +150,18 @@
     const cv = document.createElement("canvas");
     cv.width = W; cv.height = H;
     const x = cv.getContext("2d");
-    const GREEN = "#177814", DEEP = "#125D0F", GOLD = "#E6B33F", INK = "#14143A", MUTED = "#5F6388";
+    const GREEN = SITE.color, DEEP = SITE.deep, GOLD = "#E6B33F", INK = "#14143A", MUTED = "#5F6388";
     const SANS = '"DM Sans", "Inter", "Segoe UI", Arial, sans-serif', SERIF = '"Libre Baskerville", Georgia, serif';
     try {
       await Promise.all([`800 90px ${SANS}`, `600 40px ${SANS}`, `400 30px ${SANS}`, `italic 400 40px ${SERIF}`].map((f) => document.fonts.load(f)));
     } catch (e) { /* fall back to system fonts */ }
-    const [able, biz] = await Promise.all([loadImg("assets/images/logo-main.png"), loadImg("assets/images/logo-business.png")]);
+    const [able, biz] = await Promise.all([loadImg("assets/images/logo-main.png"), loadImg(SITE.logo)]);
 
     // Paper, a pale-green swoosh in two corners (clipped to the frame), the frame.
     x.fillStyle = "#FFFFFF"; x.fillRect(0, 0, W, H);
     x.save();
     x.beginPath(); x.rect(57, 57, W - 114, H - 114); x.clip();
-    x.fillStyle = "#EEF8EC";
+    x.fillStyle = SITE.pale;
     x.beginPath(); x.ellipse(W - 40, 20, 520, 340, -0.35, 0, Math.PI * 2); x.fill();
     x.beginPath(); x.ellipse(40, H - 20, 520, 340, -0.35, 0, Math.PI * 2); x.fill();
     x.restore();
@@ -192,7 +181,7 @@
     };
 
     if (biz) x.drawImage(biz, W / 2 - 88, 150, 176, 176 * biz.height / biz.width);
-    spaced("ABLE INITIATIVES  ·  ABLE BUSINESS", 400, `700 26px ${SANS}`, GREEN, 6);
+    spaced(`ABLE INITIATIVES  ·  ${SITE.name.toUpperCase()}`, 400, `700 26px ${SANS}`, GREEN, 6);
     center("Certificate of Completion", 510, `800 96px ${SANS}`, INK);
     center("This certifies that", 600, `italic 400 38px ${SERIF}`, MUTED);
 
@@ -219,7 +208,7 @@
       x.fillStyle = MUTED; x.font = `400 22px ${SANS}`; x.fillText(label, cx, 1284);
     };
     foot("Date completed", date, 470);
-    foot("Online at", "business.ableinitiatives.com", W - 470);
+    foot("Online at", SITE.domain, W - 470);
     if (able) {
       x.fillStyle = "#FFFFFF"; x.beginPath(); x.arc(W / 2, 1230, 86, 0, Math.PI * 2); x.fill();
       x.lineWidth = 3; x.strokeStyle = GREEN; x.stroke();
@@ -247,7 +236,7 @@
       if (c.certURL) URL.revokeObjectURL(c.certURL);
       c.certURL = URL.createObjectURL(blob);
       img.src = c.certURL;
-      img.alt = `Certificate of completion for ${name}, ${c.title}, ABLE Business`;
+      img.alt = `Certificate of completion for ${name}, ${c.title}, ${SITE.name}`;
       dl.href = c.certURL;
       dl.download = `ABLE-${c.file}-certificate-${name.replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") || "student"}.png`;
       preview.hidden = false;
@@ -316,7 +305,7 @@
     // Only the open course's lessons are listed in the sidebar.
     const course = view.dataset.course || "";
     $$("[data-course-nav]").forEach((g) => g.classList.toggle("is-open", g.dataset.courseNav === course));
-    document.title = `${view.dataset.title} · ABLE Business`;
+    document.title = `${view.dataset.title} · ${SITE.name}`;
     setMenu(false);
     if (target && target !== view && !(view.id === "tools" && window.innerWidth > 1100)) target.scrollIntoView({ block: "start" });
     else window.scrollTo({ top: 0, behavior: "instant" });
@@ -408,8 +397,7 @@
       dt.append(t.term);
       const a = document.createElement("a");
       a.href = `#${t.c.id}-lesson-${t.n}`;
-      a.textContent = `${t.c.short || t.c.certTitle || t.c.title}, lesson ${t.n}`;
-      if (t.c.id === "mbf") a.textContent = `Foundations, lesson ${t.n}`;
+      a.textContent = `${t.c.short || t.c.title}, lesson ${t.n}`;
       dt.append(a);
       const dd = document.createElement("dd");
       dd.textContent = t.def;
@@ -435,7 +423,7 @@
 
   // ---------- calculators ----------
   const money = (x) => (x < 0 ? "−" : "") + "$" + Math.abs(x).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const num = (el) => { const v = parseFloat(el.value); return Number.isFinite(v) && v >= 0 ? v : 0; };
+  const num = (el) => { if (el.type === "time") return el.value; const v = parseFloat(el.value); return Number.isFinite(v) && v >= 0 ? v : 0; };
   const round2 = (v) => Math.round(v * 100) / 100;
   // Fixed monthly payment on an amortizing loan, to the cent.
   const payment = (principal, apr, months) => {
@@ -527,6 +515,26 @@
       out.total = money(v.down + pay * n);
     },
   };
+
+  // Health: the extra tools below are shared by every site like the rest.
+  Object.assign(TOOLS, {
+    nutrition(v, out) {
+      const k = v.eaten;
+      out.calories = `${Math.round(v.calories * k * 10) / 10} calories`;
+      out.sugars = `${Math.round(v.sugars * k * 10) / 10} g`;
+      out.sodium = `${Math.round(v.sodium * k * 10) / 10} mg`;
+      out.share = v.servings ? `${Math.round((k / v.servings) * 1000) / 10}% of the package` : "—";
+    },
+    sleep(v, out) {
+      const m = /^(\d{1,2}):(\d{2})/.exec(v.wake || "");
+      if (!m) return { warn: "Enter the time you need to wake up." };
+      const wake = +m[1] * 60 + +m[2], mins = Math.round(v.hours * 60);
+      const bed = (((wake - mins) % 1440) + 1440) % 1440;
+      const fmt = (t) => { const h = Math.floor(t / 60), mm = t % 60; return `${((h + 11) % 12) + 1}:${String(mm).padStart(2, "0")} ${h < 12 ? "a.m." : "p.m."}`; };
+      out.bedtime = fmt(bed);
+      out.range = v.hours >= 8 && v.hours <= 10 ? "Yes, within 8–10 hours" : v.hours < 8 ? "Less than the 8–10 hours teens need" : "More than 10 hours";
+    },
+  });
 
   document.querySelectorAll(".lesson-tool[data-tool]").forEach((tool) => {
     const fn = TOOLS[tool.dataset.tool];

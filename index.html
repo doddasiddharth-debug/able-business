@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/business.css?v=3">
+<link rel="stylesheet" href="assets/css/business.css?v=7">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -1280,14 +1280,14 @@
       <section class="view" id="mbf-certificate" data-view data-course="mbf" data-title="Money &amp; Business · Certificate">
         <div class="page-head">
           <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><h1>Certificate</h1></div>
-          <p class="lede">Money &amp; Business Foundations: pass all six lesson quizzes to earn a certificate of completion with your name on it.</p>
+          <p class="lede">Money &amp; Business Foundations: pass all 6 lesson quizzes to earn a certificate of completion with your name on it.</p>
         </div>
         <div class="course-cert" data-course-cert="mbf">
           <div class="cert-locked" data-cert-locked>
             <span class="cert-locked-icon" aria-hidden="true"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
             <div>
               <h3>Earn your certificate</h3>
-              <p>Pass all six lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
+              <p>Pass all 6 lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
             </div>
           </div>
           <div class="cert-ready" data-cert-ready hidden>
@@ -2502,14 +2502,14 @@
       <section class="view" id="fl-certificate" data-view data-course="fl" data-title="Financial Literacy · Certificate">
         <div class="page-head">
           <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><h1>Certificate</h1></div>
-          <p class="lede">Financial Literacy: Money in Real Life: pass all six lesson quizzes to earn a certificate of completion with your name on it.</p>
+          <p class="lede">Financial Literacy: Money in Real Life: pass all 6 lesson quizzes to earn a certificate of completion with your name on it.</p>
         </div>
         <div class="course-cert" data-course-cert="fl">
           <div class="cert-locked" data-cert-locked>
             <span class="cert-locked-icon" aria-hidden="true"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
             <div>
               <h3>Earn your certificate</h3>
-              <p>Pass all six lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
+              <p>Pass all 6 lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
             </div>
           </div>
           <div class="cert-ready" data-cert-ready hidden>
@@ -2536,7 +2536,7 @@
         </div>
       </section>
 
-      <!-- CALCULATORS: every course's tools, grouped by course. -->
+      <!-- CALCULATORS: a picker (grouped by course) beside one calculator at a time. -->
       <section class="view" id="tools" data-view data-title="Calculators">
         <div class="page-head">
           <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><rect x="8" y="5.5" width="8" height="4" rx="0.8"/><path d="M8.5 13h1M12 13h1M15.5 13h1M8.5 17h1M12 17h1M15.5 17h1"/></svg></span><h1>Calculators</h1></div>
@@ -2787,7 +2787,49 @@
   </div>
 </div>
 
-<script src="assets/js/app.js?v=6"></script>
-<script src="assets/js/analytics.js?v=1" data-spa defer></script>
+<script type="application/json" id="site-config">
+{
+ "site": {
+  "name": "ABLE Business",
+  "domain": "business.ableinitiatives.com",
+  "color": "#177814",
+  "deep": "#125D0F",
+  "pale": "#EEF8EC",
+  "logo": "assets/images/logo-business.png"
+ },
+ "courses": {
+  "mbf": {
+   "key": "able.business.course.v1",
+   "title": "Money & Business Foundations",
+   "short": "Foundations",
+   "topics": [
+    "Budgeting  ·  Paychecks and taxes  ·  Saving and investing",
+    "Credit and debt  ·  How a business makes money  ·  Starting something, and careers in business"
+   ],
+   "file": "Money-and-Business-Foundations"
+  },
+  "fl": {
+   "key": "able.business.fl.v1",
+   "title": "Financial Literacy: Money in Real Life",
+   "short": "Financial Literacy",
+   "certTitle": "Financial Literacy",
+   "topics": [
+    "Banking basics  ·  Smart spending  ·  Protecting your money",
+    "Insurance  ·  Paying for college  ·  Your first car and first apartment"
+   ],
+   "file": "Financial-Literacy"
+  }
+ },
+ "aliases": {
+  "dashboard": "mbf",
+  "lessons": "mbf",
+  "certificate": "mbf-certificate"
+ },
+ "lessonAlias": "mbf",
+ "importProgressTo": "mbf"
+}
+</script>
+<script src="assets/js/app.js?v=7"></script>
+<script src="assets/js/analytics.js?v=7" data-spa defer></script>
 </body>
 </html>

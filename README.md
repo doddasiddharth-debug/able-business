@@ -38,8 +38,9 @@ and `#lessons` open the Foundations dashboard, `#lesson-N` its lesson N, and
    certificate (`id="<id>-certificate"`, `data-course-cert="<id>"`); a
    sidebar group (`data-course-nav`); and a `.course-tile` on `#home`.
    Copy the Financial Literacy markup; it is the template.
-3. Add an entry to `COURSES` in `app.js` (storage key, title, the two topic
-   lines printed on the certificate, file-name slug).
+3. Add an entry to `courses` in the `<script id="site-config">` block at the
+   end of `index.html` (storage key, title, short label, the two topic lines
+   printed on the certificate, file-name slug).
 4. New calculators go in `TOOLS` in `app.js` and in the calculators view.
 
 ## Files
@@ -48,7 +49,9 @@ and `#lessons` open the Foundations dashboard, `#lesson-N` its lesson N, and
 index.html               every view of every course (edit lessons here)
 assets/css/business.css  app shell, course components, catalog
 assets/js/app.js         router, per-course progress, quizzes, calculators,
-                         glossary, certificates
+                         glossary, certificates. Identical on every ABLE course
+                         site (health., engineering.); what differs lives in
+                         the page's site-config block
 assets/images/           ABLE Business mark, ABLE mark (certificate seal), favicon
 CNAME                    business.ableinitiatives.com
 ```
