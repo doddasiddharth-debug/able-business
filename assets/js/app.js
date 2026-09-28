@@ -1,53 +1,91 @@
-/* ABLE Business · Money & Business Foundations (business.ableinitiatives.com)
+/* ABLE Business courses (business.ableinitiatives.com)
 
-   Every view is already in index.html, so with no JS the page is the whole
+   Every view is already in index.html, so with no JS the page is every
    course top to bottom. This script turns it into an app like the SAT one:
-   a router that shows one view at a time (#dashboard, #lesson-1..6, #tools,
-   #glossary, #certificate), quiz grading, the five calculators, the
-   glossary, the certificate, and progress kept in localStorage. Nothing
-   leaves the browser.
+   a router that shows one view at a time, a catalog of courses (#home),
+   and for each course its dashboard, lessons, quiz grading and certificate,
+   plus the shared calculators and glossary. Progress is kept per course in
+   localStorage. Nothing leaves the browser.
+
+   A course is a set of views carrying data-course="<id>":
+     #<id>                 its dashboard       #<id>-lesson-N   lesson N
+     #<id>-certificate     its certificate
+   and an entry in COURSES below. Adding a course = its views in index.html,
+   its sidebar group and catalog card, and one entry here.
 */
 (() => {
   "use strict";
   const $ = (sel, el = document) => el.querySelector(sel);
   const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
-
   const PASS = 4;
-  const KEY = "able.business.course.v1";
-  const lessons = $$("article.lesson[data-lesson]");
-  const total = lessons.length;
+
+  const COURSES = {
+    mbf: {
+      key: "able.business.course.v1", // the first course's key from before there were several
+      title: "Money & Business Foundations",
+      topics: ["Budgeting  ·  Paychecks and taxes  ·  Saving and investing",
+               "Credit and debt  ·  How a business makes money  ·  Starting something, and careers in business"],
+      file: "Money-and-Business-Foundations",
+    },
+    fl: {
+      key: "able.business.fl.v1",
+      title: "Financial Literacy: Money in Real Life",
+      certTitle: "Financial Literacy",
+      topics: ["Banking basics  ·  Smart spending  ·  Protecting your money",
+               "Insurance  ·  Paying for college  ·  Your first car and first apartment"],
+      file: "Financial-Literacy",
+    },
+  };
+
+  // Links from before there were several courses (and the old course page on
+  // ableinitiatives.com, which forwards #lesson-N, #certificate, #dashboard).
+  const alias = (id) => {
+    if (id === "dashboard" || id === "lessons") return "mbf";
+    if (id === "certificate") return "mbf-certificate";
+    const m = /^lesson-(\d+)$/.exec(id);
+    return m ? `mbf-lesson-${m[1]}` : id;
+  };
+
   const views = $$("[data-view]");
-  const root = document;
+  const courses = Object.keys(COURSES).map((id) => {
+    const c = { id, ...COURSES[id] };
+    c.lessons = $$(`[data-view][data-course="${id}"] article.lesson[data-lesson]`);
+    c.total = c.lessons.length;
+    c.load = () => {
+      try { return JSON.parse(localStorage.getItem(c.key)) || { passed: {}, best: {} }; }
+      catch (e) { return { passed: {}, best: {} }; }
+    };
+    c.state = c.load();
+    c.save = () => {
+      try { localStorage.setItem(c.key, JSON.stringify(c.state)); } catch (e) { /* private mode: this visit only */ }
+    };
+    c.done = () => c.lessons.filter((l) => c.state.passed[l.dataset.lesson]).length;
+    c.cert = $(`[data-course-cert="${id}"]`);
+    return c;
+  }).filter((c) => c.total);
+  const byId = Object.fromEntries(courses.map((c) => [c.id, c]));
 
-  // ---------- progress ----------
-  const load = () => {
-    try { return JSON.parse(localStorage.getItem(KEY)) || { passed: {}, best: {} }; }
-    catch (e) { return { passed: {}, best: {} }; }
-  };
-  let state = load();
-  const save = () => {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode: this visit only */ }
-  };
-
-  // Progress carried over from the course's old home on ableinitiatives.com:
-  // its forwarding page passes what that browser had saved as ?progress=…
-  // Merged rather than replaced, keeping the better result per lesson, then
+  // Progress carried over from the first course's old home on
+  // ableinitiatives.com: its forwarding page passes what that browser had
+  // saved as ?progress=… Merged, keeping the better result per lesson, then
   // the parameter is dropped from the address bar.
   (() => {
     const params = new URLSearchParams(location.search);
     const raw = params.get("progress");
-    if (!raw) return;
+    const c = byId.mbf;
+    if (!raw || !c) return;
     try {
       const old = JSON.parse(raw);
       if (old && typeof old === "object") {
-        Object.keys(old.passed || {}).forEach((k) => { if (/^[1-6]$/.test(k) && old.passed[k] === true) state.passed[k] = true; });
+        const s = c.state;
+        Object.keys(old.passed || {}).forEach((k) => { if (/^[1-6]$/.test(k) && old.passed[k] === true) s.passed[k] = true; });
         Object.keys(old.best || {}).forEach((k) => {
           const v = Number(old.best[k]);
-          if (/^[1-6]$/.test(k) && Number.isInteger(v) && v >= 0 && v <= 5) state.best[k] = Math.max(v, state.best[k] || 0);
+          if (/^[1-6]$/.test(k) && Number.isInteger(v) && v >= 0 && v <= 5) s.best[k] = Math.max(v, s.best[k] || 0);
         });
-        if (typeof old.name === "string" && !state.name) state.name = old.name.slice(0, 60);
-        if (Number.isFinite(old.completedAt) && !state.completedAt) state.completedAt = old.completedAt;
-        save();
+        if (typeof old.name === "string" && !s.name) s.name = old.name.slice(0, 60);
+        if (Number.isFinite(old.completedAt) && !s.completedAt) s.completedAt = old.completedAt;
+        c.save();
       }
     } catch (e) { /* malformed: ignore */ }
     params.delete("progress");
@@ -55,56 +93,46 @@
     history.replaceState(null, "", location.pathname + (qs ? `?${qs}` : "") + location.hash);
   })();
 
-  const renderProgress = () => {
-    const done = lessons.filter((l) => state.passed[l.dataset.lesson]).length;
-    $$("[data-done]").forEach((el) => { el.textContent = done; });
-    const bar = $("[data-progress]");
-    if (bar) { bar.hidden = false; $(".side-progress-bar span", bar).style.width = `${(done / total) * 100}%`; }
-    const ring = $("[data-ring]");
-    if (ring) ring.style.strokeDasharray = `${(done / total) * 100} 100`;
-    $$(".nav-lesson").forEach((a) => a.classList.toggle("is-done", !!state.passed[a.dataset.route.split("-")[1]]));
-    $$("[data-lesson-row]").forEach((row) => {
-      const id = row.dataset.lessonRow;
-      const passed = !!state.passed[id];
-      row.classList.toggle("is-done", passed);
-      $(".status", row).textContent = passed ? "Completed ✓" : state.best[id] != null ? `Best ${state.best[id]}/5` : "Not started";
+  // ---------- progress ----------
+  const render = (c) => {
+    const s = c.state, total = c.total, done = c.done();
+    const scope = $$(`[data-course="${c.id}"]`);
+    const each = (sel, fn) => scope.forEach((root) => {
+      if (root.matches(sel)) fn(root);
+      $$(sel, root).forEach(fn);
     });
-    const cont = $("[data-continue]");
-    if (cont) {
-      const next = lessons.find((l) => !state.passed[l.dataset.lesson]);
-      if (done === 0) { cont.textContent = "Start lesson 1"; cont.href = "#lesson-1"; }
-      else if (next) { cont.textContent = `Continue: lesson ${next.dataset.lesson} →`; cont.href = `#lesson-${next.dataset.lesson}`; }
-      else { cont.textContent = "Get your certificate →"; cont.href = "#certificate"; }
-    }
-    const right = Object.values(state.best).reduce((a, b) => a + b, 0);
-    const set = (sel, text) => { const el = $(sel); if (el) el.textContent = text; };
-    set("[data-stat-lessons]", `${done}/${total}`);
-    set("[data-stat-right]", `${right}/${total * 5}`);
-    set("[data-stat-cert]", done === total ? "Ready" : "Locked");
-    $(".card-stats")?.classList.toggle("is-cert", done === total);
-    if (done === total && !state.completedAt) { state.completedAt = Date.now(); save(); }
-    renderCert(done);
+    each("[data-done]", (el) => { el.textContent = done; });
+    each("[data-ring]", (el) => { el.style.strokeDasharray = `${(done / total) * 100} 100`; });
+    each("[data-bar]", (el) => { el.style.width = `${(done / total) * 100}%`; });
+    each(".nav-lesson", (a) => a.classList.toggle("is-done", !!s.passed[a.dataset.route.split("-").pop()]));
+    each("[data-lesson-row]", (row) => {
+      const id = row.dataset.lessonRow, passed = !!s.passed[id];
+      row.classList.toggle("is-done", passed);
+      $(".status", row).textContent = passed ? "Completed ✓" : s.best[id] != null ? `Best ${s.best[id]}/5` : "Not started";
+    });
+    const next = c.lessons.find((l) => !s.passed[l.dataset.lesson]);
+    each("[data-continue]", (a) => {
+      if (done === 0) { a.textContent = "Start lesson 1"; a.href = `#${c.id}-lesson-1`; }
+      else if (next) { a.textContent = `Continue: lesson ${next.dataset.lesson} →`; a.href = `#${c.id}-lesson-${next.dataset.lesson}`; }
+      else { a.textContent = "Get your certificate →"; a.href = `#${c.id}-certificate`; }
+    });
+    each("[data-status]", (el) => {
+      el.textContent = done === total ? "Certificate earned ✓" : done ? "In progress" : "Not started";
+      el.classList.toggle("is-earned", done === total);
+    });
+    const right = Object.values(s.best).reduce((a, b) => a + b, 0);
+    each("[data-stat-lessons]", (el) => { el.textContent = `${done}/${total}`; });
+    each("[data-stat-right]", (el) => { el.textContent = `${right}/${total * 5}`; });
+    each("[data-stat-cert]", (el) => { el.textContent = done === total ? "Ready" : "Locked"; });
+    each(".card-stats", (el) => el.classList.toggle("is-cert", done === total));
+    each("[data-count]", (el) => { el.textContent = `${done}/${total}`; });
+    // The certificate's date: the day the last lesson was first passed.
+    if (done === total && !s.completedAt) { s.completedAt = Date.now(); c.save(); }
+    renderCert(c, done);
   };
+  const renderAll = () => courses.forEach(render);
 
-  // ---------- certificate ----------
-  const cert = $("[data-course-cert]");
-  const q = (sel) => cert && cert.querySelector(sel);
-  const locked = q("[data-cert-locked]"), ready = q("[data-cert-ready]");
-  const form = q("[data-cert-form]"), nameIn = q("[data-cert-name]");
-  const preview = q("[data-cert-preview]"), img = q("[data-cert-img]");
-  const actions = q("[data-cert-actions]"), dl = q("[data-cert-download]");
-  let certURL = null;
-
-  function renderCert(done) {
-    if (!cert) return;
-    const complete = done === total;
-    locked.hidden = complete;
-    ready.hidden = !complete;
-    const left = q("[data-cert-left]");
-    if (left) left.textContent = `${total - done} lesson${total - done === 1 ? "" : "s"}`;
-    if (complete && state.name && nameIn && !nameIn.value) nameIn.value = state.name;
-  }
-
+  // ---------- certificates ----------
   const loadImg = (src) => new Promise((res) => {
     const im = new Image();
     im.onload = () => res(im);
@@ -112,21 +140,34 @@
     im.src = src;
   });
 
-  const drawCert = async (name) => {
+  function renderCert(c, done) {
+    const cert = c.cert;
+    if (!cert) return;
+    const complete = done === c.total;
+    $("[data-cert-locked]", cert).hidden = complete;
+    $("[data-cert-ready]", cert).hidden = !complete;
+    const left = $("[data-cert-left]", cert);
+    if (left) left.textContent = `${c.total - done} lesson${c.total - done === 1 ? "" : "s"}`;
+    const nameIn = $("[data-cert-name]", cert);
+    if (complete && nameIn && !nameIn.value) nameIn.value = c.state.name || courses.map((o) => o.state.name).find(Boolean) || "";
+  }
+
+  // Drawn on a canvas so it can be saved as an image or printed as-is. The
+  // name is only ever drawn as canvas text, never inserted as HTML.
+  const drawCert = async (c, name) => {
     const W = 2000, H = 1414;
-    const c = document.createElement("canvas");
-    c.width = W; c.height = H;
-    const x = c.getContext("2d");
+    const cv = document.createElement("canvas");
+    cv.width = W; cv.height = H;
+    const x = cv.getContext("2d");
     const GREEN = "#177814", DEEP = "#125D0F", GOLD = "#E6B33F", INK = "#14143A", MUTED = "#5F6388";
-    const SANS = '"Outfit", "Segoe UI", Arial, sans-serif', SERIF = '"Libre Baskerville", Georgia, serif';
+    const SANS = '"DM Sans", "Inter", "Segoe UI", Arial, sans-serif', SERIF = '"Libre Baskerville", Georgia, serif';
     try {
       await Promise.all([`800 90px ${SANS}`, `600 40px ${SANS}`, `400 30px ${SANS}`, `italic 400 40px ${SERIF}`].map((f) => document.fonts.load(f)));
     } catch (e) { /* fall back to system fonts */ }
     const [able, biz] = await Promise.all([loadImg("assets/images/logo-main.png"), loadImg("assets/images/logo-business.png")]);
 
-    // Paper, a deep-green swoosh in two corners, then the frame.
+    // Paper, a pale-green swoosh in two corners (clipped to the frame), the frame.
     x.fillStyle = "#FFFFFF"; x.fillRect(0, 0, W, H);
-    // The swooshes are clipped to the inside of the frame.
     x.save();
     x.beginPath(); x.rect(57, 57, W - 114, H - 114); x.clip();
     x.fillStyle = "#EEF8EC";
@@ -162,13 +203,13 @@
     x.fillStyle = GOLD; x.fillRect(W / 2 - ruleW / 2, 770, ruleW, 4);
 
     center("has completed the free, self-paced course", 850, `400 34px ${SANS}`, MUTED);
-    center("Money & Business Foundations", 945, `800 72px ${SANS}`, GREEN);
-    center("Budgeting  ·  Paychecks and taxes  ·  Saving and investing", 1020, `400 28px ${SANS}`, INK);
-    center("Credit and debt  ·  How a business makes money  ·  Starting something, and careers in business", 1062, `400 28px ${SANS}`, INK);
-    center("Awarded for passing all six lesson quizzes.", 1118, `italic 400 26px ${SERIF}`, MUTED);
+    center(c.certTitle || c.title, 945, `800 72px ${SANS}`, GREEN, 1700);
+    center(c.topics[0], 1020, `400 28px ${SANS}`, INK, 1700);
+    center(c.topics[1], 1062, `400 28px ${SANS}`, INK, 1700);
+    center(`Awarded for passing all ${c.total === 6 ? "six" : c.total} lesson quizzes.`, 1118, `italic 400 26px ${SERIF}`, MUTED);
 
-    // Footer: date left, ABLE mark centre, where right.
-    const date = new Date(state.completedAt || Date.now()).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    // Footer: date left, ABLE seal centre, where right.
+    const date = new Date(c.state.completedAt || Date.now()).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
     const foot = (label, value, cx) => {
       x.textAlign = "center";
       x.fillStyle = INK; x.font = `600 32px ${SANS}`; x.fillText(value, cx, 1232);
@@ -182,53 +223,59 @@
       x.lineWidth = 3; x.strokeStyle = GREEN; x.stroke();
       const s = 120; x.drawImage(able, W / 2 - s / 2, 1230 - (s * able.height / able.width) / 2 - 10, s, s * able.height / able.width); // lifted: the A looks low when box-centred
     }
-    return c;
+    return cv;
   };
 
-  if (form) {
+  courses.forEach((c) => {
+    const cert = c.cert;
+    if (!cert) return;
+    const form = $("[data-cert-form]", cert), nameIn = $("[data-cert-name]", cert);
+    const preview = $("[data-cert-preview]", cert), img = $("[data-cert-img]", cert);
+    const actions = $("[data-cert-actions]", cert), dl = $("[data-cert-download]", cert);
+    c.certURL = null;
+    c.resetCert = () => { preview.hidden = true; actions.hidden = true; nameIn.value = ""; };
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = nameIn.value.replace(/\s+/g, " ").trim().slice(0, 60);
       if (!name) { nameIn.focus(); return; }
-      state.name = name;
-      save();
-      const c = await drawCert(name);
-      const blob = await new Promise((res) => c.toBlob(res, "image/png"));
-      if (certURL) URL.revokeObjectURL(certURL);
-      certURL = URL.createObjectURL(blob);
-      img.src = certURL;
-      img.alt = `Certificate of completion for ${name}, Money & Business Foundations, ABLE Business`;
-      dl.href = certURL;
-      dl.download = `ABLE-Money-and-Business-certificate-${name.replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") || "student"}.png`;
+      c.state.name = name;
+      c.save();
+      const cv = await drawCert(c, name);
+      const blob = await new Promise((res) => cv.toBlob(res, "image/png"));
+      if (c.certURL) URL.revokeObjectURL(c.certURL);
+      c.certURL = URL.createObjectURL(blob);
+      img.src = c.certURL;
+      img.alt = `Certificate of completion for ${name}, ${c.title}, ABLE Business`;
+      dl.href = c.certURL;
+      dl.download = `ABLE-${c.file}-certificate-${name.replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") || "student"}.png`;
       preview.hidden = false;
       actions.hidden = false;
       preview.scrollIntoView({ block: "nearest", behavior: "smooth" });
     });
-  }
 
-  // Print just the certificate, landscape, edge to edge.
-  q("[data-cert-print]")?.addEventListener("click", () => {
-    if (!certURL) return;
-    const sheet = document.createElement("img");
-    sheet.className = "cert-print-sheet";
-    sheet.src = certURL;
-    sheet.alt = "";
-    const page = document.createElement("style");
-    page.textContent = "@page { size: landscape; margin: 0; }";
-    document.head.append(page);
-    document.body.append(sheet);
-    document.body.classList.add("is-printing-cert");
-    const done = () => {
-      document.body.classList.remove("is-printing-cert");
-      sheet.remove();
-      page.remove();
-      window.removeEventListener("afterprint", done);
-    };
-    window.addEventListener("afterprint", done);
-    const go = () => window.print();
-    if (sheet.complete) go(); else sheet.onload = go;
+    // Print just the certificate, landscape, edge to edge.
+    $("[data-cert-print]", cert).addEventListener("click", () => {
+      if (!c.certURL) return;
+      const sheet = document.createElement("img");
+      sheet.className = "cert-print-sheet";
+      sheet.src = c.certURL;
+      sheet.alt = "";
+      const page = document.createElement("style");
+      page.textContent = "@page { size: landscape; margin: 0; }";
+      document.head.append(page);
+      document.body.append(sheet);
+      document.body.classList.add("is-printing-cert");
+      const done = () => {
+        document.body.classList.remove("is-printing-cert");
+        sheet.remove();
+        page.remove();
+        window.removeEventListener("afterprint", done);
+      };
+      window.addEventListener("afterprint", done);
+      const go = () => window.print();
+      if (sheet.complete) go(); else sheet.onload = go;
+    });
   });
-
 
   // ---------- routing: one view at a time ----------
   const sidebar = $("#sidebar"), toggle = $("#menu-toggle");
@@ -240,17 +287,22 @@
   });
 
   const show = () => {
-    const id = decodeURIComponent(location.hash.slice(1));
-    // #tool-budget etc. live inside the calculators view; old links used #lessons.
+    const raw = decodeURIComponent(location.hash.slice(1));
+    const id = alias(raw);
+    if (id !== raw) { history.replaceState(null, "", `#${id}`); }
+    // #tool-budget etc. live inside the calculators view.
     const target = id && document.getElementById(id);
     let view = target && target.matches("[data-view]") ? target : target && target.closest("[data-view]");
-    if (!view) view = $("#dashboard");
+    if (!view) view = $("#home");
     views.forEach((v) => v.classList.toggle("is-current", v === view));
     $$(".nav-item").forEach((a) => {
       const on = a.dataset.route === view.id;
       a.classList.toggle("active", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
+    // Only the open course's lessons are listed in the sidebar.
+    const course = view.dataset.course || "";
+    $$("[data-course-nav]").forEach((g) => g.classList.toggle("is-open", g.dataset.courseNav === course));
     document.title = `${view.dataset.title} · ABLE Business`;
     setMenu(false);
     if (target && target !== view) target.scrollIntoView({ block: "start" });
@@ -260,7 +312,7 @@
   show();
 
   // ---------- quizzes ----------
-  lessons.forEach((lesson) => {
+  courses.forEach((c) => c.lessons.forEach((lesson) => {
     const form = lesson.querySelector("form[data-quiz]");
     if (!form) return;
     const id = lesson.dataset.lesson;
@@ -295,19 +347,19 @@
           else if (input === picked) input.closest("label").classList.add("is-picked-wrong");
         });
       });
-      state.best[id] = Math.max(score, state.best[id] || 0);
-      if (score >= PASS) state.passed[id] = true;
-      save();
-      renderProgress();
+      c.state.best[id] = Math.max(score, c.state.best[id] || 0);
+      if (score >= PASS) c.state.passed[id] = true;
+      c.save();
+      render(c);
       const n = qs.length;
       if (score >= PASS) {
-        const next = lessons[lessons.indexOf(lesson) + 1];
+        const next = c.lessons[c.lessons.indexOf(lesson) + 1];
         result.className = "quiz-result is-pass";
         result.textContent = `${score} of ${n} — lesson complete!` + (next ? " On to the next one." : "");
-        if (!next && lessons.every((l) => state.passed[l.dataset.lesson])) {
+        if (!next && c.done() === c.total) {
           result.append(" That's the whole course. ");
           const link = document.createElement("a");
-          link.href = "#certificate";
+          link.href = `#${c.id}-certificate`;
           link.textContent = "Get your certificate →";
           result.append(link);
         }
@@ -316,62 +368,67 @@
         result.textContent = `${score} of ${n}. Read the explanations, change your answers and check again. You need ${PASS} to complete the lesson.`;
       }
     });
-  });
+  }));
 
   $("[data-reset]")?.addEventListener("click", () => {
-    if (!window.confirm("Clear your progress on this course?")) return;
-    state = { passed: {}, best: {} };
-    save();
-    if (preview) preview.hidden = true;
-    if (actions) actions.hidden = true;
-    if (nameIn) nameIn.value = "";
-    renderProgress();
+    if (!window.confirm("Clear your progress on every course?")) return;
+    courses.forEach((c) => { c.state = { passed: {}, best: {} }; c.save(); c.resetCert?.(); });
+    renderAll();
   });
 
   // ---------- glossary: every lesson's key terms, A to Z ----------
   const gloss = $("[data-glossary]");
   if (gloss) {
     const terms = [];
-    lessons.forEach((l) => $$(".lesson-terms dl > div", l).forEach((d) => {
-      terms.push({ term: $("dt", d).textContent.trim(), def: $("dd", d).textContent.trim(), n: l.dataset.lesson });
-    }));
+    courses.forEach((c) => c.lessons.forEach((l) => $$(".lesson-terms dl > div", l).forEach((d) => {
+      terms.push({ term: $("dt", d).textContent.trim(), def: $("dd", d).textContent.trim(), n: l.dataset.lesson, c });
+    })));
     terms.sort((a, b) => a.term.localeCompare(b.term, "en", { sensitivity: "base" }));
-    const dl2 = document.createElement("dl");
-    dl2.className = "glossary-list";
-    dl2.style.margin = "0";
+    const list = document.createElement("dl");
+    list.className = "glossary-list";
+    list.style.margin = "0";
     terms.forEach((t) => {
       const box = document.createElement("div");
       box.className = "gloss";
       const dt = document.createElement("dt");
       dt.append(t.term);
       const a = document.createElement("a");
-      a.href = `#lesson-${t.n}`;
-      a.textContent = `Lesson ${t.n}`;
+      a.href = `#${t.c.id}-lesson-${t.n}`;
+      a.textContent = `${t.c.short || t.c.certTitle || t.c.title}, lesson ${t.n}`;
+      if (t.c.id === "mbf") a.textContent = `Foundations, lesson ${t.n}`;
       dt.append(a);
       const dd = document.createElement("dd");
       dd.textContent = t.def;
       box.append(dt, dd);
       box.dataset.search = `${t.term} ${t.def}`.toLowerCase();
-      dl2.append(box);
+      list.append(box);
     });
-    gloss.replaceWith(dl2);
+    gloss.replaceWith(list);
     const empty = document.createElement("p");
     empty.className = "glossary-empty";
     empty.textContent = "No terms match that search.";
     empty.hidden = true;
-    dl2.after(empty);
+    list.after(empty);
     $("[data-glossary-search]")?.addEventListener("input", (e) => {
       const needle = e.target.value.trim().toLowerCase();
       let shown = 0;
-      $$(".gloss", dl2).forEach((b) => { const on = !needle || b.dataset.search.includes(needle); b.hidden = !on; shown += on; });
+      $$(".gloss", list).forEach((b) => { const on = !needle || b.dataset.search.includes(needle); b.hidden = !on; shown += on; });
       empty.hidden = shown > 0;
     });
   }
 
   $$("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
+  // ---------- calculators ----------
   const money = (x) => (x < 0 ? "−" : "") + "$" + Math.abs(x).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const num = (el) => { const v = parseFloat(el.value); return Number.isFinite(v) && v >= 0 ? v : 0; };
+  const round2 = (v) => Math.round(v * 100) / 100;
+  // Fixed monthly payment on an amortizing loan, to the cent.
+  const payment = (principal, apr, months) => {
+    const r = apr / 100 / 12;
+    if (!months) return 0;
+    return round2(r === 0 ? principal / months : principal * r / (1 - Math.pow(1 + r, -months)));
+  };
 
   const TOOLS = {
     budget(v, out) {
@@ -400,7 +457,7 @@
     },
     payoff(v, out) {
       // Fixed payment every month, no new charges, interest = APR / 12 on the
-      // balance, rounded to the cent (the method lesson 4's table uses).
+      // balance, rounded to the cent (the method Foundations lesson 4 uses).
       const r = v.apr / 100 / 12;
       let bal = v.balance, months = 0, interest = 0;
       if (bal > 0 && v.payment <= bal * r) return { warn: "This payment doesn't even cover the monthly interest, so the balance never goes down." };
@@ -421,6 +478,39 @@
       if (margin <= 0) return { warn: "Each sale loses money (or makes none), so no number of sales will cover the fixed costs. Raise the price or cut the cost per unit." };
       out.units = `${Math.ceil(v.fixed / margin - 1e-9)} units`;
       out.revenue = money(Math.ceil(v.fixed / margin - 1e-9) * v.price);
+    },
+    unitprice(v, out) {
+      if (!v.sizeA || !v.sizeB) return { warn: "Enter a size for both options." };
+      const a = v.priceA / v.sizeA, b = v.priceB / v.sizeB;
+      // Cents, unless both round to the same cent; then a tenth of a cent.
+      const d = a.toFixed(2) === b.toFixed(2) ? 3 : 2;
+      const fmt = (u) => "$" + u.toFixed(d) + " per unit";
+      out.unitA = fmt(a);
+      out.unitB = fmt(b);
+      if (Math.abs(a - b) < 1e-9) { out.better = "Same price per unit"; return; }
+      const cheap = a < b ? "A" : "B", pct = (Math.abs(a - b) / Math.max(a, b)) * 100;
+      out.better = `Option ${cheap}, ${pct.toFixed(1)}% less per unit`;
+    },
+    insurance(v, out) {
+      // Simplified: premiums plus the part of the bills below the deductible.
+      const cost = (prem, ded) => prem * 12 + Math.min(v.bills, ded);
+      const a = cost(v.premA, v.dedA), b = cost(v.premB, v.dedB);
+      out.costA = money(a);
+      out.costB = money(b);
+      out.better = Math.abs(a - b) < 0.005 ? "They cost the same" : `Plan ${a < b ? "A" : "B"}, by ${money(Math.abs(a - b))}`;
+    },
+    studentloan(v, out) {
+      const n = Math.round(v.years * 12), pay = payment(v.amount, v.apr, n);
+      out.monthly = money(pay);
+      out.interest = money(pay * n - v.amount);
+      out.total = money(pay * n);
+    },
+    carloan(v, out) {
+      const borrowed = Math.max(0, v.price - v.down), n = Math.round(v.months), pay = payment(borrowed, v.apr, n);
+      out.borrowed = money(borrowed);
+      out.monthly = money(pay);
+      out.interest = money(pay * n - borrowed);
+      out.total = money(v.down + pay * n);
     },
   };
 
@@ -443,5 +533,5 @@
     run();
   });
 
-  renderProgress();
+  renderAll();
 })();

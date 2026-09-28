@@ -3,49 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Money &amp; Business Foundations · ABLE Business</title>
-<meta name="description" content="A free, self-paced course from ABLE Business: budgeting, paychecks and taxes, saving and investing, credit, and how businesses make money. Six short lessons with calculators, quizzes and a certificate. No account needed.">
+<title>ABLE Business · Free money and business courses</title>
+<meta name="description" content="Free, self-paced courses from ABLE Business: Money &amp; Business Foundations and Financial Literacy. Short lessons with calculators, quizzes and a certificate for each course. No account needed.">
 <meta name="theme-color" content="#0A0A0A">
 <link rel="icon" href="assets/images/favicon.png" type="image/png">
 <link rel="canonical" href="https://business.ableinitiatives.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ABLE Business">
-<meta property="og:title" content="Money &amp; Business Foundations · ABLE Business">
-<meta property="og:description" content="A free, self-paced course from ABLE Business: budgeting, paychecks and taxes, saving and investing, credit, and how businesses make money. Six short lessons with calculators, quizzes and a certificate. No account needed.">
+<meta property="og:title" content="ABLE Business · Free money and business courses">
+<meta property="og:description" content="Free, self-paced courses from ABLE Business: Money &amp; Business Foundations and Financial Literacy. Short lessons with calculators, quizzes and a certificate for each course. No account needed.">
 <meta property="og:url" content="https://business.ableinitiatives.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/business.css?v=1">
+<link rel="stylesheet" href="assets/css/business.css?v=2">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
 <div id="app">
   <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#dashboard">
+    <a class="brand" href="#home">
       <img src="assets/images/logo-business.png" alt="" width="40" height="37">
-      <span>ABLE Business<small>Money &amp; Business</small></span>
+      <span>ABLE Business<small>Free courses</small></span>
     </a>
-    <nav class="nav" aria-label="Course">
-      <p class="nav-group">Course</p>
-      <a class="nav-item" data-route="dashboard" href="#dashboard"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="nav-label">Dashboard</span></a>
-      <a class="nav-item nav-lesson" data-route="lesson-1" href="#lesson-1"><span class="nav-num">1</span><span class="nav-label">Budgeting</span></a>
-      <a class="nav-item nav-lesson" data-route="lesson-2" href="#lesson-2"><span class="nav-num">2</span><span class="nav-label">Paychecks &amp; taxes</span></a>
-      <a class="nav-item nav-lesson" data-route="lesson-3" href="#lesson-3"><span class="nav-num">3</span><span class="nav-label">Saving &amp; investing</span></a>
-      <a class="nav-item nav-lesson" data-route="lesson-4" href="#lesson-4"><span class="nav-num">4</span><span class="nav-label">Credit &amp; debt</span></a>
-      <a class="nav-item nav-lesson" data-route="lesson-5" href="#lesson-5"><span class="nav-num">5</span><span class="nav-label">How businesses make money</span></a>
-      <a class="nav-item nav-lesson" data-route="lesson-6" href="#lesson-6"><span class="nav-num">6</span><span class="nav-label">Starting something &amp; careers</span></a>
+    <nav class="nav" aria-label="Courses">
+      <a class="nav-item" data-route="home" href="#home"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/></svg><span class="nav-label">All courses</span></a>
+      <p class="nav-group">Courses</p>
+      <div class="nav-course" data-course-nav="mbf" data-course="mbf">
+        <a class="nav-item nav-course-head" data-route="mbf" href="#mbf"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span class="nav-label">Money &amp; Business</span><span class="nav-count" data-count>0/6</span></a>
+        <div class="nav-course-items">
+          <a class="nav-item nav-lesson" data-route="mbf-lesson-1" href="#mbf-lesson-1"><span class="nav-num">1</span><span class="nav-label">Budgeting</span></a>
+          <a class="nav-item nav-lesson" data-route="mbf-lesson-2" href="#mbf-lesson-2"><span class="nav-num">2</span><span class="nav-label">Paychecks &amp; taxes</span></a>
+          <a class="nav-item nav-lesson" data-route="mbf-lesson-3" href="#mbf-lesson-3"><span class="nav-num">3</span><span class="nav-label">Saving &amp; investing</span></a>
+          <a class="nav-item nav-lesson" data-route="mbf-lesson-4" href="#mbf-lesson-4"><span class="nav-num">4</span><span class="nav-label">Credit &amp; debt</span></a>
+          <a class="nav-item nav-lesson" data-route="mbf-lesson-5" href="#mbf-lesson-5"><span class="nav-num">5</span><span class="nav-label">How businesses make money</span></a>
+          <a class="nav-item nav-lesson" data-route="mbf-lesson-6" href="#mbf-lesson-6"><span class="nav-num">6</span><span class="nav-label">Starting something &amp; careers</span></a>
+          <a class="nav-item" data-route="mbf-certificate" href="#mbf-certificate"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><span class="nav-label">Certificate</span></a>
+        </div>
+      </div>
+      <div class="nav-course" data-course-nav="fl" data-course="fl">
+        <a class="nav-item nav-course-head" data-route="fl" href="#fl"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H19v4"/><rect x="3" y="7" width="18" height="13" rx="2.5"/><circle cx="16.5" cy="13.5" r="1.3"/></svg><span class="nav-label">Financial Literacy</span><span class="nav-count" data-count>0/6</span></a>
+        <div class="nav-course-items">
+          <a class="nav-item nav-lesson" data-route="fl-lesson-1" href="#fl-lesson-1"><span class="nav-num">1</span><span class="nav-label">Banking basics</span></a>
+          <a class="nav-item nav-lesson" data-route="fl-lesson-2" href="#fl-lesson-2"><span class="nav-num">2</span><span class="nav-label">Smart spending</span></a>
+          <a class="nav-item nav-lesson" data-route="fl-lesson-3" href="#fl-lesson-3"><span class="nav-num">3</span><span class="nav-label">Scams &amp; identity theft</span></a>
+          <a class="nav-item nav-lesson" data-route="fl-lesson-4" href="#fl-lesson-4"><span class="nav-num">4</span><span class="nav-label">Insurance</span></a>
+          <a class="nav-item nav-lesson" data-route="fl-lesson-5" href="#fl-lesson-5"><span class="nav-num">5</span><span class="nav-label">Paying for college</span></a>
+          <a class="nav-item nav-lesson" data-route="fl-lesson-6" href="#fl-lesson-6"><span class="nav-num">6</span><span class="nav-label">First car &amp; apartment</span></a>
+          <a class="nav-item" data-route="fl-certificate" href="#fl-certificate"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><span class="nav-label">Certificate</span></a>
+        </div>
+      </div>
       <p class="nav-group">Tools</p>
       <a class="nav-item" data-route="tools" href="#tools"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><rect x="8" y="5.5" width="8" height="4" rx="0.8"/><path d="M8.5 13h1M12 13h1M15.5 13h1M8.5 17h1M12 17h1M15.5 17h1"/></svg><span class="nav-label">Calculators</span></a>
       <a class="nav-item" data-route="glossary" href="#glossary"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><span class="nav-label">Glossary</span></a>
-      <a class="nav-item" data-route="certificate" href="#certificate"><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg><span class="nav-label">Certificate</span></a>
     </nav>
     <div class="sidebar-foot">
-      <div class="side-progress" data-progress hidden>
-        <div class="side-progress-bar"><span></span></div>
-        <span><strong data-done>0</strong> of 6 lessons complete</span>
-      </div>
       <a href="https://ableinitiatives.com/business.html">ABLE Business</a>
       <span>No account needed</span>
     </div>
@@ -54,16 +67,58 @@
   <div class="main">
     <header class="topbar">
       <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-controls="sidebar" aria-expanded="false"><span></span></button>
-      <a class="brand brand-compact" href="#dashboard"><img src="assets/images/logo-business.png" alt="" width="30" height="28"><span>ABLE Business</span></a>
+      <a class="brand brand-compact" href="#home"><img src="assets/images/logo-business.png" alt="" width="30" height="28"><span>ABLE Business</span></a>
       <a class="topbar-link" href="https://ableinitiatives.com/">ableinitiatives.com</a>
     </header>
 
     <main id="page" class="page">
 
-      <!-- DASHBOARD -->
-      <section class="view" id="dashboard" data-view data-title="Dashboard">
+      <!-- HOME: the catalog. One .course-tile per course. -->
+      <section class="view" id="home" data-view data-title="Free courses">
         <div class="page-head">
-          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h1>Money &amp; Business Foundations</h1></div>
+          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/></svg></span><h1>Free courses from ABLE Business</h1></div>
+          <p class="lede">Short, self-paced courses on money and business, with calculators to try, quizzes to check yourself, and a certificate when you finish each one. Free, and no account needed.</p>
+        </div>
+        <div class="course-tiles">
+          <article class="course-tile" data-course="mbf">
+            <div class="course-tile-top">
+              <span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+              <span class="course-tile-status" data-status>Not started</span>
+            </div>
+            <span class="eyebrow">Course 1</span>
+            <h2><a href="#mbf">Money &amp; Business Foundations</a></h2>
+            <p>Budgeting, paychecks and taxes, saving and investing, credit, how businesses make money, and starting something of your own.</p>
+            <p class="course-tile-meta">6 lessons · about 103 minutes · certificate</p>
+            <div class="course-tile-bar"><span data-bar></span></div>
+            <p class="course-tile-progress"><strong data-done>0</strong> of 6 lessons complete</p>
+            <div class="course-tile-actions">
+              <a href="#mbf-lesson-1" class="btn btn-primary" data-continue>Start lesson 1</a>
+              <a href="#mbf" class="btn btn-outline">Course overview</a>
+            </div>
+          </article>
+          <article class="course-tile" data-course="fl">
+            <div class="course-tile-top">
+              <span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H19v4"/><rect x="3" y="7" width="18" height="13" rx="2.5"/><circle cx="16.5" cy="13.5" r="1.3"/></svg></span>
+              <span class="course-tile-status" data-status>Not started</span>
+            </div>
+            <span class="eyebrow">Course 2</span>
+            <h2><a href="#fl">Financial Literacy: Money in Real Life</a></h2>
+            <p>Banking, smart spending, protecting yourself from scams, insurance, paying for college, and your first car and apartment.</p>
+            <p class="course-tile-meta">6 lessons · about 100 minutes · certificate</p>
+            <div class="course-tile-bar"><span data-bar></span></div>
+            <p class="course-tile-progress"><strong data-done>0</strong> of 6 lessons complete</p>
+            <div class="course-tile-actions">
+              <a href="#fl-lesson-1" class="btn btn-primary" data-continue>Start lesson 1</a>
+              <a href="#fl" class="btn btn-outline">Course overview</a>
+            </div>
+          </article>
+        </div>
+        <p class="fine catalog-note">More courses are on the way. Progress is saved in this browser only.</p>
+      </section>
+
+      <section class="view" id="mbf" data-view data-course="mbf" data-title="Money &amp; Business Foundations">
+        <div class="page-head">
+          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h1>Money &amp; Business Foundations</h1></div>
           <p class="lede">Six short lessons on budgeting, paychecks and taxes, saving and investing, credit, and how businesses make money. Free, self-paced, no account needed, and a certificate at the end.</p>
         </div>
         <div class="dash-grid">
@@ -76,7 +131,7 @@
                 <p class="hero-label">lessons complete</p>
               </div>
             </div>
-            <a href="#lesson-1" class="btn btn-primary" data-continue>Start lesson 1</a>
+            <a href="#mbf-lesson-1" class="btn btn-primary" data-continue>Start lesson 1</a>
           </section>
           <section class="card card-stats">
             <div class="stat"><span class="stat-num" data-stat-lessons>0/6</span><span class="stat-label">lessons passed</span></div>
@@ -87,32 +142,32 @@
           <section class="card card-lessons">
             <h2>Lessons</h2>
             <div class="lesson-rows">
-          <a class="lesson-row" href="#lesson-1" data-lesson-row="1">
+          <a class="lesson-row" href="#mbf-lesson-1" data-lesson-row="1">
             <span class="lesson-row-num">01</span>
             <span class="lesson-row-text"><strong>Budgeting: a plan for your money</strong><span>Needs, wants and savings, the 50/30/20 rule, tracking what you spend, and paying yourself first.</span></span>
             <span class="lesson-row-meta"><span>15 min</span><span class="status">Not started</span></span>
           </a>
-          <a class="lesson-row" href="#lesson-2" data-lesson-row="2">
+          <a class="lesson-row" href="#mbf-lesson-2" data-lesson-row="2">
             <span class="lesson-row-num">02</span>
             <span class="lesson-row-text"><strong>Your paycheck and taxes</strong><span>Gross vs. take-home pay, FICA and income tax, reading a pay stub, the W-4 and W-2, and why refunds happen.</span></span>
             <span class="lesson-row-meta"><span>16 min</span><span class="status">Not started</span></span>
           </a>
-          <a class="lesson-row" href="#lesson-3" data-lesson-row="3">
+          <a class="lesson-row" href="#mbf-lesson-3" data-lesson-row="3">
             <span class="lesson-row-num">03</span>
             <span class="lesson-row-text"><strong>Saving and investing</strong><span>Saving vs. investing, compound interest, starting early, risk and diversification, and retirement accounts.</span></span>
             <span class="lesson-row-meta"><span>18 min</span><span class="status">Not started</span></span>
           </a>
-          <a class="lesson-row" href="#lesson-4" data-lesson-row="4">
+          <a class="lesson-row" href="#mbf-lesson-4" data-lesson-row="4">
             <span class="lesson-row-num">04</span>
             <span class="lesson-row-text"><strong>Credit and debt</strong><span>APR and card interest, the minimum-payment trap, credit scores, building credit, and which debt to avoid.</span></span>
             <span class="lesson-row-meta"><span>18 min</span><span class="status">Not started</span></span>
           </a>
-          <a class="lesson-row" href="#lesson-5" data-lesson-row="5">
+          <a class="lesson-row" href="#mbf-lesson-5" data-lesson-row="5">
             <span class="lesson-row-num">05</span>
             <span class="lesson-row-text"><strong>How a business makes money</strong><span>Revenue, fixed and variable costs, profit and margin, break-even, pricing, and why cash flow isn’t profit.</span></span>
             <span class="lesson-row-meta"><span>18 min</span><span class="status">Not started</span></span>
           </a>
-          <a class="lesson-row" href="#lesson-6" data-lesson-row="6">
+          <a class="lesson-row" href="#mbf-lesson-6" data-lesson-row="6">
             <span class="lesson-row-num">06</span>
             <span class="lesson-row-text"><strong>Starting something, and careers in business</strong><span>Testing a business idea cheaply, a one-page plan, the main business fields, and how to explore them now.</span></span>
             <span class="lesson-row-meta"><span>18 min</span><span class="status">Not started</span></span>
@@ -131,9 +186,7 @@
           </section>
         </div>
       </section>
-
-      <!-- LESSONS: one view each. Edit a lesson inside its <article>. -->
-      <section class="view view-lesson" id="lesson-1" data-view data-title="Lesson 1: Budgeting: a plan for your money">
+      <section class="view view-lesson" id="mbf-lesson-1" data-view data-course="mbf" data-title="Money &amp; Business · Lesson 1: Budgeting: a plan for your money">
 <article class="lesson" data-lesson="1" data-title="Budgeting: a plan for your money" data-minutes="15" data-summary="Needs, wants and savings, the 50/30/20 rule, tracking what you spend, and paying yourself first." aria-labelledby="lesson-1-title">
   <header class="lesson-head">
     <span class="lesson-num">Lesson 1 of 6 · about 15 minutes</span>
@@ -293,13 +346,13 @@
     </div>
   </form>
   <nav class="lesson-nav" aria-label="Lesson 1">
-    <a href="#dashboard" class="btn btn-outline">← Dashboard</a>
-    <a href="#dashboard" class="lesson-nav-all">Dashboard</a>
-    <a href="#lesson-2" class="btn btn-primary is-next">Next: Your paycheck and taxes →</a>
+    <a href="#mbf" class="btn btn-outline">← Course overview</a>
+    <a href="#mbf" class="lesson-nav-all">Course overview</a>
+    <a href="#mbf-lesson-2" class="btn btn-primary is-next">Next: Your paycheck and taxes →</a>
   </nav>
 </article>
       </section>
-      <section class="view view-lesson" id="lesson-2" data-view data-title="Lesson 2: Your paycheck and taxes">
+      <section class="view view-lesson" id="mbf-lesson-2" data-view data-course="mbf" data-title="Money &amp; Business · Lesson 2: Your paycheck and taxes">
 <article class="lesson" data-lesson="2" data-title="Your paycheck and taxes" data-minutes="16" data-summary="Gross vs. take-home pay, FICA and income tax, reading a pay stub, the W-4 and W-2, and why refunds happen." aria-labelledby="lesson-2-title">
   <header class="lesson-head">
     <span class="lesson-num">Lesson 2 of 6 · about 16 minutes</span>
@@ -482,13 +535,13 @@
     </div>
   </form>
   <nav class="lesson-nav" aria-label="Lesson 2">
-    <a href="#lesson-1" class="btn btn-outline">← Lesson 1</a>
-    <a href="#dashboard" class="lesson-nav-all">Dashboard</a>
-    <a href="#lesson-3" class="btn btn-primary is-next">Next: Saving and investing →</a>
+    <a href="#mbf-lesson-1" class="btn btn-outline">← Lesson 1</a>
+    <a href="#mbf" class="lesson-nav-all">Course overview</a>
+    <a href="#mbf-lesson-3" class="btn btn-primary is-next">Next: Saving and investing →</a>
   </nav>
 </article>
       </section>
-      <section class="view view-lesson" id="lesson-3" data-view data-title="Lesson 3: Saving and investing">
+      <section class="view view-lesson" id="mbf-lesson-3" data-view data-course="mbf" data-title="Money &amp; Business · Lesson 3: Saving and investing">
 <article class="lesson" data-lesson="3" data-title="Saving and investing" data-minutes="18" data-summary="Saving vs. investing, compound interest, starting early, risk and diversification, and retirement accounts." aria-labelledby="lesson-3-title">
   <header class="lesson-head">
     <span class="lesson-num">Lesson 3 of 6 · about 18 minutes</span>
@@ -664,13 +717,13 @@
     </div>
   </form>
   <nav class="lesson-nav" aria-label="Lesson 3">
-    <a href="#lesson-2" class="btn btn-outline">← Lesson 2</a>
-    <a href="#dashboard" class="lesson-nav-all">Dashboard</a>
-    <a href="#lesson-4" class="btn btn-primary is-next">Next: Credit and debt →</a>
+    <a href="#mbf-lesson-2" class="btn btn-outline">← Lesson 2</a>
+    <a href="#mbf" class="lesson-nav-all">Course overview</a>
+    <a href="#mbf-lesson-4" class="btn btn-primary is-next">Next: Credit and debt →</a>
   </nav>
 </article>
       </section>
-      <section class="view view-lesson" id="lesson-4" data-view data-title="Lesson 4: Credit and debt">
+      <section class="view view-lesson" id="mbf-lesson-4" data-view data-course="mbf" data-title="Money &amp; Business · Lesson 4: Credit and debt">
 <article class="lesson" data-lesson="4" data-title="Credit and debt" data-minutes="18" data-summary="APR and card interest, the minimum-payment trap, credit scores, building credit, and which debt to avoid." aria-labelledby="lesson-4-title">
   <header class="lesson-head">
     <span class="lesson-num">Lesson 4 of 6 · about 18 minutes</span>
@@ -847,13 +900,13 @@
     </div>
   </form>
   <nav class="lesson-nav" aria-label="Lesson 4">
-    <a href="#lesson-3" class="btn btn-outline">← Lesson 3</a>
-    <a href="#dashboard" class="lesson-nav-all">Dashboard</a>
-    <a href="#lesson-5" class="btn btn-primary is-next">Next: How a business makes money →</a>
+    <a href="#mbf-lesson-3" class="btn btn-outline">← Lesson 3</a>
+    <a href="#mbf" class="lesson-nav-all">Course overview</a>
+    <a href="#mbf-lesson-5" class="btn btn-primary is-next">Next: How a business makes money →</a>
   </nav>
 </article>
       </section>
-      <section class="view view-lesson" id="lesson-5" data-view data-title="Lesson 5: How a business makes money">
+      <section class="view view-lesson" id="mbf-lesson-5" data-view data-course="mbf" data-title="Money &amp; Business · Lesson 5: How a business makes money">
 <article class="lesson" data-lesson="5" data-title="How a business makes money" data-minutes="18" data-summary="Revenue, fixed and variable costs, profit and margin, break-even, pricing, and why cash flow isn’t profit." aria-labelledby="lesson-5-title">
   <header class="lesson-head">
     <span class="lesson-num">Lesson 5 of 6 · about 18 minutes</span>
@@ -1038,13 +1091,13 @@
     </div>
   </form>
   <nav class="lesson-nav" aria-label="Lesson 5">
-    <a href="#lesson-4" class="btn btn-outline">← Lesson 4</a>
-    <a href="#dashboard" class="lesson-nav-all">Dashboard</a>
-    <a href="#lesson-6" class="btn btn-primary is-next">Next: Starting something, and careers in business →</a>
+    <a href="#mbf-lesson-4" class="btn btn-outline">← Lesson 4</a>
+    <a href="#mbf" class="lesson-nav-all">Course overview</a>
+    <a href="#mbf-lesson-6" class="btn btn-primary is-next">Next: Starting something, and careers in business →</a>
   </nav>
 </article>
       </section>
-      <section class="view view-lesson" id="lesson-6" data-view data-title="Lesson 6: Starting something, and careers in business">
+      <section class="view view-lesson" id="mbf-lesson-6" data-view data-course="mbf" data-title="Money &amp; Business · Lesson 6: Starting something, and careers in business">
 <article class="lesson" data-lesson="6" data-title="Starting something, and careers in business" data-minutes="18" data-summary="Testing a business idea cheaply, a one-page plan, the main business fields, and how to explore them now." aria-labelledby="lesson-6-title">
   <header class="lesson-head">
     <span class="lesson-num">Lesson 6 of 6 · about 18 minutes</span>
@@ -1218,27 +1271,1286 @@
     </div>
   </form>
   <nav class="lesson-nav" aria-label="Lesson 6">
-    <a href="#lesson-5" class="btn btn-outline">← Lesson 5</a>
-    <a href="#dashboard" class="lesson-nav-all">Dashboard</a>
-    <a href="#certificate" class="btn btn-primary is-next">Get your certificate →</a>
+    <a href="#mbf-lesson-5" class="btn btn-outline">← Lesson 5</a>
+    <a href="#mbf" class="lesson-nav-all">Course overview</a>
+    <a href="#mbf-certificate" class="btn btn-primary is-next">Get your certificate →</a>
   </nav>
 </article>
       </section>
+      <section class="view" id="mbf-certificate" data-view data-course="mbf" data-title="Money &amp; Business · Certificate">
+        <div class="page-head">
+          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><h1>Certificate</h1></div>
+          <p class="lede">Money &amp; Business Foundations: pass all six lesson quizzes to earn a certificate of completion with your name on it.</p>
+        </div>
+        <div class="course-cert" data-course-cert="mbf">
+          <div class="cert-locked" data-cert-locked>
+            <span class="cert-locked-icon" aria-hidden="true"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
+            <div>
+              <h3>Earn your certificate</h3>
+              <p>Pass all six lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
+            </div>
+          </div>
+          <div class="cert-ready" data-cert-ready hidden>
+            <div class="cert-ready-head">
+              <span class="eyebrow">You finished the course</span>
+              <h3>Put your name on it.</h3>
+              <p>Type your name the way you'd like it to appear. It stays in this browser; nothing is sent anywhere.</p>
+            </div>
+            <form class="cert-form" data-cert-form>
+              <label for="mbf-cert-name">Your name</label>
+              <div class="cert-form-row">
+                <input type="text" id="mbf-cert-name" maxlength="60" autocomplete="name" required placeholder="First and last name" data-cert-name>
+                <button type="submit" class="btn btn-primary">Make my certificate</button>
+              </div>
+            </form>
+            <figure class="cert-preview" data-cert-preview hidden>
+              <img src="data:," alt="" data-cert-img>
+            </figure>
+            <div class="cert-actions" data-cert-actions hidden>
+              <a class="btn btn-primary" href="#mbf-certificate" download="certificate.png" data-cert-download>Download image</a>
+              <button type="button" class="btn btn-outline" data-cert-print>Print or save as PDF</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="view" id="fl" data-view data-course="fl" data-title="Financial Literacy: Money in Real Life">
+        <div class="page-head">
+          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H19v4"/><rect x="3" y="7" width="18" height="13" rx="2.5"/><circle cx="16.5" cy="13.5" r="1.3"/></svg></span><h1>Financial Literacy: Money in Real Life</h1></div>
+          <p class="lede">Six short lessons on the money decisions that come with real life: banking, spending, scams, insurance, college and your first big purchases. Free, self-paced, no account needed, and a certificate at the end.</p>
+        </div>
+        <div class="dash-grid">
+          <section class="card card-hero">
+            <h2>Your progress</h2>
+            <div class="hero-row">
+              <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-track" cx="60" cy="60" r="50"/><circle class="ring-fill" cx="60" cy="60" r="50" pathLength="100" data-ring/></svg>
+              <div class="hero-text">
+                <p class="hero-num"><span data-done>0</span><small> of 6</small></p>
+                <p class="hero-label">lessons complete</p>
+              </div>
+            </div>
+            <a href="#fl-lesson-1" class="btn btn-primary" data-continue>Start lesson 1</a>
+          </section>
+          <section class="card card-stats">
+            <div class="stat"><span class="stat-num" data-stat-lessons>0/6</span><span class="stat-label">lessons passed</span></div>
+            <div class="stat"><span class="stat-num" data-stat-right>0/30</span><span class="stat-label">quiz questions right</span></div>
+            <div class="stat"><span class="stat-num" data-stat-cert>Locked</span><span class="stat-label">certificate</span></div>
+            <p class="fine">About 100 minutes in all. Pass a lesson's quiz (4 of 5) to complete it. Progress is saved in this browser only.</p>
+          </section>
+          <section class="card card-lessons">
+            <h2>Lessons</h2>
+            <div class="lesson-rows">
+          <a class="lesson-row" href="#fl-lesson-1" data-lesson-row="1">
+            <span class="lesson-row-num">01</span>
+            <span class="lesson-row-text"><strong>Banking basics</strong><span>Why use a bank, checking vs. savings, debit cards and ATMs, dodging fees and overdrafts, and opening an account.</span></span>
+            <span class="lesson-row-meta"><span>16 min</span><span class="status">Not started</span></span>
+          </a>
+          <a class="lesson-row" href="#fl-lesson-2" data-lesson-row="2">
+            <span class="lesson-row-num">02</span>
+            <span class="lesson-row-text"><strong>Smart spending: getting your money&#x27;s worth</strong><span>Unit prices, discounts, sales tax, pay-later plans, subscriptions, marketing tricks and the 24-hour rule.</span></span>
+            <span class="lesson-row-meta"><span>15 min</span><span class="status">Not started</span></span>
+          </a>
+          <a class="lesson-row" href="#fl-lesson-3" data-lesson-row="3">
+            <span class="lesson-row-num">03</span>
+            <span class="lesson-row-text"><strong>Protecting your money: scams and identity theft</strong><span>Spot the warning signs of scams, lock down your accounts, and know what to do if your identity is stolen.</span></span>
+            <span class="lesson-row-meta"><span>16 min</span><span class="status">Not started</span></span>
+          </a>
+          <a class="lesson-row" href="#fl-lesson-4" data-lesson-row="4">
+            <span class="lesson-row-num">04</span>
+            <span class="lesson-row-text"><strong>Insurance: paying a little to avoid losing a lot</strong><span>How insurance works, premiums vs. deductibles, and the basics of auto, health, renters and phone coverage.</span></span>
+            <span class="lesson-row-meta"><span>18 min</span><span class="status">Not started</span></span>
+          </a>
+          <a class="lesson-row" href="#fl-lesson-5" data-lesson-row="5">
+            <span class="lesson-row-num">05</span>
+            <span class="lesson-row-text"><strong>Paying for college</strong><span>Cost of attendance vs. net price, the FAFSA, the four kinds of aid, student loans and comparing aid offers.</span></span>
+            <span class="lesson-row-meta"><span>17 min</span><span class="status">Not started</span></span>
+          </a>
+          <a class="lesson-row" href="#fl-lesson-6" data-lesson-row="6">
+            <span class="lesson-row-num">06</span>
+            <span class="lesson-row-text"><strong>Big purchases: your first car and your first apartment</strong><span>The full cost of a car, shopping for a car loan, renting basics, reading a lease and protecting your deposit.</span></span>
+            <span class="lesson-row-meta"><span>18 min</span><span class="status">Not started</span></span>
+          </a>
+            </div>
+          </section>
+          <section class="card card-tools">
+            <h2>Calculators</h2>
+            <div class="tool-tiles">
+          <a class="tool-tile" href="#tool-unitprice"><strong>Unit price</strong><span>Which size or package is really cheaper.</span></a>
+          <a class="tool-tile" href="#tool-insurance"><strong>Insurance plans</strong><span>Premium vs. deductible: which plan costs less this year.</span></a>
+          <a class="tool-tile" href="#tool-studentloan"><strong>Student loan</strong><span>The monthly payment and total cost of borrowing for college.</span></a>
+          <a class="tool-tile" href="#tool-carloan"><strong>Car loan</strong><span>What a car really costs once the loan is paid off.</span></a>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section class="view view-lesson" id="fl-lesson-1" data-view data-course="fl" data-title="Financial Literacy · Lesson 1: Banking basics">
+<article class="lesson" data-lesson="1" data-title="Banking basics" data-minutes="16" data-summary="Why use a bank, checking vs. savings, debit cards and ATMs, dodging fees and overdrafts, and opening an account." aria-labelledby="fl-lesson-1-title">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 1 of 6 · about 16 minutes</span>
+    <h2 id="fl-lesson-1-title">Banking basics</h2>
+    <p class="lede">Almost every paycheck you'll ever get will land in a bank account, so it pays to know how accounts work and how to stop fees from quietly eating your money.</p>
+    <div class="lesson-goals">
+      <h3>By the end of this lesson you'll be able to</h3>
+      <ul>
+        <li>Explain why a bank or credit union is safer than cash, and what deposit insurance covers.</li>
+        <li>Use checking, savings, a debit card and ATMs without paying fees you don't need to.</li>
+        <li>Explain how an overdraft happens, and check a bank statement for mistakes.</li>
+      </ul>
+    </div>
+  </header>
 
-      <!-- CALCULATORS: the same five tools as in the lessons. -->
+  <div class="lesson-body">
+    <section class="lesson-part">
+      <h3>Why use a bank or credit union at all?</h3>
+      <p>Cash in a drawer can be lost, stolen or burned, and once it's gone, it's gone. Money in an account is safer for a few reasons:</p>
+      <ul>
+        <li><strong>Deposit insurance.</strong> Banks insured by the FDIC and credit unions insured by the NCUA protect your deposits up to $250,000 per depositor, per insured institution, per ownership category. If the bank or credit union fails, you get your insured money back. You can check an institution at FDIC.gov or NCUA.gov. Some money apps aren't banks, so check how yours protects your money.</li>
+        <li><strong>A record.</strong> Every deposit and payment is written down, so you can track your money and prove you paid someone. A good banking history also helps later, when you rent or borrow.</li>
+        <li><strong>No check-cashing fees.</strong> Without an account, cashing a paycheck often means paying a check-cashing store. At an assumed fee of 3%, cashing a $400 paycheck costs $12. Do that twice a month and it's $24 a month, or <strong>$288 a year</strong>, just to get your own money.</li>
+      </ul>
+      <p><strong>Banks</strong> are businesses owned by shareholders and run to make a profit. <strong>Credit unions</strong> are nonprofits owned by their members; you usually join based on where you live, work or go to school, or through family. Credit unions often have lower fees and big banks often have more branches, but neither is always better. Compare the actual accounts.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Checking, savings and your debit card</h3>
+      <p>Most people have two accounts that work together:</p>
+      <ul>
+        <li>A <strong>checking account</strong> is for everyday money in and out: your paycheck arrives here, and your card purchases and bills come out of it.</li>
+        <li>A <strong>savings account</strong> is for money you're not spending yet, like an emergency fund or a car goal. It usually pays some interest and is a little harder to spend on impulse, which is the point.</li>
+      </ul>
+      <p>A <strong>debit card</strong> takes money straight out of your checking account. It is not a credit card: you're spending your own money, not borrowing. (The Money &amp; Business Foundations course covers credit.) At an ATM or some store checkouts, you'll type your <strong>PIN</strong>, a short secret number. Never share it, never write it on the card, and cover the keypad when you type it.</p>
+      <p>Your bank's own ATMs, and those in its network, are usually free. An <strong>out-of-network ATM</strong> often charges a fee, and your own bank may add a second fee on top. Using an in-network ATM, or getting cash back when you pay at a store, usually avoids both.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Common fees, and how to avoid them</h3>
+      <ul>
+        <li><strong>Monthly maintenance fee:</strong> a charge just for having the account. Many student accounts skip it, and others waive it if you set up direct deposit or keep a <strong>minimum balance</strong>.</li>
+        <li><strong>Minimum balance fee:</strong> charged if your balance falls below a set amount. Know the number before you open the account.</li>
+        <li><strong>Overdraft fee:</strong> an <strong>overdraft</strong> happens when you spend more than is in your checking account and the bank pays anyway, leaving you with a negative balance. Then it charges you a fee, which can be far bigger than the purchase.</li>
+        <li><strong>NSF fee:</strong> if the bank refuses a payment instead, such as a check or automatic bill, it may charge a nonsufficient funds (NSF) fee, also called a returned-item fee. The bill still isn't paid, and the company may add a late fee.</li>
+      </ul>
+      <p>For ATM withdrawals and everyday debit card purchases, federal rules say a bank can charge an overdraft fee only if you've <strong>opted in</strong> to overdraft coverage. If you haven't, the card is simply declined. Fees vary, and some banks charge little or nothing, so read your account's fee list. Low-balance alerts and linking savings to cover overdrafts can also help.</p>
+    </section>
+
+    <aside class="lesson-callout example">
+      <h4>Worked example</h4>
+      <p>Mateo starts the month with <strong>$120</strong> in checking and gets paid $210 twice a month by direct deposit. When he opened his account he opted in to overdraft coverage without reading what it meant. The fees below are assumed examples: <strong>$3</strong> for using an out-of-network ATM and <strong>$35</strong> for an overdraft. Real fees vary by bank.</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col">Date</th><th scope="col">Transaction</th><th scope="col">Amount</th><th scope="col">Balance</th></tr></thead>
+        <tbody>
+          <tr><td>Oct 1</td><td>Starting balance</td><td></td><td>$120.00</td></tr>
+          <tr><td>Oct 3</td><td>Paycheck (direct deposit)</td><td>+$210.00</td><td>$330.00</td></tr>
+          <tr><td>Oct 5</td><td>His share of the phone bill (automatic)</td><td>−$45.00</td><td>$285.00</td></tr>
+          <tr><td>Oct 9</td><td>Cash from an out-of-network ATM</td><td>−$40.00</td><td>$245.00</td></tr>
+          <tr><td>Oct 9</td><td>ATM fee (example)</td><td>−$3.00</td><td>$242.00</td></tr>
+          <tr><td>Oct 14</td><td>Concert ticket</td><td>−$95.00</td><td>$147.00</td></tr>
+          <tr><td>Oct 16</td><td>Gas</td><td>−$38.00</td><td>$109.00</td></tr>
+          <tr><td>Oct 18</td><td>Streaming subscription</td><td>−$12.99</td><td>$96.01</td></tr>
+          <tr><td>Oct 20</td><td>Transfer to savings</td><td>−$90.00</td><td>$6.01</td></tr>
+          <tr><td>Oct 21</td><td>Smoothie (debit card)</td><td>−$7.50</td><td>−$1.49</td></tr>
+          <tr><td>Oct 21</td><td>Overdraft fee (example)</td><td>−$35.00</td><td>−$36.49</td></tr>
+          <tr><td>Oct 24</td><td>Paycheck (direct deposit)</td><td>+$210.00</td><td>$173.51</td></tr>
+          <tr><th scope="row">Total fees</th><td></td><th>$38.00</th><td></td></tr>
+        </tbody>
+      </table>
+      <p>He was only $1.49 short, but his $7.50 smoothie really cost him <strong>$42.50</strong>. Without the two fees, he'd have ended the month with $211.51 instead of $173.51. Getting cash at his own bank's ATM, a low-balance alert, or opting out of overdraft coverage (so the card would have been declined) would each have saved him money.</p>
+    </aside>
+
+    <aside class="lesson-callout mistake">
+      <h4>Common mistake</h4>
+      <p>Assuming your debit card will just be declined if you don't have enough money. If you've opted in to overdraft coverage, the purchase goes through and the fee follows. Know your real balance, including payments that are still <strong>pending</strong>, before you tap your card.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Your statement and your banking app</h3>
+      <p>Each month your bank gives you a <strong>statement</strong>: your starting balance, every deposit (credit), every withdrawal or payment (debit), any fees, and your ending balance. Read it: do you recognize every charge, and were there fees you didn't expect? If something looks wrong, contact your bank right away; the sooner you report a problem, the more protection you usually have. Lesson 3 covers fraud in detail.</p>
+      <p>Your bank's app makes day-to-day banking easier:</p>
+      <ul>
+        <li><strong>Mobile banking</strong> lets you check your balance, move money between checking and savings, and turn on alerts.</li>
+        <li><strong>Direct deposit</strong> sends your pay straight into your account. Your employer will ask for your bank's <strong>routing number</strong> and your <strong>account number</strong>.</li>
+        <li><strong>Mobile check deposit</strong> lets you photograph the front and back of a signed check. Follow your bank's signing instructions and keep the paper check until the deposit clears; the money may not be available right away.</li>
+        <li><strong>Peer-to-peer (P2P) payments</strong> let you send money to a friend using their phone number or email. They're fast, but money sent is usually hard to get back, even if you sent it to the wrong person or a scammer. Double-check before you tap send, and see lesson 3.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Opening your first account</h3>
+      <p>If you're under 18, most banks and credit unions will ask a parent or guardian to open the account with you, as a <strong>joint owner</strong> or <strong>custodian</strong>. That adult can usually see and use the account too. Requirements vary, so check the website or call first. Generally, you'll need:</p>
+      <ul>
+        <li>A form of ID for you and for the adult, and your Social Security number.</li>
+        <li>Money for the first deposit, if there's a minimum.</li>
+        <li>Questions ready: What are the monthly and overdraft fees? How do I avoid them? Where are the free ATMs?</li>
+      </ul>
+    </section>
+
+    <aside class="lesson-callout key">
+      <h4>Key idea</h4>
+      <p>An insured bank or credit union keeps your money safe; your job is to know your real balance, avoid fees you don't need to pay, and check every transaction.</p>
+    </aside>
+
+    <section class="lesson-terms">
+      <h3>Key terms</h3>
+      <dl>
+        <div><dt>Deposit insurance</dt><dd>FDIC or NCUA protection for your deposits, up to $250,000 per depositor, per insured institution, per ownership category.</dd></div>
+        <div><dt>Checking account</dt><dd>An account for everyday money in and out, used with a debit card.</dd></div>
+        <div><dt>Savings account</dt><dd>An account for money you're keeping for later, usually paying some interest.</dd></div>
+        <div><dt>Debit card</dt><dd>A card that spends money directly from your checking account.</dd></div>
+        <div><dt>PIN</dt><dd>A secret number you type to use your debit card at an ATM or some checkouts.</dd></div>
+        <div><dt>Overdraft</dt><dd>Spending more than is in your account, which the bank covers and usually charges a fee for.</dd></div>
+        <div><dt>NSF fee</dt><dd>A fee for a payment the bank refused because there wasn't enough money. NSF means nonsufficient funds.</dd></div>
+        <div><dt>Direct deposit</dt><dd>Pay sent electronically straight into your account.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-try">
+      <h3>Try it yourself</h3>
+      <p>Pick one bank and one credit union near you and look up their student checking accounts. For each, find the monthly fee (and how to avoid it), the overdraft fee, whether you can opt out of overdraft coverage, and where the free ATMs are. If you already have an account, read last month's statement line by line and make sure you recognize every charge.</p>
+    </section>
+  </div>
+
+  <form class="quiz" data-quiz>
+    <h3>Check your understanding</h3>
+    <p class="quiz-intro">Five questions. Get at least four right to complete the lesson.</p>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">1</span>Your bank is insured by the FDIC. What does that protect?</legend>
+      <label><input type="radio" name="fl1-1" value="A"><span>Stocks you buy, if they lose value</span></label>
+      <label><input type="radio" name="fl1-1" value="B"><span>Your deposits, up to the insurance limit, if the bank fails</span></label>
+      <label><input type="radio" name="fl1-1" value="C"><span>Money you send to a scammer</span></label>
+      <label><input type="radio" name="fl1-1" value="D"><span>Any overdraft fees you're charged</span></label>
+      <p class="quiz-why">FDIC insurance covers deposits up to $250,000 per depositor, per insured bank, per ownership category, if the bank itself fails. It doesn't cover investments losing value or money you chose to send someone, even a scammer.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="D">
+      <legend><span class="quiz-n">2</span>You have $20 in checking and buy a $26 lunch with your debit card. You've opted in to overdraft coverage, and the overdraft fee is an assumed $35. What's your balance now?</legend>
+      <label><input type="radio" name="fl1-2" value="A"><span>$0, because the card is declined</span></label>
+      <label><input type="radio" name="fl1-2" value="B"><span>−$6</span></label>
+      <label><input type="radio" name="fl1-2" value="C"><span>−$35</span></label>
+      <label><input type="radio" name="fl1-2" value="D"><span>−$41</span></label>
+      <p class="quiz-why">$20 − $26 = −$6, then the $35 fee brings it to −$41. −$6 forgets the fee, and the card would only be declined if you hadn't opted in.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="A">
+      <legend><span class="quiz-n">3</span>Mateo wants to buy gas with his card and also save for a car without being tempted to spend that money. Which setup fits best?</legend>
+      <label><input type="radio" name="fl1-3" value="A"><span>Checking for everyday spending, savings for the car</span></label>
+      <label><input type="radio" name="fl1-3" value="B"><span>Everything in one checking account</span></label>
+      <label><input type="radio" name="fl1-3" value="C"><span>Everything in savings, moving money over for each purchase</span></label>
+      <label><input type="radio" name="fl1-3" value="D"><span>The car money in cash at home</span></label>
+      <p class="quiz-why">Checking handles everyday spending, and keeping goal money in savings makes it harder to spend by accident. Cash at home isn't insured and can be lost or stolen.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">4</span>You need $20 in cash. Which choice usually avoids an ATM fee?</legend>
+      <label><input type="radio" name="fl1-4" value="A"><span>Whichever ATM is closest</span></label>
+      <label><input type="radio" name="fl1-4" value="B"><span>An out-of-network ATM, since fees only apply abroad</span></label>
+      <label><input type="radio" name="fl1-4" value="C"><span>Your bank's own or in-network ATM, or cash back at a store checkout</span></label>
+      <label><input type="radio" name="fl1-4" value="D"><span>Any ATM, as long as you enter your PIN correctly</span></label>
+      <p class="quiz-why">In-network ATMs and store cash back are usually free. The closest ATM may be out of network, which can mean a fee from the ATM owner and another from your own bank.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">5</span>You send $40 through a peer-to-peer payment app to the wrong person by mistake. What's most likely true?</legend>
+      <label><input type="radio" name="fl1-5" value="A"><span>Your bank will reverse it automatically</span></label>
+      <label><input type="radio" name="fl1-5" value="B"><span>It may be hard or impossible to get back</span></label>
+      <label><input type="radio" name="fl1-5" value="C"><span>FDIC insurance will pay you back</span></label>
+      <label><input type="radio" name="fl1-5" value="D"><span>It's refunded after 30 days if nobody claims it</span></label>
+      <p class="quiz-why">P2P payments move fast and are usually hard to undo, so double-check before you send. Deposit insurance protects you if a bank fails, not when you send money to the wrong person.</p>
+    </fieldset>
+    <div class="quiz-actions">
+      <button type="submit" class="btn btn-primary">Check answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </form>
+  <nav class="lesson-nav" aria-label="Lesson 1">
+    <a href="#fl" class="btn btn-outline">← Course overview</a>
+    <a href="#fl" class="lesson-nav-all">Course overview</a>
+    <a href="#fl-lesson-2" class="btn btn-primary is-next">Next: Smart spending: getting your money&#x27;s worth →</a>
+  </nav>
+</article>
+      </section>
+      <section class="view view-lesson" id="fl-lesson-2" data-view data-course="fl" data-title="Financial Literacy · Lesson 2: Smart spending: getting your money&#x27;s worth">
+<article class="lesson" data-lesson="2" data-title="Smart spending: getting your money's worth" data-minutes="15" data-summary="Unit prices, discounts, sales tax, pay-later plans, subscriptions, marketing tricks and the 24-hour rule." aria-labelledby="fl-lesson-2-title">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 2 of 6 · about 15 minutes</span>
+    <h2 id="fl-lesson-2-title">Smart spending: getting your money's worth</h2>
+    <p class="lede">The price on the tag is rarely the whole story, and stores are very good at making you forget that.</p>
+    <div class="lesson-goals">
+      <h3>By the end of this lesson you'll be able to</h3>
+      <ul>
+        <li>Compare products by unit price and work out what a sale or coupon really saves.</li>
+        <li>Spot the costs that come later: sales tax, pay-later plans, subscriptions and upkeep.</li>
+        <li>Recognize common marketing pressure and slow down before an impulse buy.</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <section class="lesson-part">
+      <h3>Compare the price per unit, not per package</h3>
+      <p>Two bottles of shampoo sit side by side: one is bigger and costs more. Which is the better deal? You can't tell from the price alone. You need the <strong>unit price</strong>: the price divided by the amount you get, such as dollars per ounce or cents per sheet.</p>
+      <p>Many stores print the unit price in small type on the shelf tag. If they don't, divide it yourself: price ÷ size. Make sure both products use the same unit (ounces with ounces, not ounces with "count").</p>
+      <p>Bigger is often cheaper per unit, but <strong>not always</strong>. A smaller size may be on sale, or a store may simply price the big one higher. And a bulk bargain only saves money if you'll use it all before it goes bad. Try the calculator below with any two sizes you find.</p>
+      <div class="lesson-tool" data-tool="unitprice">
+      <h4>Try it: unit price comparison</h4>
+      <div class="tool-inputs">
+        <label>Option A price ($)<input type="number" inputmode="decimal" min="0" step="0.01" value="3.48" data-in="priceA"></label>
+        <label>Option A size<input type="number" inputmode="decimal" min="0" step="0.1" value="12" data-in="sizeA"></label>
+        <label>Option B price ($)<input type="number" inputmode="decimal" min="0" step="0.01" value="5.58" data-in="priceB"></label>
+        <label>Option B size<input type="number" inputmode="decimal" min="0" step="0.1" value="18" data-in="sizeB"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div><span>Option A</span><strong data-out="unitA">—</strong></div>
+        <div><span>Option B</span><strong data-out="unitB">—</strong></div>
+        <div class="is-main"><span>Better deal</span><strong data-out="better">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">Use the same unit for both sizes (ounces, count, liters) or the comparison means nothing.</p>
+    </div>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Sales, coupons and stacked discounts</h3>
+      <p><strong>Percent off</strong> is simple once you turn it into money. For 30% off a $45 hoodie, 30% of $45 is $13.50, so you pay $31.50. A shortcut: 30% off means you pay 70%, and 70% of $45 is $31.50.</p>
+      <p><strong>"Buy one, get one"</strong> deals depend on the fine print. "Buy one, get one free" on a $6 item means two for $6, or $3 each: 50% off, but only if you actually wanted two. "Buy one, get one 50% off" on a $12 item means $18 for two, or $9 each. That's only 25% off per item.</p>
+      <p><strong>Stacked discounts</strong> don't simply add up. If a jacket is 20% off and you get "an extra 10% off at the register", the second discount comes off the already-reduced price. On a $50 jacket: 20% off leaves $40, then 10% off $40 leaves $36. That's $14 off in total, or <strong>28% off, not 30%</strong>.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>At the register and after: tax, receipts and warranties</h3>
+      <p>In the US, the price on the tag usually doesn't include <strong>sales tax</strong>; it's added when you pay. The rate depends on your state and often your city or county too, and a handful of states have no statewide sales tax at all. Some items, like groceries, may be taxed at a lower rate or not at all, depending on where you live.</p>
+      <p>Keep your <strong>receipt</strong>, or a photo of it, until you're sure you're keeping the item. Check the <strong>return policy</strong> before you buy: many stores give you a set number of days, some charge a restocking fee, and "final sale" items often can't be returned at all.</p>
+      <p>Many products come with a <strong>manufacturer's warranty</strong> that covers defects for a set time. At checkout you may be offered an <strong>extended warranty</strong> for extra money. Read what it covers and compare its price with the cost of simply replacing the item. For cheap items, an extended warranty is often not worth it.</p>
+    </section>
+
+    <aside class="lesson-callout example">
+      <h4>Worked example</h4>
+      <p>Grace needs shampoo. The store has two sizes of the same brand:</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col">Option</th><th scope="col">Price</th><th scope="col">Size</th><th scope="col">Unit price</th></tr></thead>
+        <tbody>
+          <tr><td>A: small bottle</td><td>$3.48</td><td>12 oz</td><td>$3.48 ÷ 12 = $0.29 per oz</td></tr>
+          <tr><td>B: big bottle</td><td>$5.58</td><td>18 oz</td><td>$5.58 ÷ 18 = $0.31 per oz</td></tr>
+        </tbody>
+      </table>
+      <p>Surprise: the <strong>smaller bottle is cheaper per ounce</strong>, by 2 cents an ounce, or about 6% less than option B. Grace picks option A.</p>
+      <p>She also finds a $40 hoodie marked 25% off, and she has a $5-off store coupon for it. We'll assume a combined sales tax rate of 8%, figured on the price after the discounts.</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col">Item</th><th scope="col">Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Shampoo, 12 oz</td><td>$3.48</td></tr>
+          <tr><td>Hoodie, tag price</td><td>$40.00</td></tr>
+          <tr><td>Sale: 25% off the hoodie</td><td>−$10.00</td></tr>
+          <tr><td>Store coupon</td><td>−$5.00</td></tr>
+          <tr><th scope="row">Subtotal</th><td>$28.48</td></tr>
+          <tr><td>Sales tax (assumed 8%)</td><td>$2.28</td></tr>
+          <tr><th scope="row">Total</th><th>$30.76</th></tr>
+        </tbody>
+      </table>
+      <p>The tax is $28.48 × 0.08 = $2.2784, which rounds to $2.28. Forgetting it, Grace would have come up $2.28 short.</p>
+    </aside>
+
+    <aside class="lesson-callout mistake">
+      <h4>Common mistake</h4>
+      <p>Adding discounts together. "20% off, plus an extra 10% off" is not 30% off. Each discount applies to the price that's left, so you get 28% off. Always work through the discounts one at a time, in dollars.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Costs that keep coming</h3>
+      <p><strong>Buy now, pay later</strong> plans split a purchase into a few payments, often four over several weeks. Some charge no interest if every payment is on time, but missed payments can bring late fees, and several plans at once are easy to lose track of. Store financing and store credit cards work in a similar way over longer periods. Watch for <strong>deferred interest</strong> offers ("no interest if paid in full in 12 months"): if any balance is left when the promotion ends, interest can be charged all the way back to the purchase date. Paying later doesn't make anything cheaper; at best it costs the same. The Money &amp; Business Foundations course covers interest and credit in more depth.</p>
+      <p><strong>Subscriptions and free trials</strong> usually <strong>auto-renew</strong>: when the trial ends, your card is charged unless you cancel. A forgotten $9.99-a-month trial costs $119.88 a year. When you start a trial, set a reminder to decide a day or two before it ends.</p>
+      <p>Finally, think about <strong>total cost of ownership</strong>: the price to buy something plus what it costs to use it. A cheap printer can need expensive ink. With example numbers, a $40 printer that needs a $30 cartridge every two months costs $40 + (12 × $30) = $400 over two years. Game consoles, phones and cars work the same way: add up the extras, not just the sticker.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Marketing tricks and the 24-hour rule</h3>
+      <p>Stores and brands want you to buy now. A few common tactics:</p>
+      <ul>
+        <li><strong>Urgency:</strong> "Only 3 left!", countdown timers, "today only". Pressure to decide fast leaves no time to think.</li>
+        <li><strong>Anchoring:</strong> "Was $120, now $60!" The "was" price sets a reference point that makes $60 feel like a win, even if the item rarely sold for $120. Ask whether it's worth $60 to you.</li>
+        <li><strong>Influencer ads:</strong> a creator you like shows off a product. They may be paid or given it free. Paid posts are supposed to be labeled, with tags like #ad or "paid partnership", but they're still ads.</li>
+        <li><strong>Free shipping thresholds:</strong> "Free shipping over $35" can nudge a $28 cart up to $35 with things you didn't plan to buy.</li>
+      </ul>
+      <p>A simple defense is the <strong>24-hour rule</strong>: for anything that isn't a planned or needed purchase, wait a day before buying. If you still want it tomorrow and it fits your plan, buy it. Often the urge has passed.</p>
+    </section>
+
+    <aside class="lesson-callout key">
+      <h4>Key idea</h4>
+      <p>Compare unit prices, turn every discount into dollars, add the tax and the costs that come later, and give yourself time before you buy.</p>
+    </aside>
+
+    <section class="lesson-terms">
+      <h3>Key terms</h3>
+      <dl>
+        <div><dt>Unit price</dt><dd>The price divided by the amount, such as dollars per ounce. It lets you compare different sizes fairly.</dd></div>
+        <div><dt>Stacked discount</dt><dd>Two or more discounts applied one after another, each to the price left by the one before.</dd></div>
+        <div><dt>Sales tax</dt><dd>A tax added at the register, set by your state and often your city or county.</dd></div>
+        <div><dt>Buy now, pay later</dt><dd>A plan that splits a purchase into several payments, often with fees if you pay late.</dd></div>
+        <div><dt>Deferred interest</dt><dd>A financing offer where interest is charged back to the purchase date if the balance isn't paid in full by the deadline.</dd></div>
+        <div><dt>Auto-renewal</dt><dd>A subscription or free trial that keeps charging you automatically until you cancel.</dd></div>
+        <div><dt>Anchoring</dt><dd>Showing a high "was" or reference price so the real price feels like a bargain.</dd></div>
+        <div><dt>Total cost of ownership</dt><dd>What something costs to buy plus what it costs to use and maintain over time.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-try">
+      <h3>Try it yourself</h3>
+      <p>Next time you're in a store (or shopping online), find one product sold in two sizes and work out the unit price of each. Was the bigger one cheaper per unit? Then check your bank app or email for subscriptions and free trials: list each one, what it costs per year, and whether you'd sign up for it again today.</p>
+    </section>
+  </div>
+
+  <form class="quiz" data-quiz>
+    <h3>Check your understanding</h3>
+    <p class="quiz-intro">Five questions. Get at least four right to complete the lesson.</p>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">1</span>A 16-oz bottle costs $4.00 and a 24-oz bottle of the same product costs $6.48. Which is true?</legend>
+      <label><input type="radio" name="fl2-1" value="A"><span>The 24-oz bottle is cheaper per ounce because it's bigger</span></label>
+      <label><input type="radio" name="fl2-1" value="B"><span>They cost the same per ounce</span></label>
+      <label><input type="radio" name="fl2-1" value="C"><span>The 16-oz bottle is cheaper per ounce, at $0.25 an ounce</span></label>
+      <label><input type="radio" name="fl2-1" value="D"><span>The 24-oz bottle costs $0.25 an ounce</span></label>
+      <p class="quiz-why">$4.00 ÷ 16 = $0.25 per ounce, and $6.48 ÷ 24 = $0.27 per ounce, so the smaller bottle is cheaper per unit. Bigger packages are often, but not always, the better deal.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">2</span>An $80 pair of shoes is 20% off, and you get an extra 10% off at the register. What do you pay before tax?</legend>
+      <label><input type="radio" name="fl2-2" value="A"><span>$56.00</span></label>
+      <label><input type="radio" name="fl2-2" value="B"><span>$57.60</span></label>
+      <label><input type="radio" name="fl2-2" value="C"><span>$64.00</span></label>
+      <label><input type="radio" name="fl2-2" value="D"><span>$72.00</span></label>
+      <p class="quiz-why">20% off $80 leaves $64, and 10% off $64 leaves $57.60. $56.00 is what you'd get by wrongly adding the discounts to make 30% off.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="A">
+      <legend><span class="quiz-n">3</span>You sign up for a free 30-day trial of an app that costs $12.99 a month afterward. What's the best way to avoid a surprise charge?</legend>
+      <label><input type="radio" name="fl2-3" value="A"><span>Set a reminder to decide, and cancel if you don't want it, before the trial ends</span></label>
+      <label><input type="radio" name="fl2-3" value="B"><span>Do nothing: free trials end on their own</span></label>
+      <label><input type="radio" name="fl2-3" value="C"><span>Delete the app from your phone</span></label>
+      <label><input type="radio" name="fl2-3" value="D"><span>Wait for the first charge, then decide</span></label>
+      <p class="quiz-why">Most free trials auto-renew into paid subscriptions. Deleting the app doesn't cancel the subscription; you have to cancel it in your account.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="D">
+      <legend><span class="quiz-n">4</span>A tag says "Was $120, now $60!" What marketing tactic is this?</legend>
+      <label><input type="radio" name="fl2-4" value="A"><span>Unit pricing</span></label>
+      <label><input type="radio" name="fl2-4" value="B"><span>Deferred interest</span></label>
+      <label><input type="radio" name="fl2-4" value="C"><span>Total cost of ownership</span></label>
+      <label><input type="radio" name="fl2-4" value="D"><span>Anchoring</span></label>
+      <p class="quiz-why">The "was" price is an anchor that makes $60 feel like a deal. It may be a real 50% saving, or the item may rarely have sold for $120. The real question is whether it's worth $60 to you.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">5</span>Which statement about "buy now, pay later" plans is true?</legend>
+      <label><input type="radio" name="fl2-5" value="A"><span>You never have to pay back the later payments</span></label>
+      <label><input type="radio" name="fl2-5" value="B"><span>Missed payments can bring fees, and several plans at once are easy to lose track of</span></label>
+      <label><input type="radio" name="fl2-5" value="C"><span>They lower the total price of what you buy</span></label>
+      <label><input type="radio" name="fl2-5" value="D"><span>They're the same as paying with cash</span></label>
+      <p class="quiz-why">Pay-later plans are a way of borrowing: you owe every payment, and late ones can cost extra. They don't make anything cheaper; at best you pay the same price, spread out.</p>
+    </fieldset>
+    <div class="quiz-actions">
+      <button type="submit" class="btn btn-primary">Check answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </form>
+  <nav class="lesson-nav" aria-label="Lesson 2">
+    <a href="#fl-lesson-1" class="btn btn-outline">← Lesson 1</a>
+    <a href="#fl" class="lesson-nav-all">Course overview</a>
+    <a href="#fl-lesson-3" class="btn btn-primary is-next">Next: Protecting your money: scams and identity theft →</a>
+  </nav>
+</article>
+      </section>
+      <section class="view view-lesson" id="fl-lesson-3" data-view data-course="fl" data-title="Financial Literacy · Lesson 3: Protecting your money: scams and identity theft">
+<article class="lesson" data-lesson="3" data-title="Protecting your money: scams and identity theft" data-minutes="16" data-summary="Spot the warning signs of scams, lock down your accounts, and know what to do if your identity is stolen." aria-labelledby="fl-lesson-3-title">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 3 of 6 · about 16 minutes</span>
+    <h2 id="fl-lesson-3-title">Protecting your money: scams and identity theft</h2>
+    <p class="lede">Scammers don't need to hack anything if they can get you to hand over the money, or the code, yourself.</p>
+    <div class="lesson-goals">
+      <h3>By the end of this lesson you'll be able to</h3>
+      <ul>
+        <li>Recognize the warning signs that most scams share, and the scams teens run into most.</li>
+        <li>Protect your accounts with strong passwords, two-factor authentication and codes you never share.</li>
+        <li>Spot the signs of identity theft and know exactly where to report it.</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <section class="lesson-part">
+      <h3>The warning signs most scams share</h3>
+      <p>Most scams use the same few tricks. Learn them and you can spot scams you've never seen before:</p>
+      <ul>
+        <li><strong>Urgency.</strong> "Act in the next 30 minutes or your account will be closed." Pressure stops you from thinking or asking someone.</li>
+        <li><strong>Secrecy.</strong> "Don't tell your parents" or "keep this between us." Real businesses and friends don't need you to hide things.</li>
+        <li><strong>Unusual ways to pay.</strong> Gift cards, wire transfers, cryptocurrency or a payment app. These are fast and very hard to reverse. Anyone who demands to be paid in gift cards is a scammer, every time.</li>
+        <li><strong>Too good to be true.</strong> A prize you never entered for, or $500 a week for "a few minutes a day."</li>
+      </ul>
+      <p>If a message hits even one of these, slow down. Check with someone you trust, or contact the company using a website or number you already know, not the one in the message.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Scams teens actually run into</h3>
+      <ul>
+        <li><strong>Phishing texts and emails.</strong> A message that seems to be from your bank, a delivery company or your school, with a link to "confirm your account" on a fake login page. Open the real app or website yourself instead.</li>
+        <li><strong>Fake online stores.</strong> Slick sites or social media ads with prices far below anywhere else. You pay, and nothing arrives, or a cheap fake does.</li>
+        <li><strong>Marketplace overpayment scams.</strong> A buyer "accidentally" pays too much and asks for the difference back (see the worked example).</li>
+        <li><strong>Fake jobs, "reshipping" and money-mule offers.</strong> "Jobs" that have you reship packages or pass money through your account. The goods and money are usually stolen, and moving money for someone else can be a crime, even if you didn't know.</li>
+        <li><strong>Fake prizes and scholarship scams.</strong> "You've won! Just pay a small fee to claim it." Real prizes don't charge you to collect, and you never pay to get a scholarship.</li>
+        <li><strong>Romance and friendship scams.</strong> Someone you've only met online becomes close over weeks, then suddenly has an emergency and needs money or gift cards.</li>
+        <li><strong>"Verification code" scams.</strong> "Hey, I accidentally sent my code to your number, can you send it to me?" That code is the key to <em>your</em> account. Send it, and they can lock you out and scam your friends as you.</li>
+      </ul>
+    </section>
+
+    <aside class="lesson-callout example">
+      <h4>Worked example</h4>
+      <p>Kenji lists his old gaming headset on an online marketplace for <strong>$150</strong>. A buyer quickly sends <strong>$400</strong> through a payment app. "Oops, wrong amount! Can you send back the extra $250? I'll pick up the headset tomorrow."</p>
+      <p>It seems fair: $400 − $150 = $250. Kenji sends $250 back and hands over the headset. A few days later, the $400 vanishes. The buyer paid with a stolen card or hacked account, and when the real owner reported the fraud, that payment was reversed. Kenji's $250 was a normal payment he chose to send, and it's gone.</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col">Step</th><th scope="col">Change to Kenji's money</th><th scope="col">Running total</th></tr></thead>
+        <tbody>
+          <tr><td>Buyer's "payment" arrives</td><td>+$400</td><td>+$400</td></tr>
+          <tr><td>Kenji sends back the "extra"</td><td>−$250</td><td>+$150</td></tr>
+          <tr><td>Kenji hands over the headset</td><td>Loses a $150 headset</td><td>+$150</td></tr>
+          <tr><td>The $400 payment is reversed</td><td>−$400</td><td>−$250</td></tr>
+          <tr><th scope="row">Kenji's total loss</th><td>$250 in cash + $150 headset</td><th>$400</th></tr>
+        </tbody>
+      </table>
+      <p>The scammer walks away with $250 of Kenji's real money plus a $150 headset, so Kenji's total loss equals the full fake payment of $400. The safe response to any overpayment: ask the buyer to cancel it and send the correct amount, and don't hand anything over until it's settled.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Payment apps work like cash</h3>
+      <p>Peer-to-peer payment apps are great for splitting a pizza. But sending money with one usually works like handing over cash: it moves in seconds, and if you paid a scammer, the app often won't refund it because you approved the payment.</p>
+      <p>Money coming <em>to</em> you is different. If it came from a stolen card or account, it can be pulled back later, as Kenji found out. Fake checks can bounce the same way. So send app payments only to people you know in real life, double-check the name before you tap send, and don't treat a stranger's payment as final.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Lock down your accounts</h3>
+      <p>Many account takeovers come from reused passwords or shared codes, not movie-style hacking. Four habits help:</p>
+      <ul>
+        <li><strong>Use a strong, unique password for every account.</strong> Long beats clever: a <strong>passphrase</strong> of four or more random words, like "copper-lantern-mango-sleet", is easier to remember and harder to guess than "P@ssw0rd1". Unique means a leak at one site puts only that account at risk.</li>
+        <li><strong>Consider a password manager.</strong> This is an app or browser feature that creates and remembers a strong password for each account, so you remember just one master passphrase.</li>
+        <li><strong>Turn on two-factor authentication (2FA).</strong> The site also asks for a second proof, usually a one-time code sent to your phone or shown in an authenticator app, so a stolen password alone isn't enough.</li>
+        <li><strong>Never share a one-time code.</strong> Not with a "friend," "customer support" or someone who says they sent it by mistake. Real companies won't ask you to read one back.</li>
+      </ul>
+    </section>
+
+    <aside class="lesson-callout mistake">
+      <h4>Common mistake</h4>
+      <p>Trusting a message because it comes from a friend's account. A scammer who takes over an account messages all its contacts, and the requests feel safe because the name is familiar. If a friend suddenly asks for a code, money or gift cards, call them or ask in person first.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Identity theft: what it is and what to do</h3>
+      <p><strong>Identity theft</strong> is when someone uses your personal information, such as your name, birthday or Social Security number, to open accounts, borrow money, or file taxes as you. They get the money; you get the bills and damaged credit (the Money &amp; Business Foundations course covers credit scores).</p>
+      <p>Teens are a favorite target because you usually have a clean record, often no credit file at all, so a thief can build one in your name. It can go unnoticed for years, until you apply for a student loan, car loan or apartment and get turned down.</p>
+      <p>Warning signs include bills or collection calls for accounts you never opened, charges you don't recognize, being turned down because of a credit history you don't have, or a notice that a tax return was already filed in your name. If it happens, move quickly:</p>
+      <ul>
+        <li><strong>Contact your bank</strong> or the company involved (look up the number yourself) and change your passwords.</li>
+        <li><strong>Report identity theft at IdentityTheft.gov</strong>, which creates a personal recovery plan.</li>
+        <li><strong>Report scams and fraud at ReportFraud.ftc.gov</strong>, even if you didn't lose money.</li>
+        <li><strong>Freeze your credit.</strong> It stops lenders from seeing your credit report, so it's very hard for anyone to open new credit in your name. It's free by federal law, and a parent or guardian can request one for a child under 16.</li>
+      </ul>
+      <p>Adults can check their credit reports free at AnnualCreditReport.com. For a minor, a parent or guardian can ask each credit bureau whether a report even exists.</p>
+    </section>
+
+    <aside class="lesson-callout key">
+      <h4>Key idea</h4>
+      <p>Urgency, secrecy and strange payment methods mean stop and check. Keep your passwords unique and your codes private, treat payment-app money like cash, and report fraud fast.</p>
+    </aside>
+
+    <section class="lesson-terms">
+      <h3>Key terms</h3>
+      <dl>
+        <div><dt>Scam</dt><dd>A trick designed to get your money or personal information.</dd></div>
+        <div><dt>Phishing</dt><dd>A fake message designed to get your password or personal details.</dd></div>
+        <div><dt>Overpayment scam</dt><dd>A "buyer" pays too much, asks for the difference back, then the original payment is reversed.</dd></div>
+        <div><dt>Money mule</dt><dd>Someone who moves money, often stolen, for another person. It can be a crime.</dd></div>
+        <div><dt>Two-factor authentication (2FA)</dt><dd>A login that needs your password plus a second proof, such as a one-time code.</dd></div>
+        <div><dt>Passphrase</dt><dd>A long password made of several random words.</dd></div>
+        <div><dt>Identity theft</dt><dd>Using someone else's personal information to open accounts or borrow money.</dd></div>
+        <div><dt>Credit freeze</dt><dd>A free block on your credit report that makes it hard to open new credit in your name.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-try">
+      <h3>Try it yourself</h3>
+      <p>Pick your three most important accounts: your email, your phone account and anything that holds money. Check that each has a unique password and two-factor authentication turned on. Then find a suspicious text or email you've received and list the warning signs it uses.</p>
+    </section>
+  </div>
+
+  <form class="quiz" data-quiz>
+    <h3>Check your understanding</h3>
+    <p class="quiz-intro">Five questions. Get at least four right to complete the lesson.</p>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">1</span>Which of these is the clearest sign of a scam?</legend>
+      <label><input type="radio" name="fl3-1" value="A"><span>A store that lists its return policy on its website</span></label>
+      <label><input type="radio" name="fl3-1" value="B"><span>Someone who insists you pay them with gift cards, right now</span></label>
+      <label><input type="radio" name="fl3-1" value="C"><span>A friend you see at school paying you back for lunch</span></label>
+      <label><input type="radio" name="fl3-1" value="D"><span>A bank app asking you to log in when you open it yourself</span></label>
+      <p class="quiz-why">Urgency plus an unusual payment method are two classic warning signs, and demanding gift cards is always a scam. Logging in to an app you opened yourself is normal; the danger is a link in a message.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="D">
+      <legend><span class="quiz-n">2</span>You sell a jacket for $80. The buyer sends $300 by payment app and asks you to send back $220. You do, and hand over the jacket. Then the $300 is reversed. How much did you lose in total?</legend>
+      <label><input type="radio" name="fl3-2" value="A"><span>$80</span></label>
+      <label><input type="radio" name="fl3-2" value="B"><span>$220</span></label>
+      <label><input type="radio" name="fl3-2" value="C"><span>$0</span></label>
+      <label><input type="radio" name="fl3-2" value="D"><span>$300</span></label>
+      <p class="quiz-why">You lost $220 in cash plus an $80 jacket: $220 + $80 = $300, the full fake payment. $220 counts only the cash and forgets the jacket.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="A">
+      <legend><span class="quiz-n">3</span>An email says you've won a $5,000 scholarship. To receive it, you just need to pay a $50 processing fee. What's going on?</legend>
+      <label><input type="radio" name="fl3-3" value="A"><span>It's a scam: you never pay to get a scholarship</span></label>
+      <label><input type="radio" name="fl3-3" value="B"><span>It's a good deal, since $50 is much less than $5,000</span></label>
+      <label><input type="radio" name="fl3-3" value="C"><span>It's fine as long as you pay with a payment app</span></label>
+      <label><input type="radio" name="fl3-3" value="D"><span>It's normal: most scholarships charge a small fee</span></label>
+      <p class="quiz-why">Real scholarships give you money; they don't charge you to receive it. The "small fee compared with a big prize" math is exactly how the scam hooks people.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">4</span>A friend's account messages you: "I sent my login code to your phone by mistake, can you text it to me?" What should you do?</legend>
+      <label><input type="radio" name="fl3-4" value="A"><span>Send it, since it's from a friend</span></label>
+      <label><input type="radio" name="fl3-4" value="B"><span>Send only the first half of the code</span></label>
+      <label><input type="radio" name="fl3-4" value="C"><span>Don't send it, and check with your friend another way, like calling them</span></label>
+      <label><input type="radio" name="fl3-4" value="D"><span>Send it, then change your password afterward</span></label>
+      <p class="quiz-why">That code is most likely for your own account, and your friend's account may already be taken over. Never share a one-time code; changing your password afterward may be too late.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">5</span>You discover a credit card was opened in your name. Which response makes the most sense?</legend>
+      <label><input type="radio" name="fl3-5" value="A"><span>Ignore it; it will go away once you turn 18</span></label>
+      <label><input type="radio" name="fl3-5" value="B"><span>Contact the company, report it at IdentityTheft.gov and freeze your credit for free</span></label>
+      <label><input type="radio" name="fl3-5" value="C"><span>Pay off the card so it doesn't hurt your credit</span></label>
+      <label><input type="radio" name="fl3-5" value="D"><span>Pay a fee to someone who calls offering to fix it</span></label>
+      <p class="quiz-why">Reporting fast and freezing your credit limit the damage and start the recovery. Paying off a debt you never took on isn't your job, and a stranger calling to "fix it" for a fee may be a second scam.</p>
+    </fieldset>
+    <div class="quiz-actions">
+      <button type="submit" class="btn btn-primary">Check answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </form>
+  <nav class="lesson-nav" aria-label="Lesson 3">
+    <a href="#fl-lesson-2" class="btn btn-outline">← Lesson 2</a>
+    <a href="#fl" class="lesson-nav-all">Course overview</a>
+    <a href="#fl-lesson-4" class="btn btn-primary is-next">Next: Insurance: paying a little to avoid losing a lot →</a>
+  </nav>
+</article>
+      </section>
+      <section class="view view-lesson" id="fl-lesson-4" data-view data-course="fl" data-title="Financial Literacy · Lesson 4: Insurance: paying a little to avoid losing a lot">
+<article class="lesson" data-lesson="4" data-title="Insurance: paying a little to avoid losing a lot" data-minutes="18" data-summary="How insurance works, premiums vs. deductibles, and the basics of auto, health, renters and phone coverage." aria-labelledby="fl-lesson-4-title">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 4 of 6 · about 18 minutes</span>
+    <h2 id="fl-lesson-4-title">Insurance: paying a little to avoid losing a lot</h2>
+    <p class="lede">Insurance is a deal: you pay a small, known cost every month so that one bad day can't wipe out years of savings.</p>
+    <div class="lesson-goals">
+      <h3>By the end of this lesson you'll be able to</h3>
+      <ul>
+        <li>Explain how insurance works and read the words on a policy: premium, deductible, copay, coinsurance and more.</li>
+        <li>Compare a low-premium plan with a low-deductible plan for a given year's bills.</li>
+        <li>Tell apart the main kinds of auto, health and renters coverage, and spot when insurance isn't worth buying.</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <section class="lesson-part">
+      <h3>What insurance actually does</h3>
+      <p>Some losses are small: a lost water bottle. Others are huge and rare: a car crash, a hospital stay, an apartment fire. You can't know in advance whether one will happen to you this year, but across a big group of people, it's fairly predictable how many will happen to <em>someone</em>.</p>
+      <p>That's the idea behind insurance: <strong>pooling risk</strong>. Imagine 100 students who each own a $1,000 laptop, and in a typical year about two of those laptops get destroyed. If everyone pays $20 into a shared pot, the pot holds $2,000, which is enough to replace both. Each student trades a small, certain cost ($20) for protection against a large, uncertain one ($1,000).</p>
+      <p>Real insurers work the same way, but they also cover their costs and profit, so on average people pay in more than they get back. That's fine: you're not buying insurance to come out ahead. You're buying it so that a disaster you <em>can't</em> afford becomes a cost you <em>can</em>.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>The words on every policy</h3>
+      <p>The same words show up whether you're insuring a car, your health or an apartment.</p>
+      <ul>
+        <li>Your <strong>policy</strong> is the contract: what's covered, what isn't, and what it costs.</li>
+        <li>The <strong>premium</strong> is what you pay to keep the policy active, usually every month. You pay it whether or not anything goes wrong.</li>
+        <li>When something does go wrong, you file a <strong>claim</strong>: a request for the insurer to pay.</li>
+        <li>The <strong>deductible</strong> is how much of the covered costs you pay yourself before the insurer starts paying.</li>
+        <li>Health plans often add a <strong>copay</strong> (a flat fee, like a set amount per doctor visit) and <strong>coinsurance</strong> (a percentage you share after the deductible). With 20% coinsurance, a $1,000 covered bill means you pay $200 and the plan pays $800.</li>
+        <li>The <strong>out-of-pocket maximum</strong> is the most you'll pay for covered care in a year; after that, the plan pays 100% of covered costs. Your premiums don't count toward it.</li>
+        <li>A <strong>coverage limit</strong> is the most the insurer will pay. Anything above it is on you.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Low premium or low deductible?</h3>
+      <p>Most insurance lets you choose between two kinds of plans, and they pull in opposite directions:</p>
+      <ul>
+        <li><strong>Low premium, high deductible:</strong> cheaper every month, but you pay more yourself when something happens.</li>
+        <li><strong>High premium, low deductible:</strong> more expensive every month, but less of a hit when something happens.</li>
+      </ul>
+      <p>Neither is always better. If you rarely need the coverage, the low premium usually wins. If you expect big bills, the low deductible usually wins. And whichever plan you pick, you need to be able to pay its deductible if the worst happens. Try the calculator below to compare two plans for any amount of bills.</p>
+      <div class="lesson-tool" data-tool="insurance">
+      <h4>Try it: compare two plans for a year</h4>
+      <div class="tool-inputs">
+        <label>Plan A premium per month ($)<input type="number" inputmode="decimal" min="0" step="1" value="150" data-in="premA"></label>
+        <label>Plan A deductible ($)<input type="number" inputmode="decimal" min="0" step="50" value="2500" data-in="dedA"></label>
+        <label>Plan B premium per month ($)<input type="number" inputmode="decimal" min="0" step="1" value="250" data-in="premB"></label>
+        <label>Plan B deductible ($)<input type="number" inputmode="decimal" min="0" step="50" value="500" data-in="dedB"></label>
+        <label>Covered bills this year ($)<input type="number" inputmode="decimal" min="0" step="50" value="6000" data-in="bills"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div><span>Plan A, year's cost</span><strong data-out="costA">—</strong></div>
+        <div><span>Plan B, year's cost</span><strong data-out="costB">—</strong></div>
+        <div class="is-main"><span>Cheaper this year</span><strong data-out="better">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">Simplified: premiums for 12 months plus the bills up to the deductible. It ignores copays, coinsurance and out-of-pocket maximums.</p>
+    </div>
+    </section>
+
+    <aside class="lesson-callout example">
+      <h4>Worked example</h4>
+      <p>A few years from now, Zoe starts a full-time job that offers two health plans (these are example numbers). <strong>Plan A</strong> costs $150 a month with a $2,500 yearly deductible. <strong>Plan B</strong> costs $250 a month with a $500 yearly deductible. To keep it simple, we'll say that once the deductible is met, the plan pays the rest, and we'll ignore copays, coinsurance and the out-of-pocket maximum.</p>
+      <p>Her yearly cost is <strong>premium × 12 + whichever is smaller: her covered bills or the deductible</strong>. Here's how each plan does in a quiet year and in a rough one:</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col"></th><th scope="col">Plan A</th><th scope="col">Plan B</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Premiums for the year</th><td>$150 × 12 = $1,800</td><td>$250 × 12 = $3,000</td></tr>
+          <tr><th scope="row">Low-bill year: $300 of covered bills</th><td>$1,800 + $300 = $2,100</td><td>$3,000 + $300 = $3,300</td></tr>
+          <tr><th scope="row">High-bill year: $6,000 of covered bills</th><td>$1,800 + $2,500 = $4,300</td><td>$3,000 + $500 = $3,500</td></tr>
+        </tbody>
+      </table>
+      <p>In the low-bill year, Plan A saves Zoe <strong>$1,200</strong>. In the high-bill year, Plan B saves her <strong>$800</strong>. The two plans cost exactly the same, $3,500, when her covered bills are $1,700. Below that, Plan A is cheaper; above it, Plan B is. Type these numbers into the calculator to check.</p>
+    </aside>
+
+    <aside class="lesson-callout mistake">
+      <h4>Common mistake</h4>
+      <p>Picking the lowest premium without asking "could I pay the deductible tomorrow?" A plan that saves you $100 a month doesn't help much if a $2,500 bill arrives and you have $200 in the bank. A high deductible works best when you have an emergency fund that could cover it.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Auto insurance</h3>
+      <p>Almost every state requires drivers to carry <strong>liability coverage</strong>. It pays for damage and injuries <em>you</em> cause to other people and their property, up to your policy's coverage limits. It does not pay to fix your own car. That's what the other two main types are for:</p>
+      <ul>
+        <li><strong>Collision</strong> pays to repair your car after a crash, whether you hit another car or a pole.</li>
+        <li><strong>Comprehensive</strong> covers damage that isn't a crash: theft, hail, fire, vandalism or hitting a deer.</li>
+      </ul>
+      <p>Collision and comprehensive are usually optional, though a lender typically requires them if you have a car loan. Lesson 6 looks at buying a car.</p>
+      <p>Teen drivers usually pay more than almost anyone else, because insurers see new drivers as more likely to crash. Premiums can come down in a few general ways: many insurers offer good-student discounts, discounts for finishing a driver's education course, and lower rates for a clean driving record. Staying on a family policy, driving a less expensive car and choosing a higher deductible can also help.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Health, renters and phone plans</h3>
+      <p><strong>Health insurance.</strong> Young adults can generally stay on a parent's health plan until age 26, even if they move out or aren't in school. Most plans have a <strong>network</strong> of doctors and hospitals that have agreed on prices with the plan. Staying <strong>in-network</strong> costs you less; going <strong>out-of-network</strong> can cost much more or may not be covered at all. Check before you book an appointment.</p>
+      <p><strong>Renters insurance.</strong> When you rent, your landlord's insurance covers the building, not your stuff. Renters insurance covers your belongings (clothes, laptop, furniture) if they're stolen or damaged by something like a fire, and it usually includes liability coverage if someone is hurt in your home. It's usually inexpensive compared with what it would cost to replace everything you own.</p>
+      <p><strong>Phone and device protection plans.</strong> Stores and carriers often offer a plan for a monthly fee, and many also charge a deductible each time you file a claim. Before signing up, add it up: a plan at an example price of $10 a month costs $120 a year and $240 over two years, before any deductible. Compare that with what a repair or replacement would actually cost you.</p>
+      <p><strong>When insurance isn't worth it.</strong> Insurance makes the most sense for losses you couldn't cover yourself. For small, affordable losses, like cheap earbuds or a phone case, you'll usually do better by skipping the coverage and keeping that money in savings to pay for the rare replacement.</p>
+    </section>
+
+    <aside class="lesson-callout key">
+      <h4>Key idea</h4>
+      <p>Insure the losses you couldn't afford, not the ones you could. When choosing a plan, look at the total yearly cost, premiums plus what you'd pay out of pocket, not just the monthly price.</p>
+    </aside>
+
+    <section class="lesson-terms">
+      <h3>Key terms</h3>
+      <dl>
+        <div><dt>Policy</dt><dd>The insurance contract: what's covered, what isn't, and the cost.</dd></div>
+        <div><dt>Premium</dt><dd>What you pay, often monthly, to keep your coverage active.</dd></div>
+        <div><dt>Deductible</dt><dd>The amount of covered costs you pay yourself before insurance starts paying.</dd></div>
+        <div><dt>Copay</dt><dd>A flat fee you pay for a covered service, like a doctor visit.</dd></div>
+        <div><dt>Coinsurance</dt><dd>The percentage of a covered cost you pay after meeting your deductible.</dd></div>
+        <div><dt>Out-of-pocket maximum</dt><dd>The most you'll pay for covered health care in a year, not counting premiums.</dd></div>
+        <div><dt>Coverage limit</dt><dd>The most an insurer will pay on a claim or policy.</dd></div>
+        <div><dt>Claim</dt><dd>A request asking your insurer to pay for a covered loss.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-try">
+      <h3>Try it yourself</h3>
+      <p>Ask a parent or guardian if you can look at a summary of one of your family's policies, auto or health. Find the premium, the deductible and, for health insurance, the out-of-pocket maximum. Then use the calculator to see what that plan would cost in a year with no bills, and in a year with a big one.</p>
+    </section>
+  </div>
+
+  <form class="quiz" data-quiz>
+    <h3>Check your understanding</h3>
+    <p class="quiz-intro">Five questions. Get at least four right to complete the lesson.</p>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">1</span>What is a deductible?</legend>
+      <label><input type="radio" name="fl4-1" value="A"><span>The monthly price you pay to keep your coverage</span></label>
+      <label><input type="radio" name="fl4-1" value="B"><span>The most the insurer will ever pay</span></label>
+      <label><input type="radio" name="fl4-1" value="C"><span>The amount of covered costs you pay before insurance starts paying</span></label>
+      <label><input type="radio" name="fl4-1" value="D"><span>A flat fee you pay each time you see a doctor</span></label>
+      <p class="quiz-why">The deductible is your share before the insurer pays. The monthly price is the premium, the most the insurer pays is the coverage limit, and a flat fee per visit is a copay.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">2</span>A plan costs $100 a month with a $1,000 yearly deductible. You have $400 of covered bills this year. Using this lesson's simplified method, what's your yearly cost?</legend>
+      <label><input type="radio" name="fl4-2" value="A"><span>$1,400</span></label>
+      <label><input type="radio" name="fl4-2" value="B"><span>$1,600</span></label>
+      <label><input type="radio" name="fl4-2" value="C"><span>$2,200</span></label>
+      <label><input type="radio" name="fl4-2" value="D"><span>$2,600</span></label>
+      <p class="quiz-why">Premiums are $100 × 12 = $1,200. Your bills ($400) are less than the deductible, so you pay the $400: $1,200 + $400 = $1,600. $2,200 adds the whole deductible, but you only pay the deductible if your bills reach it.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="A">
+      <legend><span class="quiz-n">3</span>You back into a parked car and dent its door. Which part of your auto insurance pays to fix the other car?</legend>
+      <label><input type="radio" name="fl4-3" value="A"><span>Liability</span></label>
+      <label><input type="radio" name="fl4-3" value="B"><span>Collision</span></label>
+      <label><input type="radio" name="fl4-3" value="C"><span>Comprehensive</span></label>
+      <label><input type="radio" name="fl4-3" value="D"><span>Renters insurance</span></label>
+      <p class="quiz-why">Liability pays for damage you cause to other people's property. Collision is tempting, but it pays to repair your own car, not someone else's.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="D">
+      <legend><span class="quiz-n">4</span>A storm damages your apartment building's roof, and rain ruins your laptop. What does renters insurance typically cover?</legend>
+      <label><input type="radio" name="fl4-4" value="A"><span>The roof, but not the laptop</span></label>
+      <label><input type="radio" name="fl4-4" value="B"><span>Both the roof and the laptop</span></label>
+      <label><input type="radio" name="fl4-4" value="C"><span>Neither; your rent already covers both</span></label>
+      <label><input type="radio" name="fl4-4" value="D"><span>The laptop, but not the roof</span></label>
+      <p class="quiz-why">Renters insurance covers your belongings. The building is the landlord's responsibility and is covered by the landlord's insurance, not yours, and your rent doesn't insure your stuff.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">5</span>Which is the weakest case for buying insurance?</legend>
+      <label><input type="radio" name="fl4-5" value="A"><span>Liability coverage when you drive</span></label>
+      <label><input type="radio" name="fl4-5" value="B"><span>Health insurance</span></label>
+      <label><input type="radio" name="fl4-5" value="C"><span>A protection plan on a pair of $20 earbuds</span></label>
+      <label><input type="radio" name="fl4-5" value="D"><span>Renters insurance for everything you own</span></label>
+      <p class="quiz-why">Losing $20 earbuds is a small, affordable loss, so paying for coverage rarely makes sense. The others protect against costs that could be far bigger than you could pay on your own.</p>
+    </fieldset>
+    <div class="quiz-actions">
+      <button type="submit" class="btn btn-primary">Check answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </form>
+  <nav class="lesson-nav" aria-label="Lesson 4">
+    <a href="#fl-lesson-3" class="btn btn-outline">← Lesson 3</a>
+    <a href="#fl" class="lesson-nav-all">Course overview</a>
+    <a href="#fl-lesson-5" class="btn btn-primary is-next">Next: Paying for college →</a>
+  </nav>
+</article>
+      </section>
+      <section class="view view-lesson" id="fl-lesson-5" data-view data-course="fl" data-title="Financial Literacy · Lesson 5: Paying for college">
+<article class="lesson" data-lesson="5" data-title="Paying for college" data-minutes="17" data-summary="Cost of attendance vs. net price, the FAFSA, the four kinds of aid, student loans and comparing aid offers." aria-labelledby="fl-lesson-5-title">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 5 of 6 · about 17 minutes</span>
+    <h2 id="fl-lesson-5-title">Paying for college</h2>
+    <p class="lede">The price on a college's website is rarely what you'll pay, and the biggest aid offer isn't always the best deal.</p>
+    <div class="lesson-goals">
+      <h3>By the end of this lesson you'll be able to</h3>
+      <ul>
+        <li>Tell the difference between cost of attendance, sticker price and net price.</li>
+        <li>Explain what the FAFSA does and which kinds of aid have to be repaid.</li>
+        <li>Compare two aid offers by net price and by how much of each is loans.</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <section class="lesson-part">
+      <h3>What college really costs</h3>
+      <p>A year of college costs more than tuition. The <strong>cost of attendance</strong> is a college's estimate of everything a year will take:</p>
+      <ul>
+        <li><strong>Tuition and fees</strong>: what the college charges for classes and services.</li>
+        <li><strong>Housing and food</strong>: a dorm and meal plan, or rent and groceries.</li>
+        <li><strong>Books and supplies</strong>: textbooks, a laptop, lab materials.</li>
+        <li><strong>Transportation</strong>: getting to campus and home for breaks.</li>
+        <li><strong>Personal expenses</strong>: a phone bill, toiletries, laundry, the occasional meal out.</li>
+      </ul>
+      <p>The <strong>sticker price</strong> is the full, published price before any help. Many students don't pay it. What matters is the <strong>net price</strong>: the cost of attendance minus the grants and scholarships you receive, which is money you don't pay back.</p>
+      <p>That means a college with a scary sticker price can end up cheaper than one that looks affordable. To get an early estimate, look for the <strong>net price calculator</strong> on each college's website. You answer questions about your family's finances and it estimates what you might actually pay there. It's only an estimate, but it's far more useful than the sticker price.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>The FAFSA</h3>
+      <p>The <strong>FAFSA</strong> (Free Application for Federal Student Aid) is the form that opens the door to federal grants, work-study and federal student loans. Many colleges and states also use your FAFSA to decide their own aid, so skipping it can cost you money from several places at once.</p>
+      <p>A few things to know:</p>
+      <ul>
+        <li>You file it <strong>every year</strong> you want aid, not just once.</li>
+        <li>It asks about your family's income, so you'll usually fill it out with a parent or guardian.</li>
+        <li>It's free. The official site is <strong>StudentAid.gov</strong>, and that's also where to check the current opening date and deadlines. Colleges and states can have their own, earlier deadlines, so check those too.</li>
+      </ul>
+      <p>Even if you think your family earns too much to qualify, filing can still matter: some colleges won't consider you for their own aid without it.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>The four kinds of aid</h3>
+      <p>When a college accepts you, it sends an <strong>aid offer</strong> listing the help it can give. Everything on it falls into one of four groups:</p>
+      <ul>
+        <li><strong>Grants</strong> are usually based on financial need and come from the federal government, your state or the college. You generally don't repay them.</li>
+        <li><strong>Scholarships</strong> are often based on grades, talents, activities or background, and come from colleges and outside groups. You generally don't repay them either.</li>
+        <li><strong>Work-study</strong> is a chance to earn money at a part-time job, often on campus. You earn it as you work, so it isn't taken off your bill up front.</li>
+        <li><strong>Loans</strong> are borrowed money. <strong>You repay them, with interest.</strong></li>
+      </ul>
+      <p>Only grants and scholarships lower your net price. Work-study is a paycheck, and loans are a bill you'll pay later. That's why comparing offers takes more than looking at the biggest total: an aid offer full of loans isn't free money.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Student loans: federal vs. private</h3>
+      <p>If you borrow, the kind of loan matters as much as the amount.</p>
+      <ul>
+        <li><strong>Federal student loans</strong> come from the US government through the FAFSA. They have fixed interest rates, so your rate won't change over the life of the loan. They also come with protections, including income-driven repayment options that can lower your monthly payment if your income is low.</li>
+        <li><strong>Private student loans</strong> come from banks, credit unions and other lenders. Students often need a <strong>co-signer</strong>, usually a parent, who is equally responsible for the debt. Rates can be fixed or variable, and they generally offer fewer protections if you have trouble paying.</li>
+      </ul>
+      <p>Because of those differences, many families look at federal loans first and private loans only to fill a remaining gap. Either way, a loan is a promise to make monthly payments for years. Try the calculator below: enter an amount borrowed, an APR and a number of years to see the monthly payment and how much of what you repay is interest.</p>
+      <div class="lesson-tool" data-tool="studentloan">
+      <h4>Try it: student loan payment</h4>
+      <div class="tool-inputs">
+        <label>Amount borrowed ($)<input type="number" inputmode="decimal" min="0" step="100" value="16000" data-in="amount"></label>
+        <label>Interest rate, APR (%)<input type="number" inputmode="decimal" min="0" step="0.1" value="6" data-in="apr"></label>
+        <label>Years to repay<input type="number" inputmode="decimal" min="0" step="1" value="10" data-in="years"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div class="is-main"><span>Monthly payment</span><strong data-out="monthly">—</strong></div>
+        <div><span>Total interest</span><strong data-out="interest">—</strong></div>
+        <div><span>Total repaid</span><strong data-out="total">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">A fixed payment every month with interest at APR ÷ 12. The rate here is an example you enter, not a current federal rate.</p>
+    </div>
+    </section>
+
+    <aside class="lesson-callout example">
+      <h4>Worked example</h4>
+      <p>Andre got into two colleges. Here are their first-year offers. All numbers are examples, not real college prices.</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col">One year</th><th scope="col">College A</th><th scope="col">College B</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cost of attendance</th><td>$26,000</td><td>$42,000</td></tr>
+          <tr><th scope="row">Grants and scholarships</th><td>$10,000</td><td>$18,000</td></tr>
+          <tr><th scope="row">Net price</th><td>$16,000</td><td>$24,000</td></tr>
+          <tr><th scope="row">Loans offered</th><td>$4,000</td><td>$12,000</td></tr>
+          <tr><th scope="row">Left for his family to cover</th><td>$12,000</td><td>$12,000</td></tr>
+        </tbody>
+      </table>
+      <p>College B's letter looks bigger: $18,000 + $12,000 = <strong>$30,000 in "aid"</strong>, against $14,000 from College A. But College B's net price is $8,000 higher, and it fills that gap with loans. Loans cover <strong>half</strong> of B's net price ($12,000 of $24,000), compared with a <strong>quarter</strong> at A ($4,000 of $16,000). His family pays the same $12,000 this year either way; the difference is how much Andre owes later.</p>
+      <p>If the offers stay the same for four years, Andre would borrow $4,000 × 4 = <strong>$16,000</strong> at College A, or $12,000 × 4 = <strong>$48,000</strong> at College B. With an assumed APR of 6% (an example rate, not a current federal rate) repaid over 10 years:</p>
+      <ul>
+        <li>College A: $16,000 → <strong>$177.63 a month</strong>, $5,315.60 in total interest, $21,315.60 repaid.</li>
+        <li>College B: $48,000 → <strong>$532.90 a month</strong>, $15,948.00 in total interest, $63,948.00 repaid.</li>
+      </ul>
+      <p>That's a difference of over $350 a month for ten years. (Real payments can differ by a few cents at the end, and some loans build interest while you're still in school, which would make the real totals higher.)</p>
+    </aside>
+
+    <aside class="lesson-callout mistake">
+      <h4>Common mistake</h4>
+      <p>Picking the college with the biggest "total aid" number. Aid offers often add grants, work-study and loans into one figure, and they don't all look the same from college to college. Pull out the grants and scholarships, work out the net price yourself, and then check how much of what's left is loans.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>How much to borrow, and cheaper paths</h3>
+      <p>A common guideline is to <strong>try to keep your total student debt below what you expect to earn in your first year</strong> after graduating. It's a rule of thumb, not a law, and pay varies a lot by career, but it's a useful check. If Andre expects to start at around $45,000 a year (an example figure), College A's $16,000 is well under that, while College B's $48,000 is over it.</p>
+      <p>There are also ways to lower the cost of a degree:</p>
+      <ul>
+        <li><strong>Community college, then transfer.</strong> Taking your first one or two years at a community college usually costs much less. Check early that your credits will transfer to the four-year school you want.</li>
+        <li><strong>In-state public colleges.</strong> Public colleges usually charge students from their own state less than students from other states.</li>
+        <li><strong>Earning credit in high school.</strong> Dual enrollment classes and AP exams can count toward a degree, depending on each college's rules, which means fewer courses to pay for later.</li>
+      </ul>
+    </section>
+
+    <aside class="lesson-callout key">
+      <h4>Key idea</h4>
+      <p>Judge a college by its net price, not its sticker price, and read every aid offer for how much of it you'll have to pay back.</p>
+    </aside>
+
+    <section class="lesson-terms">
+      <h3>Key terms</h3>
+      <dl>
+        <div><dt>Cost of attendance</dt><dd>A college's estimate of a full year's costs: tuition and fees, housing, food, books, transportation and personal expenses.</dd></div>
+        <div><dt>Sticker price</dt><dd>The full published price before any financial aid.</dd></div>
+        <div><dt>Net price</dt><dd>Cost of attendance minus grants and scholarships. Loans don't lower it.</dd></div>
+        <div><dt>FAFSA</dt><dd>Free Application for Federal Student Aid; the form used for federal aid and by many colleges and states.</dd></div>
+        <div><dt>Grant</dt><dd>Aid, usually based on need, that you generally don't repay.</dd></div>
+        <div><dt>Scholarship</dt><dd>Aid, often based on achievement or background, that you generally don't repay.</dd></div>
+        <div><dt>Work-study</dt><dd>Aid you earn through a part-time job while in school.</dd></div>
+        <div><dt>Co-signer</dt><dd>A person who signs a loan with you and is equally responsible for repaying it.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-try">
+      <h3>Try it yourself</h3>
+      <p>Pick two colleges you're curious about and find the net price calculator on each one's website. With a parent or guardian if you can, run both. Write down each college's estimated cost of attendance, grants and scholarships, and net price. Which one is cheaper for you, and does that match what the sticker prices suggested?</p>
+    </section>
+  </div>
+
+  <form class="quiz" data-quiz>
+    <h3>Check your understanding</h3>
+    <p class="quiz-intro">Five questions. Get at least four right to complete the lesson.</p>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">1</span>A college's cost of attendance is $30,000. You're offered $12,000 in grants and scholarships and $6,000 in loans. What is your net price?</legend>
+      <label><input type="radio" name="fl5-1" value="A"><span>$12,000</span></label>
+      <label><input type="radio" name="fl5-1" value="B"><span>$18,000</span></label>
+      <label><input type="radio" name="fl5-1" value="C"><span>$24,000</span></label>
+      <label><input type="radio" name="fl5-1" value="D"><span>$30,000</span></label>
+      <p class="quiz-why">Net price is cost of attendance minus grants and scholarships: $30,000 − $12,000 = $18,000. Subtracting the loans too gives $12,000, but loans are money you pay back, so they don't lower the price.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="D">
+      <legend><span class="quiz-n">2</span>Which kind of financial aid do you have to repay?</legend>
+      <label><input type="radio" name="fl5-2" value="A"><span>Grants</span></label>
+      <label><input type="radio" name="fl5-2" value="B"><span>Scholarships</span></label>
+      <label><input type="radio" name="fl5-2" value="C"><span>Work-study</span></label>
+      <label><input type="radio" name="fl5-2" value="D"><span>Loans</span></label>
+      <p class="quiz-why">Loans are borrowed money you repay with interest. Work-study isn't repaid, but it isn't free either: you earn it by working.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="A">
+      <legend><span class="quiz-n">3</span>Which statement about the FAFSA is true?</legend>
+      <label><input type="radio" name="fl5-3" value="A"><span>You file it each year you want aid, and many colleges and states use it for their own aid</span></label>
+      <label><input type="radio" name="fl5-3" value="B"><span>You file it once, before your first year, and it covers all four years</span></label>
+      <label><input type="radio" name="fl5-3" value="C"><span>It's only used for federal loans</span></label>
+      <label><input type="radio" name="fl5-3" value="D"><span>There's a fee to file it, paid when you submit</span></label>
+      <p class="quiz-why">The FAFSA is filed every year you want aid, and colleges and states often use it too. Filing once isn't enough, and it's free: that's what the first F stands for.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">4</span>Which is generally true of federal student loans compared with private ones?</legend>
+      <label><input type="radio" name="fl5-4" value="A"><span>They usually require a co-signer</span></label>
+      <label><input type="radio" name="fl5-4" value="B"><span>Their interest rate can rise over the life of the loan</span></label>
+      <label><input type="radio" name="fl5-4" value="C"><span>They have fixed rates and offer income-driven repayment options</span></label>
+      <label><input type="radio" name="fl5-4" value="D"><span>They don't have to be repaid if you graduate</span></label>
+      <p class="quiz-why">Federal student loans have fixed rates and protections such as income-driven repayment. Needing a co-signer is typical of private loans, and every loan has to be repaid.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">5</span>You expect to earn about $40,000 in your first year after college. Which total student debt fits the common guideline of staying below that?</legend>
+      <label><input type="radio" name="fl5-5" value="A"><span>$52,000</span></label>
+      <label><input type="radio" name="fl5-5" value="B"><span>$35,000</span></label>
+      <label><input type="radio" name="fl5-5" value="C"><span>$48,000</span></label>
+      <label><input type="radio" name="fl5-5" value="D"><span>$60,000</span></label>
+      <p class="quiz-why">Only $35,000 is below the expected $40,000 first-year pay. $48,000 might look close, but it's more than a full year's expected earnings. Remember it's a rule of thumb, not a law.</p>
+    </fieldset>
+    <div class="quiz-actions">
+      <button type="submit" class="btn btn-primary">Check answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </form>
+  <nav class="lesson-nav" aria-label="Lesson 5">
+    <a href="#fl-lesson-4" class="btn btn-outline">← Lesson 4</a>
+    <a href="#fl" class="lesson-nav-all">Course overview</a>
+    <a href="#fl-lesson-6" class="btn btn-primary is-next">Next: Big purchases: your first car and your first apartment →</a>
+  </nav>
+</article>
+      </section>
+      <section class="view view-lesson" id="fl-lesson-6" data-view data-course="fl" data-title="Financial Literacy · Lesson 6: Big purchases: your first car and your first apartment">
+<article class="lesson" data-lesson="6" data-title="Big purchases: your first car and your first apartment" data-minutes="18" data-summary="The full cost of a car, shopping for a car loan, renting basics, reading a lease and protecting your deposit." aria-labelledby="fl-lesson-6-title">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 6 of 6 · about 18 minutes</span>
+    <h2 id="fl-lesson-6-title">Big purchases: your first car and your first apartment</h2>
+    <p class="lede">The sticker price and the monthly rent are only the start. The real cost of a car or an apartment is everything that comes with it.</p>
+    <div class="lesson-goals">
+      <h3>By the end of this lesson you'll be able to</h3>
+      <ul>
+        <li>Add up the total monthly cost of owning a car, not just the payment.</li>
+        <li>Compare car loans and explain why a longer loan costs more in total.</li>
+        <li>Estimate what you can afford in rent, read the key parts of a lease and protect your deposit.</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <section class="lesson-part">
+      <h3>What a car really costs</h3>
+      <p>When people talk about a car's cost, they usually mean the price or the monthly payment. The <strong>total cost of ownership</strong> is bigger. Every month or year you'll also pay for:</p>
+      <ul>
+        <li><strong>Insurance.</strong> Almost every state requires auto liability insurance, and a lender usually requires more coverage. Lesson 4 explains how premiums and deductibles work.</li>
+        <li><strong>Gas</strong> (or charging), which depends on how far you drive.</li>
+        <li><strong>Maintenance and repairs:</strong> oil changes, tires, brakes and surprise repairs.</li>
+        <li><strong>Registration and fees</strong> your state charges to keep the car on the road, often yearly.</li>
+      </ul>
+      <p>Here's an example with made-up numbers: a $300 payment, $150 insurance, $120 gas, $50 set aside for maintenance, and $20 for registration (a $240 yearly fee spread over 12 months). That car costs <strong>$640 a month</strong>, more than twice the payment.</p>
+      <p><strong>New or used?</strong> New cars generally lose value fastest in their first few years, so the first owner absorbs the biggest drop. A used car lets someone else take that hit, but it may need more repairs and has less warranty left. Compare the total cost of the specific cars you're considering.</p>
+      <p>If you buy used, a few checks protect you:</p>
+      <ul>
+        <li>Get a <strong>vehicle history report</strong> using the car's VIN (vehicle identification number) to look for past accidents, flood damage or a salvage title.</li>
+        <li>Pay for an <strong>independent inspection</strong> by a mechanic you choose, not one the seller picks.</li>
+        <li>Test drive it, check for open safety recalls, and make sure the seller's name and the car's VIN match the title.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-part">
+      <h3>Shop for the loan before the car</h3>
+      <p>Many people borrow to buy a car, and it pays to find the loan first. You can apply to a bank or credit union for <strong>preapproval</strong>: the lender reviews your finances and tells you how much it will lend and at what rate. Then you walk into the dealership knowing your budget and holding a rate to beat. If the dealer offers financing, compare its <strong>APR</strong> (annual percentage rate, the yearly cost of borrowing including interest) with yours, and pick whichever costs less.</p>
+      <p>The other big choice is the <strong>loan term</strong>, how many months you take to pay. A longer term spreads the same amount over more payments, so each payment is smaller. But you're borrowing the money for longer, so you pay interest for longer, and the total you pay goes up. A bigger <strong>down payment</strong> (cash you pay up front) shrinks the loan and the interest.</p>
+      <p>Try the calculator below: enter a price, down payment, APR and number of months, then change only the months and watch what happens to the total interest.</p>
+      <div class="lesson-tool" data-tool="carloan">
+      <h4>Try it: car loan calculator</h4>
+      <div class="tool-inputs">
+        <label>Car price ($)<input type="number" inputmode="decimal" min="0" step="100" value="18000" data-in="price"></label>
+        <label>Down payment ($)<input type="number" inputmode="decimal" min="0" step="100" value="3000" data-in="down"></label>
+        <label>Interest rate, APR (%)<input type="number" inputmode="decimal" min="0" step="0.1" value="7" data-in="apr"></label>
+        <label>Loan length (months)<input type="number" inputmode="decimal" min="0" step="12" value="72" data-in="months"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div><span>Amount borrowed</span><strong data-out="borrowed">—</strong></div>
+        <div class="is-main"><span>Monthly payment</span><strong data-out="monthly">—</strong></div>
+        <div><span>Total interest</span><strong data-out="interest">—</strong></div>
+        <div><span>Total cost of the car</span><strong data-out="total">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">A fixed payment every month with interest at APR ÷ 12. Taxes, fees and insurance aren't included.</p>
+    </div>
+    </section>
+
+    <aside class="lesson-callout example">
+      <h4>Worked example</h4>
+      <p>Nadia finds a used car for <strong>$18,000</strong>. She puts <strong>$3,000</strong> down, so she borrows <strong>$15,000</strong>. Her credit union preapproves her at an assumed APR of <strong>7%</strong>. She compares a 36-month loan with a 72-month loan.</p>
+      <table class="lesson-table">
+        <thead><tr><th scope="col">Loan length</th><th scope="col">36 months</th><th scope="col">72 months</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Amount borrowed</th><td>$15,000.00</td><td>$15,000.00</td></tr>
+          <tr><th scope="row">Monthly payment</th><td>$463.16</td><td>$255.74</td></tr>
+          <tr><th scope="row">Total interest</th><td>$1,673.76</td><td>$3,413.28</td></tr>
+          <tr><th scope="row">Total cost (down payment + all payments)</th><td>$19,673.76</td><td>$21,413.28</td></tr>
+        </tbody>
+      </table>
+      <p>The 72-month loan cuts her payment by $207.42 a month, but she pays <strong>$1,739.52 more</strong> in interest for the same car. Doubling the term more than doubled the interest. (In real life, the last payment may differ by a few cents because of rounding.)</p>
+    </aside>
+
+    <aside class="lesson-callout mistake">
+      <h4>Common mistake</h4>
+      <p>Shopping by monthly payment. If a seller asks "what payment are you looking for?", a lower number can always be reached by stretching the loan, which quietly raises the total cost. Because cars lose value, a long loan can also leave you owing more than the car is worth. Negotiate the price first, then compare loans by total cost.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Your first apartment: rent and move-in costs</h3>
+      <p>A common guideline is to keep rent at or below about <strong>30% of your gross income</strong> (what you earn before taxes). It's a rule of thumb, not a law. If you earn $3,000 a month before taxes, 30% is <strong>$900</strong>.</p>
+      <p>Moving in costs much more than one month's rent. Expect:</p>
+      <ul>
+        <li><strong>First month's rent</strong>, and sometimes the last month's too.</li>
+        <li>A <strong>security deposit</strong>, often around one month's rent, held by the landlord to cover unpaid rent or damage beyond normal wear.</li>
+        <li><strong>Application fees</strong> for background and credit checks, usually per adult applicant.</li>
+        <li><strong>Utility setup</strong>: electricity, gas, internet, and sometimes a deposit if you have no credit history.</li>
+      </ul>
+      <p>For a $1,000 apartment with a $1,000 deposit, a $40 application fee and $100 in utility setup, you'd need <strong>$2,140</strong> before you sleep there once, before furniture or moving costs.</p>
+    </section>
+
+    <section class="lesson-part">
+      <h3>The lease, roommates and your deposit</h3>
+      <p>A <strong>lease</strong> is a legal contract. Read all of it before you sign, and ask about anything unclear. Look especially for:</p>
+      <ul>
+        <li><strong>The term:</strong> how long it lasts (often 12 months) and what happens at the end.</li>
+        <li><strong>The deposit:</strong> what it can be used for and how and when it's returned. Rules vary by state.</li>
+        <li><strong>Who fixes what:</strong> which repairs are the landlord's job, and how to request them.</li>
+        <li><strong>Breaking the lease:</strong> if you leave early, you may owe a fee or rent until the unit is re-rented.</li>
+        <li><strong>Guests and pets:</strong> limits on overnight guests, pet rules, and any pet fees or deposits.</li>
+      </ul>
+      <p><strong>Roommates</strong> make rent cheaper; $1,800 split two ways is $900 each. But if you both sign the lease, the landlord can often hold either of you responsible for the full rent if the other stops paying. Agree in writing on who pays what (rent, utilities, internet, shared supplies), when, and what happens if someone moves out.</p>
+      <p>Your landlord's insurance usually covers the building, not your belongings. <strong>Renters insurance</strong> covers your stuff and your liability, often for a modest monthly premium; see Lesson 4 for how policies work.</p>
+      <p>Finally, <strong>document the unit's condition on move-in day</strong>. Take dated photos and videos of every room and any scratches, stains or damage, note them on the move-in checklist if there is one, and keep a copy. When you move out, that record helps show which damage was already there, so it doesn't come out of your deposit.</p>
+    </section>
+
+    <aside class="lesson-callout key">
+      <h4>Key idea</h4>
+      <p>Judge a big purchase by its total cost, not its monthly number: add every cost that comes with it, compare loans by total interest, and read and document everything before you sign.</p>
+    </aside>
+
+    <section class="lesson-part">
+      <h3>Looking back at the whole course</h3>
+      <p>You've finished Financial Literacy: Money in Real Life. You learned to pick and use a bank account, spend with a plan instead of on impulse, spot scams and protect your identity, use insurance to handle big risks, weigh the true cost of college, and now, take on a car and an apartment with your eyes open.</p>
+      <p>You don't need to be rich to use any of this. Ask questions, read before you sign, compare before you buy, and come back to these lessons when a real decision shows up. You're more ready than you think.</p>
+    </section>
+
+    <section class="lesson-terms">
+      <h3>Key terms</h3>
+      <dl>
+        <div><dt>Total cost of ownership</dt><dd>Everything a car costs you: payment, insurance, gas, maintenance and fees.</dd></div>
+        <div><dt>Depreciation</dt><dd>The loss in a car's value over time. It's usually fastest in the first few years.</dd></div>
+        <div><dt>Down payment</dt><dd>Cash paid up front, which reduces how much you borrow.</dd></div>
+        <div><dt>Preapproval</dt><dd>A lender's offer, before you shop, saying how much it will lend and at what rate.</dd></div>
+        <div><dt>Loan term</dt><dd>How long you take to repay a loan, usually counted in months for car loans.</dd></div>
+        <div><dt>Vehicle history report</dt><dd>A report, looked up by VIN, showing a car's past accidents, title problems and ownership.</dd></div>
+        <div><dt>Lease</dt><dd>A contract that sets the rules for renting a home: rent, term, deposit, repairs and more.</dd></div>
+        <div><dt>Security deposit</dt><dd>Money a landlord holds to cover unpaid rent or damage, returned (minus any lawful deductions) when you move out.</dd></div>
+      </dl>
+    </section>
+
+    <section class="lesson-try">
+      <h3>Try it yourself</h3>
+      <p>Find one real used-car listing and one real apartment listing near you. For the car, estimate its total monthly cost (payment, insurance, gas, maintenance, registration) and run the loan through the calculator at 36 and 72 months. For the apartment, add up the move-in costs and work out what gross monthly income the 30% guideline suggests for that rent. Which one surprised you more?</p>
+    </section>
+  </div>
+
+  <form class="quiz" data-quiz>
+    <h3>Check your understanding</h3>
+    <p class="quiz-intro">Five questions. Get at least four right to complete the lesson.</p>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">1</span>Which best describes the total cost of owning a car?</legend>
+      <label><input type="radio" name="fl6-1" value="A"><span>The monthly loan payment</span></label>
+      <label><input type="radio" name="fl6-1" value="B"><span>The payment plus insurance, gas, maintenance and registration</span></label>
+      <label><input type="radio" name="fl6-1" value="C"><span>The sticker price on the windshield</span></label>
+      <label><input type="radio" name="fl6-1" value="D"><span>The down payment plus the first month's gas</span></label>
+      <p class="quiz-why">Owning a car means paying for insurance, fuel, upkeep and fees every month, on top of any loan. The payment alone can be less than half the real monthly cost.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="D">
+      <legend><span class="quiz-n">2</span>Same car, same down payment, same APR. What happens if you choose a 72-month loan instead of a 36-month loan?</legend>
+      <label><input type="radio" name="fl6-2" value="A"><span>The monthly payment and the total interest both go down</span></label>
+      <label><input type="radio" name="fl6-2" value="B"><span>The monthly payment goes up, but the total interest goes down</span></label>
+      <label><input type="radio" name="fl6-2" value="C"><span>Nothing changes except the date of the last payment</span></label>
+      <label><input type="radio" name="fl6-2" value="D"><span>The monthly payment goes down, but the total interest goes up</span></label>
+      <p class="quiz-why">Spreading the loan over more months shrinks each payment, but you pay interest for twice as long. In Nadia's example the payment fell from $463.16 to $255.74 while total interest rose from $1,673.76 to $3,413.28. A lower payment is not a lower cost.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="A">
+      <legend><span class="quiz-n">3</span>You earn $2,500 a month before taxes. Using the 30% guideline, about how much rent can you afford?</legend>
+      <label><input type="radio" name="fl6-3" value="A"><span>$750</span></label>
+      <label><input type="radio" name="fl6-3" value="B"><span>$300</span></label>
+      <label><input type="radio" name="fl6-3" value="C"><span>$1,000</span></label>
+      <label><input type="radio" name="fl6-3" value="D"><span>$1,250</span></label>
+      <p class="quiz-why">30% of $2,500 is $750. $1,000 would be 40% of your gross income, well above the guideline.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="C">
+      <legend><span class="quiz-n">4</span>Why take dated photos of an apartment on the day you move in?</legend>
+      <label><input type="radio" name="fl6-4" value="A"><span>The landlord needs them to set the rent</span></label>
+      <label><input type="radio" name="fl6-4" value="B"><span>They replace the need to read the lease</span></label>
+      <label><input type="radio" name="fl6-4" value="C"><span>They show damage that was already there, so it isn't taken out of your deposit</span></label>
+      <label><input type="radio" name="fl6-4" value="D"><span>They're required before you can get renters insurance</span></label>
+      <p class="quiz-why">A move-in record is your evidence when the deposit is settled at move-out. It doesn't replace reading the lease; you still need to know what the deposit covers.</p>
+    </fieldset>
+    <fieldset class="quiz-q" data-answer="B">
+      <legend><span class="quiz-n">5</span>What is the main advantage of getting preapproved for a car loan before you shop?</legend>
+      <label><input type="radio" name="fl6-5" value="A"><span>It means you no longer have to pay interest</span></label>
+      <label><input type="radio" name="fl6-5" value="B"><span>You know your budget and have a rate to compare with the dealer's offer</span></label>
+      <label><input type="radio" name="fl6-5" value="C"><span>It guarantees the car has no mechanical problems</span></label>
+      <label><input type="radio" name="fl6-5" value="D"><span>It requires you to buy from the lender that preapproved you</span></label>
+      <p class="quiz-why">Preapproval tells you how much you can borrow and at what APR, so you can compare offers and pick the cheaper one. It says nothing about the car itself; that's what an independent inspection is for.</p>
+    </fieldset>
+    <div class="quiz-actions">
+      <button type="submit" class="btn btn-primary">Check answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </form>
+  <nav class="lesson-nav" aria-label="Lesson 6">
+    <a href="#fl-lesson-5" class="btn btn-outline">← Lesson 5</a>
+    <a href="#fl" class="lesson-nav-all">Course overview</a>
+    <a href="#fl-certificate" class="btn btn-primary is-next">Get your certificate →</a>
+  </nav>
+</article>
+      </section>
+      <section class="view" id="fl-certificate" data-view data-course="fl" data-title="Financial Literacy · Certificate">
+        <div class="page-head">
+          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><h1>Certificate</h1></div>
+          <p class="lede">Financial Literacy: Money in Real Life: pass all six lesson quizzes to earn a certificate of completion with your name on it.</p>
+        </div>
+        <div class="course-cert" data-course-cert="fl">
+          <div class="cert-locked" data-cert-locked>
+            <span class="cert-locked-icon" aria-hidden="true"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
+            <div>
+              <h3>Earn your certificate</h3>
+              <p>Pass all six lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
+            </div>
+          </div>
+          <div class="cert-ready" data-cert-ready hidden>
+            <div class="cert-ready-head">
+              <span class="eyebrow">You finished the course</span>
+              <h3>Put your name on it.</h3>
+              <p>Type your name the way you'd like it to appear. It stays in this browser; nothing is sent anywhere.</p>
+            </div>
+            <form class="cert-form" data-cert-form>
+              <label for="fl-cert-name">Your name</label>
+              <div class="cert-form-row">
+                <input type="text" id="fl-cert-name" maxlength="60" autocomplete="name" required placeholder="First and last name" data-cert-name>
+                <button type="submit" class="btn btn-primary">Make my certificate</button>
+              </div>
+            </form>
+            <figure class="cert-preview" data-cert-preview hidden>
+              <img src="data:," alt="" data-cert-img>
+            </figure>
+            <div class="cert-actions" data-cert-actions hidden>
+              <a class="btn btn-primary" href="#fl-certificate" download="certificate.png" data-cert-download>Download image</a>
+              <button type="button" class="btn btn-outline" data-cert-print>Print or save as PDF</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALCULATORS: every course's tools, grouped by course. -->
       <section class="view" id="tools" data-view data-title="Calculators">
         <div class="page-head">
           <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><rect x="8" y="5.5" width="8" height="4" rx="0.8"/><path d="M8.5 13h1M12 13h1M15.5 13h1M8.5 17h1M12 17h1M15.5 17h1"/></svg></span><h1>Calculators</h1></div>
-          <p class="lede">The five calculators from the lessons, all in one place. Change any number and the results update as you type.</p>
+          <p class="lede">Every calculator from the courses in one place. Change any number and the results update as you type.</p>
         </div>
+        <h2 class="tool-group-title">Money &amp; Business Foundations</h2>
         <div class="tool-grid">
-        <section class="card tool-card" id="tool-budget">
-          <div class="tool-card-head">
-            <h2>50/30/20 budget</h2>
-            <a class="btn-text" href="#lesson-1">From lesson 1 →</a>
-          </div>
-          <p>Split take-home pay into needs, wants and savings.</p>
-          <div class="lesson-tool" data-tool="budget">
+          <section class="card tool-card" id="tool-budget">
+            <div class="tool-card-head">
+              <h2>50/30/20 budget</h2>
+              <a class="btn-text" href="#mbf-lesson-1">From lesson 1 →</a>
+            </div>
+            <p>Split take-home pay into needs, wants and savings.</p>
+            <div class="lesson-tool" data-tool="budget">
       <h4>Try it: the 50/30/20 split</h4>
       <div class="tool-inputs">
         <label>Monthly take-home pay ($)<input type="number" inputmode="decimal" min="0" step="1" value="600" data-in="income"></label>
@@ -1251,14 +2563,14 @@
       <p class="tool-warn" hidden></p>
       <p class="tool-note">A starting point, not a rule. If your needs are lower, move the difference into savings.</p>
     </div>
-        </section>
-        <section class="card tool-card" id="tool-paycheck">
-          <div class="tool-card-head">
-            <h2>Paycheck</h2>
-            <a class="btn-text" href="#lesson-2">From lesson 2 →</a>
-          </div>
-          <p>See what comes out of a two-week paycheck.</p>
-          <div class="lesson-tool" data-tool="paycheck">
+          </section>
+          <section class="card tool-card" id="tool-paycheck">
+            <div class="tool-card-head">
+              <h2>Paycheck</h2>
+              <a class="btn-text" href="#mbf-lesson-2">From lesson 2 →</a>
+            </div>
+            <p>See what comes out of a two-week paycheck.</p>
+            <div class="lesson-tool" data-tool="paycheck">
       <h4>Try it: paycheck calculator</h4>
       <div class="tool-inputs">
         <label>Hourly wage ($)<input type="number" inputmode="decimal" min="0" step="0.25" value="16" data-in="wage"></label>
@@ -1275,14 +2587,14 @@
       <p class="tool-warn" hidden></p>
       <p class="tool-note">Income tax withheld is an estimate you enter: the real amount depends on your W-4, your state and how much you earn in the year.</p>
     </div>
-        </section>
-        <section class="card tool-card" id="tool-compound">
-          <div class="tool-card-head">
-            <h2>Compound growth</h2>
-            <a class="btn-text" href="#lesson-3">From lesson 3 →</a>
-          </div>
-          <p>Watch regular saving grow over the years.</p>
-          <div class="lesson-tool" data-tool="compound">
+          </section>
+          <section class="card tool-card" id="tool-compound">
+            <div class="tool-card-head">
+              <h2>Compound growth</h2>
+              <a class="btn-text" href="#mbf-lesson-3">From lesson 3 →</a>
+            </div>
+            <p>Watch regular saving grow over the years.</p>
+            <div class="lesson-tool" data-tool="compound">
       <h4>Try it: compound growth calculator</h4>
       <div class="tool-inputs">
         <label>Starting amount ($)<input type="number" inputmode="decimal" min="0" step="1" value="0" data-in="start"></label>
@@ -1298,14 +2610,14 @@
       <p class="tool-warn" hidden></p>
       <p class="tool-note">Assumes the same return every year, compounded monthly, with each deposit at the end of the month. Real returns go up and down, and are never guaranteed.</p>
     </div>
-        </section>
-        <section class="card tool-card" id="tool-payoff">
-          <div class="tool-card-head">
-            <h2>Credit card payoff</h2>
-            <a class="btn-text" href="#lesson-4">From lesson 4 →</a>
-          </div>
-          <p>How long a balance takes to clear, and what it costs.</p>
-          <div class="lesson-tool" data-tool="payoff">
+          </section>
+          <section class="card tool-card" id="tool-payoff">
+            <div class="tool-card-head">
+              <h2>Credit card payoff</h2>
+              <a class="btn-text" href="#mbf-lesson-4">From lesson 4 →</a>
+            </div>
+            <p>How long a balance takes to clear, and what it costs.</p>
+            <div class="lesson-tool" data-tool="payoff">
       <h4>Try it: credit card payoff calculator</h4>
       <div class="tool-inputs">
         <label>Card balance ($)<input type="number" inputmode="decimal" min="0" step="1" value="1000" data-in="balance"></label>
@@ -1320,14 +2632,14 @@
       <p class="tool-warn" hidden></p>
       <p class="tool-note">Assumes the same payment every month, no new purchases or fees, and interest of APR ÷ 12 on the balance each month, rounded to the cent. Real cards usually work interest out daily, so the numbers differ slightly.</p>
     </div>
-        </section>
-        <section class="card tool-card" id="tool-breakeven">
-          <div class="tool-card-head">
-            <h2>Break-even</h2>
-            <a class="btn-text" href="#lesson-5">From lesson 5 →</a>
-          </div>
-          <p>How many sales before a business covers its costs.</p>
-          <div class="lesson-tool" data-tool="breakeven">
+          </section>
+          <section class="card tool-card" id="tool-breakeven">
+            <div class="tool-card-head">
+              <h2>Break-even</h2>
+              <a class="btn-text" href="#mbf-lesson-5">From lesson 5 →</a>
+            </div>
+            <p>How many sales before a business covers its costs.</p>
+            <div class="lesson-tool" data-tool="breakeven">
       <h4>Try it: break-even calculator</h4>
       <div class="tool-inputs">
         <label>Price per unit ($)<input type="number" inputmode="decimal" min="0" step="0.5" value="15" data-in="price"></label>
@@ -1342,7 +2654,103 @@
       <p class="tool-warn" hidden></p>
       <p class="tool-note">Break-even is rounded up to whole units: you can't sell part of a box.</p>
     </div>
-        </section>
+          </section>
+        </div>
+        <h2 class="tool-group-title">Financial Literacy: Money in Real Life</h2>
+        <div class="tool-grid">
+          <section class="card tool-card" id="tool-unitprice">
+            <div class="tool-card-head">
+              <h2>Unit price</h2>
+              <a class="btn-text" href="#fl-lesson-2">From lesson 2 →</a>
+            </div>
+            <p>Which size or package is really cheaper.</p>
+            <div class="lesson-tool" data-tool="unitprice">
+      <h4>Try it: unit price comparison</h4>
+      <div class="tool-inputs">
+        <label>Option A price ($)<input type="number" inputmode="decimal" min="0" step="0.01" value="3.48" data-in="priceA"></label>
+        <label>Option A size<input type="number" inputmode="decimal" min="0" step="0.1" value="12" data-in="sizeA"></label>
+        <label>Option B price ($)<input type="number" inputmode="decimal" min="0" step="0.01" value="5.58" data-in="priceB"></label>
+        <label>Option B size<input type="number" inputmode="decimal" min="0" step="0.1" value="18" data-in="sizeB"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div><span>Option A</span><strong data-out="unitA">—</strong></div>
+        <div><span>Option B</span><strong data-out="unitB">—</strong></div>
+        <div class="is-main"><span>Better deal</span><strong data-out="better">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">Use the same unit for both sizes (ounces, count, liters) or the comparison means nothing.</p>
+    </div>
+          </section>
+          <section class="card tool-card" id="tool-insurance">
+            <div class="tool-card-head">
+              <h2>Insurance plans</h2>
+              <a class="btn-text" href="#fl-lesson-4">From lesson 4 →</a>
+            </div>
+            <p>Premium vs. deductible: which plan costs less this year.</p>
+            <div class="lesson-tool" data-tool="insurance">
+      <h4>Try it: compare two plans for a year</h4>
+      <div class="tool-inputs">
+        <label>Plan A premium per month ($)<input type="number" inputmode="decimal" min="0" step="1" value="150" data-in="premA"></label>
+        <label>Plan A deductible ($)<input type="number" inputmode="decimal" min="0" step="50" value="2500" data-in="dedA"></label>
+        <label>Plan B premium per month ($)<input type="number" inputmode="decimal" min="0" step="1" value="250" data-in="premB"></label>
+        <label>Plan B deductible ($)<input type="number" inputmode="decimal" min="0" step="50" value="500" data-in="dedB"></label>
+        <label>Covered bills this year ($)<input type="number" inputmode="decimal" min="0" step="50" value="6000" data-in="bills"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div><span>Plan A, year's cost</span><strong data-out="costA">—</strong></div>
+        <div><span>Plan B, year's cost</span><strong data-out="costB">—</strong></div>
+        <div class="is-main"><span>Cheaper this year</span><strong data-out="better">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">Simplified: premiums for 12 months plus the bills up to the deductible. It ignores copays, coinsurance and out-of-pocket maximums.</p>
+    </div>
+          </section>
+          <section class="card tool-card" id="tool-studentloan">
+            <div class="tool-card-head">
+              <h2>Student loan</h2>
+              <a class="btn-text" href="#fl-lesson-5">From lesson 5 →</a>
+            </div>
+            <p>The monthly payment and total cost of borrowing for college.</p>
+            <div class="lesson-tool" data-tool="studentloan">
+      <h4>Try it: student loan payment</h4>
+      <div class="tool-inputs">
+        <label>Amount borrowed ($)<input type="number" inputmode="decimal" min="0" step="100" value="16000" data-in="amount"></label>
+        <label>Interest rate, APR (%)<input type="number" inputmode="decimal" min="0" step="0.1" value="6" data-in="apr"></label>
+        <label>Years to repay<input type="number" inputmode="decimal" min="0" step="1" value="10" data-in="years"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div class="is-main"><span>Monthly payment</span><strong data-out="monthly">—</strong></div>
+        <div><span>Total interest</span><strong data-out="interest">—</strong></div>
+        <div><span>Total repaid</span><strong data-out="total">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">A fixed payment every month with interest at APR ÷ 12. The rate here is an example you enter, not a current federal rate.</p>
+    </div>
+          </section>
+          <section class="card tool-card" id="tool-carloan">
+            <div class="tool-card-head">
+              <h2>Car loan</h2>
+              <a class="btn-text" href="#fl-lesson-6">From lesson 6 →</a>
+            </div>
+            <p>What a car really costs once the loan is paid off.</p>
+            <div class="lesson-tool" data-tool="carloan">
+      <h4>Try it: car loan calculator</h4>
+      <div class="tool-inputs">
+        <label>Car price ($)<input type="number" inputmode="decimal" min="0" step="100" value="18000" data-in="price"></label>
+        <label>Down payment ($)<input type="number" inputmode="decimal" min="0" step="100" value="3000" data-in="down"></label>
+        <label>Interest rate, APR (%)<input type="number" inputmode="decimal" min="0" step="0.1" value="7" data-in="apr"></label>
+        <label>Loan length (months)<input type="number" inputmode="decimal" min="0" step="12" value="72" data-in="months"></label>
+      </div>
+      <div class="tool-out" aria-live="polite">
+        <div><span>Amount borrowed</span><strong data-out="borrowed">—</strong></div>
+        <div class="is-main"><span>Monthly payment</span><strong data-out="monthly">—</strong></div>
+        <div><span>Total interest</span><strong data-out="interest">—</strong></div>
+        <div><span>Total cost of the car</span><strong data-out="total">—</strong></div>
+      </div>
+      <p class="tool-warn" hidden></p>
+      <p class="tool-note">A fixed payment every month with interest at APR ÷ 12. Taxes, fees and insurance aren't included.</p>
+    </div>
+          </section>
         </div>
       </section>
 
@@ -1350,62 +2758,24 @@
       <section class="view" id="glossary" data-view data-title="Glossary">
         <div class="page-head">
           <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg></span><h1>Glossary</h1></div>
-          <p class="lede">Every key term from the course, A to Z, with the lesson it comes from.</p>
+          <p class="lede">Every key term from every course, A to Z, with the lesson it comes from.</p>
         </div>
         <div class="card">
-          <label class="glossary-search"><span>Search terms</span><input type="search" placeholder="e.g. APR, margin, W-4" data-glossary-search></label>
+          <label class="glossary-search"><span>Search terms</span><input type="search" placeholder="e.g. APR, deductible, FAFSA" data-glossary-search></label>
           <div class="glossary-list" data-glossary></div>
           <noscript><p class="fine">Each lesson lists its key terms near the end.</p></noscript>
-        </div>
-      </section>
-
-      <!-- CERTIFICATE -->
-      <section class="view" id="certificate" data-view data-title="Certificate">
-        <div class="page-head">
-          <div class="page-title"><span class="spot"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><h1>Certificate</h1></div>
-          <p class="lede">Pass all six lesson quizzes to earn a certificate of completion with your name on it.</p>
-        </div>
-        <div class="course-cert" data-course-cert>
-          <div class="cert-locked" data-cert-locked>
-            <span class="cert-locked-icon" aria-hidden="true"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span>
-            <div>
-              <h3>Earn your certificate</h3>
-              <p>Pass all six lesson quizzes and you'll get a certificate of completion with your name on it, to download or print. <strong data-cert-left>6 lessons</strong> to go.</p>
-            </div>
-          </div>
-          <div class="cert-ready" data-cert-ready hidden>
-            <div class="cert-ready-head">
-              <span class="eyebrow">You finished the course</span>
-              <h3>Put your name on it.</h3>
-              <p>Type your name the way you'd like it to appear. It stays in this browser; nothing is sent anywhere.</p>
-            </div>
-            <form class="cert-form" data-cert-form>
-              <label for="cert-name">Your name</label>
-              <div class="cert-form-row">
-                <input type="text" id="cert-name" maxlength="60" autocomplete="name" required placeholder="First and last name" data-cert-name>
-                <button type="submit" class="btn btn-primary">Make my certificate</button>
-              </div>
-            </form>
-            <figure class="cert-preview" data-cert-preview hidden>
-              <img src="data:," alt="" data-cert-img>
-            </figure>
-            <div class="cert-actions" data-cert-actions hidden>
-              <a class="btn btn-primary" href="#certificate" download="ABLE-Money-and-Business-Foundations-certificate.png" data-cert-download>Download image</a>
-              <button type="button" class="btn btn-outline" data-cert-print>Print or save as PDF</button>
-            </div>
-          </div>
         </div>
       </section>
 
     </main>
 
     <footer class="app-foot">
-      <p>This course teaches general ideas, not personal financial, tax or legal advice. The students and numbers in the examples are made up, and US rules are used throughout.</p>
+      <p>These courses teach general ideas, not personal financial, tax, legal or insurance advice. The students and numbers in the examples are made up, and US rules are used throughout.</p>
       <p>© <span data-year>2026</span> <a href="https://ableinitiatives.com/">ABLE Initiatives</a>, a student-run 501(c)(3) nonprofit · <button type="button" class="btn-text" data-reset>Reset my progress</button></p>
     </footer>
   </div>
 </div>
 
-<script src="assets/js/app.js?v=3"></script>
+<script src="assets/js/app.js?v=4"></script>
 </body>
 </html>

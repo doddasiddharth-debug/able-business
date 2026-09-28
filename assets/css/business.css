@@ -368,3 +368,47 @@ img { max-width: 100%; display: block; }
 }
 
 }
+
+/* ==========================================================================
+   SEVERAL COURSES
+   ========================================================================== */
+/* Sidebar: a group per course. Only the open course lists its lessons once
+   JS is running; without it every group is expanded. */
+.nav-course { display: flex; flex-direction: column; gap: 2px; }
+.nav-course-head .nav-label { flex: 1; }
+.nav-count { font-size: 11.5px; font-weight: 600; color: var(--side-muted); background: rgba(255, 255, 255, 0.08); padding: 2px 7px; border-radius: 999px; }
+.nav-item.active .nav-count { color: #FFFFFF; background: rgba(255, 255, 255, 0.2); }
+.nav-course-items { display: flex; flex-direction: column; gap: 2px; padding-left: 12px; margin-left: 10px; border-left: 1px solid rgba(255, 255, 255, 0.12); margin-bottom: 6px; }
+.js .nav-course:not(.is-open) .nav-course-items { display: none; }
+.nav-course.is-open > .nav-course-head:not(.active) { color: #FFFFFF; }
+
+/* Home: the catalog. */
+.course-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.course-tile { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px 28px; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); transition: border-color 0.15s ease; }
+.course-tile:hover { border-color: var(--accent); }
+.course-tile-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.course-tile-status { font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 999px; background: var(--bg-alt); color: var(--ink-soft); }
+.course-tile-status.is-earned { background: var(--gold); color: var(--ink); }
+.course-tile h2 { font-size: 24px; letter-spacing: -0.03em; margin: 0 0 8px; }
+.course-tile h2 a { color: inherit; text-decoration: none; }
+.course-tile h2 a:hover { color: var(--accent-dark); }
+.course-tile > p { color: var(--ink-soft); margin: 0 0 10px; }
+.course-tile .course-tile-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; }
+.course-tile-bar { height: 8px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; margin-top: auto; }
+.course-tile-bar span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width 0.5s ease; }
+.course-tile .course-tile-progress { font-size: 13.5px; color: var(--muted); margin: 8px 0 18px; }
+.course-tile-progress strong { color: var(--ink); }
+.course-tile-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.catalog-note { margin-top: 18px; }
+
+/* Calculators page: one group per course. */
+.tool-group-title { font-size: 18px; margin: 30px 0 14px; color: var(--ink-soft); }
+.tool-group-title:first-of-type { margin-top: 4px; }
+
+@media (max-width: 900px) {
+  .course-tiles { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .course-tile { padding: 22px 20px; }
+  .course-tile-actions .btn { flex: 1 1 100%; }
+}

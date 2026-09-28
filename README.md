@@ -1,6 +1,6 @@
-# ABLE Business · Money & Business Foundations
+# ABLE Business · Free courses
 
-A free, self-paced course from ABLE Business, the financial-literacy and
+Free, self-paced courses from ABLE Business, the financial-literacy and
 entrepreneurship branch of [ABLE Initiatives](https://ableinitiatives.com), a
 student-run 501(c)(3) nonprofit. Live at **https://business.ableinitiatives.com**.
 
@@ -9,48 +9,70 @@ server (`python3 -m http.server`) or let GitHub Pages deploy it on every push to
 `main` (`.github/workflows/static.yml`). It is the sibling of the SAT course at
 prep.ableinitiatives.com and uses the same app shell.
 
-## What's in it
+## Courses
 
-| View | What's there |
-|---|---|
-| **Dashboard** (`#dashboard`) | Progress ring, "continue" button, lessons passed / quiz questions right / certificate status, every lesson with its status, links to the calculators |
-| **Lessons 1–6** (`#lesson-1` … `#lesson-6`) | Budgeting; paychecks and taxes; saving and investing; credit and debt; how a business makes money; starting something, and careers in business. Each: goals, worked example, common mistake, key idea, key terms, "try it yourself", a five-question quiz (four right completes it) |
-| **Calculators** (`#tools`, `#tool-budget` …) | 50/30/20 budget, paycheck, compound growth, credit card payoff, break-even |
-| **Glossary** (`#glossary`) | Every lesson's key terms, A to Z, searchable, built at runtime from the lessons |
-| **Certificate** (`#certificate`) | Unlocks when all six quizzes are passed; drawn on a canvas with the student's name; download as PNG or print |
+| Course | Views | Progress key |
+|---|---|---|
+| **Money &amp; Business Foundations**: budgeting; paychecks and taxes; saving and investing; credit and debt; how a business makes money; starting something, and careers | `#mbf`, `#mbf-lesson-1`…`6`, `#mbf-certificate` | `able.business.course.v1` |
+| **Financial Literacy: Money in Real Life**: banking basics; smart spending; scams and identity theft; insurance; paying for college; your first car and apartment | `#fl`, `#fl-lesson-1`…`6`, `#fl-certificate` | `able.business.fl.v1` |
+
+Each course has a dashboard (progress ring, continue button, stats, lessons,
+its calculators), six lessons (goals, worked example, common mistake, key
+idea, key terms, "try it yourself", a five-question quiz where four right
+completes the lesson) and its own certificate. Shared views: **All courses**
+(`#home`, the catalog and the default), **Calculators** (`#tools`, grouped by
+course, each linkable as `#tool-…`) and **Glossary** (`#glossary`, every
+course's key terms A to Z, built at runtime from the lessons).
+
+Old links from before there were several courses still work: `#dashboard`
+and `#lessons` open the Foundations dashboard, `#lesson-N` its lesson N, and
+`#certificate` its certificate (`alias()` in `app.js`).
+
+## Adding a course
+
+1. Write six `<article class="lesson">` blocks like the existing ones, with
+   ids and quiz radio names prefixed so nothing collides (`fl-lesson-3-title`,
+   `name="fl3-2"`), and no `id` on the article itself.
+2. Add its views to `index.html` with `data-course="<id>"`: a dashboard
+   (`id="<id>"`), one section per lesson (`id="<id>-lesson-N"`) and a
+   certificate (`id="<id>-certificate"`, `data-course-cert="<id>"`); a
+   sidebar group (`data-course-nav`); and a `.course-tile` on `#home`.
+   Copy the Financial Literacy markup; it is the template.
+3. Add an entry to `COURSES` in `app.js` (storage key, title, the two topic
+   lines printed on the certificate, file-name slug).
+4. New calculators go in `TOOLS` in `app.js` and in the calculators view.
 
 ## Files
 
 ```
-index.html               every view, including all six lessons (edit lessons here)
-assets/css/business.css  app shell + the course components
-assets/js/app.js         router, progress, quizzes, calculators, glossary, certificate
+index.html               every view of every course (edit lessons here)
+assets/css/business.css  app shell, course components, catalog
+assets/js/app.js         router, per-course progress, quizzes, calculators,
+                         glossary, certificates
 assets/images/           ABLE Business mark, ABLE mark (certificate seal), favicon
 CNAME                    business.ableinitiatives.com
 ```
 
 ## How it works
 
-- **Without JS** the page is the whole course top to bottom; calculators hide
-  and quiz explanations show. **With JS**, one view shows at a time, chosen by
-  the URL hash, so every lesson and calculator has a shareable link.
-- **Progress** lives in `localStorage` under `able.business.course.v1`:
-  `passed`, `best` score per lesson, the certificate `name`, and `completedAt`
-  (the day the last lesson was first passed, printed on the certificate).
-  Nothing is sent anywhere, so progress is per browser.
-- **A quiz question** is a `fieldset.quiz-q` with `data-answer="A"`–`"D"`.
-  Keep five per lesson, or change `PASS` in `app.js`.
-- **Calculators** are `.lesson-tool[data-tool]` blocks, defined in `TOOLS` in
-  `app.js`: inputs are `[data-in]`, outputs `[data-out]`. Each appears twice,
-  in its lesson and on the calculators page; its default inputs match that
-  lesson's worked example, so keep the two copies' defaults in step. The
-  payoff tool rounds interest to the cent each month because lesson 4's table
-  does.
-- **The certificate** has no signature and no number on purpose: completion
-  is recorded only in the student's browser, so it can't be verified and
-  shouldn't look as if it can. Changing a lesson title means changing the
-  topic lines in `drawCert` too, and the list on the dashboard and in the
-  sidebar (which uses short titles).
+- **Without JS** the page is every course top to bottom; calculators hide
+  and quiz explanations show. **With JS**, one view shows at a time, chosen
+  by the URL hash, and the sidebar lists only the open course's lessons.
+- **Progress** is per course in `localStorage`: `passed`, the `best` score
+  per lesson, the certificate `name`, and `completedAt` (the day the last
+  lesson was first passed, printed on the certificate). Nothing is sent
+  anywhere, so progress is per browser. "Reset my progress" clears every
+  course. The first course's old page on ableinitiatives.com forwards here
+  with `?progress=`, which is merged into Foundations.
+- **Calculators** are `.lesson-tool[data-tool]` blocks: inputs `[data-in]`,
+  outputs `[data-out]`. Each appears in its lesson and on the calculators
+  page, and its default inputs reproduce that lesson's worked example, so
+  keep the two copies' defaults in step. Loan payments are
+  P·r/(1−(1+r)^−n) rounded to the cent, as in the lessons; the card-payoff
+  tool rounds interest each month because Foundations lesson 4's table does.
+- **Certificates** have no signature and no number on purpose: completion is
+  recorded only in the student's browser, so they can't be verified and
+  shouldn't look as if they can.
 
 ## Content rules
 
