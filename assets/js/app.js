@@ -18,6 +18,8 @@
   const $ = (sel, el = document) => el.querySelector(sel);
   const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
   const PASS = 4;
+  // Anonymous interaction counts (analytics.js); a no-op if it isn't loaded.
+  const track = (name, once) => window.ableTrack?.(name, once);
 
   const COURSES = {
     mbf: {
@@ -127,7 +129,7 @@
     each(".card-stats", (el) => el.classList.toggle("is-cert", done === total));
     each("[data-count]", (el) => { el.textContent = `${done}/${total}`; });
     // The certificate's date: the day the last lesson was first passed.
-    if (done === total && !s.completedAt) { s.completedAt = Date.now(); c.save(); }
+    if (done === total && !s.completedAt) { s.completedAt = Date.now(); c.save(); track(`course-complete/${c.id}`); }
     renderCert(c, done);
   };
   const renderAll = () => courses.forEach(render);
@@ -251,11 +253,15 @@
       preview.hidden = false;
       actions.hidden = false;
       preview.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      track(`certificate/${c.id}`);
     });
+
+    dl.addEventListener("click", () => track(`certificate-download/${c.id}`));
 
     // Print just the certificate, landscape, edge to edge.
     $("[data-cert-print]", cert).addEventListener("click", () => {
       if (!c.certURL) return;
+      track(`certificate-print/${c.id}`);
       const sheet = document.createElement("img");
       sheet.className = "cert-print-sheet";
       sheet.src = c.certURL;
@@ -354,6 +360,7 @@
           else if (input === picked) input.closest("label").classList.add("is-picked-wrong");
         });
       });
+      track(`quiz-${score >= PASS ? "pass" : "fail"}/${c.id}-${id}`);
       c.state.best[id] = Math.max(score, c.state.best[id] || 0);
       if (score >= PASS) c.state.passed[id] = true;
       c.save();
@@ -536,7 +543,7 @@
       });
       if (warn) { warn.hidden = !res.warn; warn.textContent = res.warn || ""; }
     };
-    inputs.forEach((el) => el.addEventListener("input", run));
+    inputs.forEach((el) => el.addEventListener("input", () => { run(); track(`calculator/${tool.dataset.tool}`, true); }));
     run();
   });
 
