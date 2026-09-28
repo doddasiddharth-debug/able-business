@@ -17,6 +17,7 @@ prep.ableinitiatives.com and uses the same app shell.
 | **Financial Literacy: Money in Real Life**: banking basics; smart spending; scams and identity theft; insurance; paying for college; your first car and apartment | `#fl`, `#fl-lesson-1`…`6`, `#fl-certificate` | `able.business.fl.v1` |
 | **Career Readiness: Landing Your First Job**: finding work that fits you; resumes and applications; interviews; your first weeks on the job; comparing jobs and offers; growing your career | `#cr`, `#cr-lesson-1`…`6`, `#cr-certificate` | `able.business.cr.v1` |
 | **Marketing: How Businesses Win Customers**: what marketing is; knowing your customer; brand and message; getting the word out; measuring what works; selling, service and honest marketing | `#mk`, `#mk-lesson-1`…`6`, `#mk-certificate` | `able.business.mk.v1` |
+| **Leadership & Communication**: leading without a title; communicating clearly; speaking and presenting; teamwork and meetings; conflict and negotiation; leading a project | `#lc`, `#lc-lesson-1`…`6`, `#lc-certificate` | `able.business.lc.v1` |
 
 Each course has a dashboard (progress ring, continue button, stats, lessons,
 its calculators), six lessons (goals, worked example, common mistake, key
